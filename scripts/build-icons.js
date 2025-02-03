@@ -29,6 +29,13 @@ const assetsFiles = [
     out: ["icon-pack", "flags"],
     keepColor: true,
   },
+  {
+    dir: path.join(rootDir, "icons", "rds"),
+    id: "rise.design",
+    index: path.join(rootDir, "rds.ts"),
+    out: ["icon-pack", "rds"],
+    keepColor: true,
+  }
 ];
 
 function isNumber(str) {
