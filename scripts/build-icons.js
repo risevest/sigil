@@ -34,7 +34,6 @@ const assetsFiles = [
     id: "rise.design",
     index: path.join(rootDir, "rds.ts"),
     out: ["icon-pack", "rds"],
-    keepColor: true,
   }
 ];
 
