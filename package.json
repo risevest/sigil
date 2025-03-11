@@ -1,6 +1,6 @@
 {
   "name": "@risemaxi/sigil",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "Icons and Signs for the Rise Design System",
   "homepage": "https://risevest.com",
   "main": "build/index.js",
