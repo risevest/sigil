@@ -15,6 +15,7 @@ const assetsFiles = [
          */`,
     dir: path.join(rootDir, "icons", "remix"),
     id: "remix",
+    prefix: "Ri",
     index: path.join(rootDir, "index.ts"),
     out: ["icon-pack", "remix"],
   },
@@ -28,6 +29,19 @@ const assetsFiles = [
     index: path.join(rootDir, "lucide.ts"),
     isStrokeIcon: true,
     out: ["icon-pack", "lucide"],
+  },
+  {
+    attr: (name) => `/**
+    * Material Icon: ${toTitleCase(name)}
+    * @see {@link https://fonts.google.com/icons?selected=Material+Icons:${toSnakeCase(
+      name
+    )} Material Icon Docs}
+    */`,
+    dir: path.join(rootDir, "icons", "material"),
+    id: "material",
+    prefix: "Mi",
+    index: path.join(rootDir, "material.ts"),
+    out: ["icon-pack", "material"],
   },
   {
     attr: (name) => `/**
@@ -61,78 +75,83 @@ function toTitleCase(str) {
     .join(" ");
 }
 
-assetsFiles.forEach(({ attr, dir, index, isStrokeIcon, out, ...rest }) => {
-  glob(`${dir}/**/*.svg`, (_, icons) => {
-    fs.writeFileSync(index, "", "utf-8");
-    const outDir = path.join(rootDir, ...out);
+function toSnakeCase(str) {
+  return str.toLowerCase().split("-").join("_");
+}
 
-    icons.forEach(async (i) => {
-      const svg = fs.readFileSync(i, "utf-8");
-      const name = path.basename(i, ".svg");
-      const $ = cheerio.load(svg, {
-        xmlMode: true,
-      });
-      const fileName = path.basename(i).replace(".svg", ".tsx");
-      const location = path.join(outDir, fileName);
-      const keepColor =
-        typeof rest.keepColor === "function"
-          ? rest.keepColor(name)
-          : rest.keepColor;
+assetsFiles.forEach(
+  ({ attr, dir, index, prefix, isStrokeIcon, out, ...rest }) => {
+    glob(`${dir}/**/*.svg`, (_, icons) => {
+      fs.writeFileSync(index, "", "utf-8");
+      const outDir = path.join(rootDir, ...out);
 
-      // Because CSS does not exist on Native platforms
-      // We need to duplicate the styles applied to the
-      // SVG to its children
-      const svgAttribs = $("svg")[0].attribs;
-      delete svgAttribs["xmlns"];
-      const attribsOfInterest = {};
-      Object.keys(svgAttribs).forEach((key) => {
-        if (
-          ![
-            "height",
-            "width",
-            "viewBox",
-            "fill",
-            "stroke-width",
-            "stroke-linecap",
-            "stroke-linejoin",
-          ].includes(key)
-        ) {
-          attribsOfInterest[key] = svgAttribs[key];
-        }
-      });
+      icons.forEach(async (i) => {
+        const svg = fs.readFileSync(i, "utf-8");
+        const name = path.basename(i, ".svg");
+        const $ = cheerio.load(svg, {
+          xmlMode: true,
+        });
+        const fileName = path.basename(i).replace(".svg", ".tsx");
+        const location = path.join(outDir, fileName);
+        const keepColor =
+          typeof rest.keepColor === "function"
+            ? rest.keepColor(name)
+            : rest.keepColor;
 
-      $("*").each((index, el) => {
-        Object.keys(el.attribs).forEach((x) => {
-          if (x.includes("-")) {
-            $(el).attr(camelcase(x), el.attribs[x]).removeAttr(x);
-          }
-          if (keepColor) return;
-          if (x === "fill") {
-            $(el).attr(x, isStrokeIcon ? "none" : "currentColor");
-          }
-          if (isStrokeIcon && x === "stroke") {
-            $(el).attr(x, "currentColor");
+        // Because CSS does not exist on Native platforms
+        // We need to duplicate the styles applied to the
+        // SVG to its children
+        const svgAttribs = $("svg")[0].attribs;
+        delete svgAttribs["xmlns"];
+        const attribsOfInterest = {};
+        Object.keys(svgAttribs).forEach((key) => {
+          if (
+            ![
+              "height",
+              "width",
+              "viewBox",
+              "fill",
+              "stroke-width",
+              "stroke-linecap",
+              "stroke-linejoin",
+            ].includes(key)
+          ) {
+            attribsOfInterest[key] = svgAttribs[key];
           }
         });
 
-        // For every element that is NOT svg ...
-        if (el.name !== "svg") {
-          Object.keys(attribsOfInterest).forEach((key) => {
-            $(el).attr(camelcase(key), attribsOfInterest[key]);
+        $("*").each((index, el) => {
+          Object.keys(el.attribs).forEach((x) => {
+            if (x.includes("-")) {
+              $(el).attr(camelcase(x), el.attribs[x]).removeAttr(x);
+            }
+            if (keepColor) return;
+            if (x === "fill") {
+              $(el).attr(x, isStrokeIcon ? "none" : "currentColor");
+            }
+            if (isStrokeIcon && x === "stroke") {
+              $(el).attr(x, "currentColor");
+            }
           });
+
+          // For every element that is NOT svg ...
+          if (el.name !== "svg") {
+            Object.keys(attribsOfInterest).forEach((key) => {
+              $(el).attr(camelcase(key), attribsOfInterest[key]);
+            });
+          }
+
+          if (el.name === "svg") {
+            $(el).attr("otherProps", "...");
+          }
+        });
+
+        let cname = uppercamelcase(name);
+        if (isNumber(cname[0])) {
+          cname = prefix + cname;
         }
 
-        if (el.name === "svg") {
-          $(el).attr("otherProps", "...");
-        }
-      });
-
-      let cname = uppercamelcase(name);
-      if (isNumber(cname[0])) {
-        cname = "Ri" + cname;
-      }
-
-      const element = `
+        const element = `
         import React, { memo } from 'react'
         import type { IconProps } from '../../types'
         import {
@@ -232,21 +251,22 @@ assetsFiles.forEach(({ attr, dir, index, isStrokeIcon, out, ...rest }) => {
         export const ${cname} = memo(Icon)
       `;
 
-      fs.writeFileSync(location, element, "utf-8");
+        fs.writeFileSync(location, element, "utf-8");
 
-      const exportString = `export { ${cname} } from './${out.join(
-        "/"
-      )}/${name}'\n`;
+        const exportString = `export { ${cname} } from './${out.join(
+          "/"
+        )}/${name}'\n`;
 
-      fs.appendFileSync(index, exportString, "utf-8");
+        fs.appendFileSync(index, exportString, "utf-8");
+      });
+
+      // run biome:
+      require("node:child_process").execSync(
+        `bunx biome check --write ${outDir} ${index}`,
+        {
+          stdio: "inherit",
+        }
+      );
     });
-
-    // run biome:
-    require("node:child_process").execSync(
-      `bunx biome check --write ${outDir} ${index}`,
-      {
-        stdio: "inherit",
-      }
-    );
-  });
-});
+  }
+);
