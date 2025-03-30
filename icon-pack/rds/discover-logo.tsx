@@ -1,6 +1,20 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-import { Svg, G, LinearGradient, Path, Defs, Stop } from 'react-native-svg'
+import {
+  Svg,
+  G,
+  LinearGradient,
+  Path,
+  Defs,
+  Stop,
+  FeBlend,
+  FeColorMatrix,
+  FeComposite,
+  FeFlood,
+  FeGaussianBlur,
+  Filter,
+  FeOffset,
+} from 'react-native-svg'
 
 const Icon = (props: IconProps) => {
   const { color = 'black', size = 24, ...otherProps } = props
@@ -54,37 +68,36 @@ const Icon = (props: IconProps) => {
         />
       </G>
       <Defs>
-        <filter
+        <Filter
           id="filter0_i_134_2106"
           x="13.9492"
           y="8"
           width="6.31481"
           height="6.80303"
           filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
         >
-          <feFlood result="BackgroundImageFix" floodOpacity="0" />
-          <feBlend
+          <FeFlood result="BackgroundImageFix" floodOpacity="0" />
+          <FeBlend
             mode="normal"
             in="SourceGraphic"
             in2="BackgroundImageFix"
             result="shape"
           />
-          <feColorMatrix
+          <FeColorMatrix
             in="SourceAlpha"
             type="matrix"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dx="0.976924" dy="1.46539" />
-          <feGaussianBlur stdDeviation="0.976924" />
-          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
-          <feColorMatrix
+          <FeOffset dx="0.976924" dy="1.46539" />
+          <FeGaussianBlur stdDeviation="0.976924" />
+          <FeComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+          <FeColorMatrix
             type="matrix"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"
           />
-          <feBlend mode="normal" in2="shape" result="effect1_innerShadow_134_2106" />
-        </filter>
+          <FeBlend mode="normal" in2="shape" result="effect1_innerShadow_134_2106" />
+        </Filter>
         <LinearGradient
           id="paint0_linear_134_2106"
           x1="15.2192"
