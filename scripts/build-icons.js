@@ -172,7 +172,14 @@ assetsFiles.forEach(
           Use,
           Defs,
           Stop,
-          ClipPath
+          ClipPath,
+          FeBlend,
+          FeColorMatrix,
+          FeComposite,
+          FeFlood,
+          FeGaussianBlur,
+          Filter,
+          FeOffset,
         } from 'react-native-svg'
   
         const Icon = (props: IconProps) => {
@@ -241,7 +248,23 @@ assetsFiles.forEach(
               .replace(/<\/defs/g, "</Defs")
               .replace(/<stop/g, "<Stop")
               .replace(/<\/stop/g, "</Stop")
-              .replace(/px/g, "")}
+              .replace(/px/g, "")
+              .replace(/<feBlend/g, "<FeBlend")
+              .replace(/<\/feBlend/g, "</FeBlend")
+              .replace(/<feColorMatrix/g, "<FeColorMatrix")
+              .replace(/<\/feColorMatrix/g, "</FeColorMatrix")
+              .replace(/<feComposite/g, "<FeComposite")
+              .replace(/<\/feComposite/g, "</FeComposite")
+              .replace(/<feFlood/g, "<FeFlood")
+              .replace(/<\/feFlood/g, "</FeFlood")
+              .replace(/<feGaussianBlur/g, "<FeGaussianBlur")
+              .replace(/<\/feGaussianBlur/g, "</FeGaussianBlur")
+              .replace(/<filter/g, "<Filter")
+              .replace(/<\/filter/g, "</Filter")
+              .replace(/colorInterpolationFilters=\"[^\"]+\"/g, "")
+              .replace(/<feOffset/g, "<FeOffset")
+              .replace(/<\/feOffset/g, "</FeOffset")
+            }
             )
           }
   
