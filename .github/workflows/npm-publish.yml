@@ -7,22 +7,23 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-22.04
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
         with:
-            ref: master
-      - name: Use Node
-        uses: actions/setup-node@v3
-        with:
-            node-version: '16.x'
-      - name: Publish
-        run: |
-          npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-          npm publish
+          fetch-depth: 0
+
+      - name: 🍞 Setup Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: 📦 Install packages and prebuild
+        run: bun install --frozen-lockfile
+        shell: bash
+
+      - name: 🚀 Publish
+        run: bun publish --access public
         env:
           CI: true
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NPM_CONFIG_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
