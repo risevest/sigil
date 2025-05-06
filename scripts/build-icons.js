@@ -114,6 +114,7 @@ assetsFiles.forEach(
         // SVG to its children
         const svgAttribs = $("svg")[0].attribs;
         delete svgAttribs["xmlns"];
+        delete svgAttribs["xmlns:xlink"];
         const attribsOfInterest = {};
         Object.keys(svgAttribs).forEach((key) => {
           if (
@@ -191,6 +192,8 @@ assetsFiles.forEach(
           FeGaussianBlur,
           Filter,
           FeOffset,
+          Pattern,
+          Image
         } from 'react-native-svg'
   
         const Icon = (props: IconProps) => {
@@ -199,6 +202,7 @@ assetsFiles.forEach(
             ${$("svg")
               .toString()
               .replace(/ class=\"[^\"]+\"/g, "")
+              .replace(/xlink:href/g, "xlinkHref")
               .replace(/ version=\"[^\"]+\"/g, "")
               .replace(/style="([^:]+):([^"]+)"/g, (_, key, value) => {
                 return `style={{
@@ -255,6 +259,10 @@ assetsFiles.forEach(
               .replace(/<\/text/g, "</_Text")
               .replace(/<use/g, "<Use")
               .replace(/<\/use/g, "</Use")
+              .replace(/<pattern/g, "<Pattern")
+              .replace(/<\/pattern/g, "</Pattern")
+              .replace(/<image/g, "<Image")
+              .replace(/<\/image/g, "</Image")
               .replace(/<defs/g, "<Defs")
               .replace(/<\/defs/g, "</Defs")
               .replace(/<stop/g, "<Stop")
