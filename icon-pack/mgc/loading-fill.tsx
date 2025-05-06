@@ -5,7 +5,7 @@ import { Svg, G, LinearGradient, Path, Defs, Stop } from 'react-native-svg'
 const Icon = (props: IconProps) => {
   const { color = 'black', size = 24, ...otherProps } = props
   return (
-    <Svg height={size} width={size} {...otherProps}>
+    <Svg viewBox="0 0 24 24" height={size} width={size} {...otherProps}>
       <Defs>
         <LinearGradient id="a" x1="50%" x2="50%" y1="5.271%" y2="91.793%">
           <Stop offset="0%" stopColor="#09244B" />

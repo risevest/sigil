@@ -113,6 +113,9 @@ assetsFiles.forEach(
         // We need to duplicate the styles applied to the
         // SVG to its children
         const svgAttribs = $("svg")[0].attribs;
+        if (!svgAttribs["viewBox"]) {
+          svgAttribs["viewBox"] = "0 0 24 24";
+        }
         delete svgAttribs["xmlns"];
         delete svgAttribs["xmlns:xlink"];
         const attribsOfInterest = {};
@@ -207,6 +210,7 @@ assetsFiles.forEach(
               .toString()
               .replace(/ class=\"[^\"]+\"/g, "")
               .replace(/xlink:href/g, "xlinkHref")
+              .replace(/fill-rule/g, "fillRule")
               .replace(/ version=\"[^\"]+\"/g, "")
               .replace(/style="([^:]+):([^"]+)"/g, (_, key, value) => {
                 return `style={{

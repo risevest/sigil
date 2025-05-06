@@ -5,7 +5,7 @@ import { Svg, G, Path, Use, Defs, Pattern, Image } from 'react-native-svg'
 const Icon = (props: IconProps) => {
   const { color = 'black', size = 24, ...otherProps } = props
   return (
-    <Svg height={size} width={size} {...otherProps}>
+    <Svg viewBox="0 0 24 24" height={size} width={size} {...otherProps}>
       <Defs>
         <Pattern id="b" width="100%" height="100%" patternUnits="objectBoundingBox">
           <Use xlinkHref="#a" />
