@@ -3,7 +3,7 @@ import type { IconProps } from '../../types'
 import { Svg, Path } from 'react-native-svg'
 
 const Icon = (props: IconProps) => {
-  const { color = '#f0b90b', size = 24, ...otherProps } = props
+  const { color = 'black', size = 24, ...otherProps } = props
   return (
     <Svg viewBox="0 0 336.41 337.42" height={size} width={size} {...otherProps}>
       <Path

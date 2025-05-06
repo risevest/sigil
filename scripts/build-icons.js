@@ -61,6 +61,17 @@ const assetsFiles = [
     out: ["icon-pack", "rds"],
     keepColor: (name) => name.includes("logo"),
   },
+  {
+    attr: (name) => `/**
+         * MingCute Icon: ${toTitleCase(name)}
+         * @see {@link https://www.mingcute.com MingCute Icon Docs}
+         */`,
+    dir: path.join(rootDir, "icons", "mgc"),
+    id: "mgc",
+    prefix: "Mg",
+    index: path.join(rootDir, "mgc.ts"),
+    out: ["icon-pack", "mgc"],
+  },
 ];
 
 function isNumber(str) {
@@ -263,8 +274,7 @@ assetsFiles.forEach(
               .replace(/<\/filter/g, "</Filter")
               .replace(/colorInterpolationFilters=\"[^\"]+\"/g, "")
               .replace(/<feOffset/g, "<FeOffset")
-              .replace(/<\/feOffset/g, "</FeOffset")
-            }
+              .replace(/<\/feOffset/g, "</FeOffset")}
             )
           }
   
