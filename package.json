@@ -15,6 +15,21 @@
       "require": "./build/flags.js",
       "types": "./build/flags.d.ts"
     },
+    "./mgc": {
+      "import": "./build/mgc.js",
+      "require": "./build/mgc.js",
+      "types": "./build/mgc.d.ts"
+    },
+    "./rds": {
+      "import": "./build/rds.js",
+      "require": "./build/rds.js",
+      "types": "./build/rds.d.ts"
+    },
+    "./remix": {
+      "import": "./build/index.js",
+      "require": "./build/index.js",
+      "types": "./build/index.d.ts"
+    },
     "./types": {
       "import": "./build/types.js",
       "require": "./build/types.js",
