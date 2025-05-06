@@ -69,7 +69,7 @@ const assetsFiles = [
     dir: path.join(rootDir, "icons", "mgc"),
     id: "mgc",
     prefix: "Mg",
-    index: path.join(rootDir, "index.ts"),
+    index: path.join(rootDir, "mgc.ts"),
     out: ["icon-pack", "mgc"],
   },
 ];
