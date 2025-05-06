@@ -6,7 +6,7 @@ const Icon = (props: IconProps) => {
   const { color = 'black', size = 24, ...otherProps } = props
   return (
     <Svg height={size} width={size} {...otherProps}>
-      <G fill={color}>
+      <G fill="none">
         <Path d="M0 0h24v24H0z" />
         <Path fill={color} d="M5 4a1 1 0 0 0 0 2h6v14a1 1 0 1 0 2 0V6h6a1 1 0 1 0 0-2z" />
       </G>

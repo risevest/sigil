@@ -91,7 +91,7 @@ function toSnakeCase(str) {
 }
 
 assetsFiles.forEach(
-  ({ attr, dir, index, prefix, isStrokeIcon, out, ...rest }) => {
+  ({ attr, dir, id, index, prefix, isStrokeIcon, out, ...rest }) => {
     glob(`${dir}/**/*.svg`, (_, icons) => {
       fs.writeFileSync(index, "", "utf-8");
       const outDir = path.join(rootDir, ...out);
@@ -133,6 +133,10 @@ assetsFiles.forEach(
         });
 
         $("*").each((index, el) => {
+          if (id === "mgc" && el.name === "g") {
+            return;
+          }
+
           Object.keys(el.attribs).forEach((x) => {
             if (x.includes("-")) {
               $(el).attr(camelcase(x), el.attribs[x]).removeAttr(x);
