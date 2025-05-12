@@ -146,7 +146,9 @@ assetsFiles.forEach(
             }
             if (keepColor) return;
             if (x === "fill") {
-              $(el).attr(x, isStrokeIcon ? "none" : "currentColor");
+              const preserveNone =
+                isStrokeIcon || (el.name === "svg" && el.attribs[x] === "none");
+              $(el).attr(x, preserveNone ? "none" : "currentColor");
             }
             if (isStrokeIcon && x === "stroke") {
               $(el).attr(x, "currentColor");

@@ -17,7 +17,7 @@ import {
 const Icon = (props: IconProps) => {
   const { color = 'black', size = 24, ...otherProps } = props
   return (
-    <Svg viewBox="0 0 129 128" fill={color} height={size} width={size} {...otherProps}>
+    <Svg viewBox="0 0 129 128" fill="none" height={size} width={size} {...otherProps}>
       <G filter="url(#filter0_f_9040_38315)">
         <_Circle cx="64.375" cy="64" r="14" fill={color} />
       </G>

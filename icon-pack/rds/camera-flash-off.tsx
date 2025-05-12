@@ -5,7 +5,7 @@ import { Svg, Path } from 'react-native-svg'
 const Icon = (props: IconProps) => {
   const { color = 'black', size = 24, ...otherProps } = props
   return (
-    <Svg viewBox="0 0 12 19" fill={color} height={size} width={size} {...otherProps}>
+    <Svg viewBox="0 0 12 19" fill="none" height={size} width={size} {...otherProps}>
       <Path
         d="M11.0406 17.144C11.1746 17.3854 11.0875 17.6898 10.846 17.8238C10.6046 17.9578 10.3002 17.8707 10.1662 17.6292L1.91746 2.76453C1.78347 2.52308 1.87059 2.21872 2.11205 2.08473C2.35351 1.95074 2.65787 2.03786 2.79186 2.27931L11.0406 17.144Z"
         fill={color}

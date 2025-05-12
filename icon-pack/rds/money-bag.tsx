@@ -5,7 +5,7 @@ import { Svg, G, Mask, Path, Rect } from 'react-native-svg'
 const Icon = (props: IconProps) => {
   const { color = 'black', size = 24, ...otherProps } = props
   return (
-    <Svg viewBox="0 0 20 20" fill={color} height={size} width={size} {...otherProps}>
+    <Svg viewBox="0 0 20 20" fill="none" height={size} width={size} {...otherProps}>
       <Mask
         id="mask0_1537_20174"
         style={{

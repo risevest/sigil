@@ -5,7 +5,7 @@ import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
 const Icon = (props: IconProps) => {
   const { color = 'black', size = 24, ...otherProps } = props
   return (
-    <Svg fill={color} viewBox="0 0 54 13" height={size} width={size} {...otherProps}>
+    <Svg fill="none" viewBox="0 0 54 13" height={size} width={size} {...otherProps}>
       <G clipPath="url(#clip0_5741_232641)">
         <Path
           d="M51.8547 10.1032C49.9895 11.9678 47.1326 12.2473 44.9694 10.9461L43.4152 12.4997L42.7812 11.8659L44.2324 10.4152L46.0802 8.5669L47.3624 8.55498L48.8819 8.53982L51.1687 2.83342L45.4603 5.11836L45.4321 7.91793L43.5843 9.76625C41.706 7.55823 41.809 4.23104 43.8953 2.14545C46.09 -0.0484831 49.6611 -0.0484831 51.8558 2.14545C54.0505 4.33938 54.0505 7.90926 51.8558 10.1021L51.8547 10.1032Z"
