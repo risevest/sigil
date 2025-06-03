@@ -21,17 +21,6 @@ const assetsFiles = [
   },
   {
     attr: (name) => `/**
-    * Lucide Icon: ${toTitleCase(name)}
-    * @see {@link https://lucide.dev/icons/${name} Lucide Icon Docs}
-    */`,
-    dir: path.join(rootDir, "icons", "lucide"),
-    id: "lucide",
-    index: path.join(rootDir, "lucide.ts"),
-    isStrokeIcon: true,
-    out: ["icon-pack", "lucide"],
-  },
-  {
-    attr: (name) => `/**
     * Material Icon: ${toTitleCase(name)}
     * @see {@link https://fonts.google.com/icons?selected=Material+Icons:${toSnakeCase(
       name
