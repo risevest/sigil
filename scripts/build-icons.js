@@ -21,19 +21,6 @@ const assetsFiles = [
   },
   {
     attr: (name) => `/**
-    * Material Icon: ${toTitleCase(name)}
-    * @see {@link https://fonts.google.com/icons?selected=Material+Icons:${toSnakeCase(
-      name
-    )} Material Icon Docs}
-    */`,
-    dir: path.join(rootDir, "icons", "material"),
-    id: "material",
-    prefix: "Mi",
-    index: path.join(rootDir, "material.ts"),
-    out: ["icon-pack", "material"],
-  },
-  {
-    attr: (name) => `/**
                * Flags by \`Deji.Zeal\`: ${toTitleCase(name)}
                * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
                */`,
