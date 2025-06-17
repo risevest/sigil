@@ -1,0 +1,19 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+import { Svg, Path } from 'react-native-svg'
+
+const Icon = (props: IconProps) => {
+  const { color = 'black', size = 24, ...otherProps } = props
+  return (
+    <Svg viewBox="0 0 18 18" fill="none" height={size} width={size} {...otherProps}>
+      <Path
+        d="M9.83464 8.16602V3.99935L5.66797 9.83268H8.16797V13.9993L12.3346 8.16602H9.83464ZM9.0013 17.3327C4.3988 17.3327 0.667969 13.6018 0.667969 8.99935C0.667969 4.39685 4.3988 0.666016 9.0013 0.666016C13.6038 0.666016 17.3346 4.39685 17.3346 8.99935C17.3346 13.6018 13.6038 17.3327 9.0013 17.3327Z"
+        fill={color}
+      />
+    </Svg>
+  )
+}
+
+Icon.displayName = 'InvestmentIcon'
+
+export const InvestmentIcon = memo(Icon)
