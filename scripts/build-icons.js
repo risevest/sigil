@@ -51,7 +51,7 @@ const assetsFiles = [
   {
     attr: (name) => `/**
          * Lucide Icon: ${toTitleCase(name)}
-         * @see {@link https://lucide.dev Lucide Icon Docs}
+         * @see {@link https://lucide.dev/icons/${name} Lucide Icon Docs}
          */`,
     dir: path.join(rootDir, "icons", "lucide"),
     id: "lucide",
