@@ -48,6 +48,18 @@ const assetsFiles = [
     index: path.join(rootDir, "mgc.ts"),
     out: ["icon-pack", "mgc"],
   },
+  {
+    attr: (name) => `/**
+         * Lucide Icon: ${toTitleCase(name)}
+         * @see {@link https://lucide.dev/icons/${name} Lucide Icon Docs}
+         */`,
+    dir: path.join(rootDir, "icons", "lucide"),
+    id: "lucide",
+    prefix: "Lc",
+    index: path.join(rootDir, "lucide.ts"),
+    isStrokeIcon: true,
+    out: ["icon-pack", "lucide"],
+  },
 ];
 
 function isNumber(str) {
