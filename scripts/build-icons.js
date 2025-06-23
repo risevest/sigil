@@ -57,6 +57,7 @@ const assetsFiles = [
     id: "lucide",
     prefix: "Lc",
     index: path.join(rootDir, "lucide.ts"),
+    isStrokeIcon: true,
     out: ["icon-pack", "lucide"],
   },
 ];
