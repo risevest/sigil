@@ -1,0 +1,241 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+import {
+  Svg,
+  G,
+  Path,
+  Rect,
+  Defs,
+  FeBlend,
+  FeColorMatrix,
+  FeComposite,
+  FeFlood,
+  FeGaussianBlur,
+  Filter,
+  FeOffset,
+} from 'react-native-svg'
+
+const Icon = (props: IconProps) => {
+  const { color = 'black', size = 24, ...otherProps } = props
+  return (
+    <Svg viewBox="0 0 55 55" fill="none" height={size} width={size} {...otherProps}>
+      <G filter="url(#filter0_dd_1453_14934)">
+        <Rect x="7.5" y="3" width="40" height="40" rx="20" fill="#003399" />
+        <Path
+          d="M27.192 11.0703L27.6038 11.9509L28.5128 12.0787L27.8595 12.7605L28.0157 13.7263L27.192 13.2718L26.3682 13.7263L26.5244 12.7605L25.8711 12.0787L26.7801 11.9509L27.192 11.0703Z"
+          fill="#FFCC00"
+          fillRule="evenodd"
+          clipRule="evenodd"
+        />
+        <Path
+          d="M27.192 11.0703L27.6038 11.9509L28.5128 12.0787L27.8595 12.7605L28.0157 13.7263L27.192 13.2718L26.3682 13.7263L26.5244 12.7605L25.8711 12.0787L26.7801 11.9509L27.192 11.0703Z"
+          stroke="#FFCC00"
+          strokeWidth="1.65249"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <Path
+          d="M32.4927 12.3906L32.9046 13.2712L33.8278 13.4132L33.1603 14.0808L33.3165 15.0466L32.4927 14.5921L31.6832 15.0466L31.8394 14.0808L31.1719 13.4132L32.0951 13.2712L32.4927 12.3906Z"
+          fill="#FFCC00"
+          fillRule="evenodd"
+          clipRule="evenodd"
+        />
+        <Path
+          d="M32.4927 12.3906L32.9046 13.2712L33.8278 13.4132L33.1603 14.0808L33.3165 15.0466L32.4927 14.5921L31.6832 15.0466L31.8394 14.0808L31.1719 13.4132L32.0951 13.2712L32.4927 12.3906Z"
+          stroke="#FFCC00"
+          strokeWidth="1.65249"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <Path
+          d="M21.8976 12.3906L22.2953 13.2712L23.2184 13.4132L22.5509 14.0808L22.7071 15.0466L21.8976 14.5921L21.0738 15.0466L21.23 14.0808L20.5625 13.4132L21.4857 13.2712L21.8976 12.3906Z"
+          fill="#FFCC00"
+          fillRule="evenodd"
+          clipRule="evenodd"
+        />
+        <Path
+          d="M21.8976 12.3906L22.2953 13.2712L23.2184 13.4132L22.5509 14.0808L22.7071 15.0466L21.8976 14.5921L21.0738 15.0466L21.23 14.0808L20.5625 13.4132L21.4857 13.2712L21.8976 12.3906Z"
+          stroke="#FFCC00"
+          strokeWidth="1.65249"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <Path
+          d="M36.4693 16.3682L36.8812 17.2487L37.8044 17.3908L37.1368 18.0583L37.2931 19.0241L36.4693 18.5696L35.6597 19.0241L35.816 18.0583L35.1484 17.3908L36.0716 17.2487L36.4693 16.3682Z"
+          fill="#FFCC00"
+          fillRule="evenodd"
+          clipRule="evenodd"
+        />
+        <Path
+          d="M36.4693 16.3682L36.8812 17.2487L37.8044 17.3908L37.1368 18.0583L37.2931 19.0241L36.4693 18.5696L35.6597 19.0241L35.816 18.0583L35.1484 17.3908L36.0716 17.2487L36.4693 16.3682Z"
+          stroke="#FFCC00"
+          strokeWidth="1.65249"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <Path
+          d="M17.921 16.3682L18.3187 17.2487L19.2419 17.3908L18.5743 18.0583L18.7306 19.0241L17.921 18.5696L17.0972 19.0241L17.2535 18.0583L16.5859 17.3908L17.5091 17.2487L17.921 16.3682Z"
+          fill="#FFCC00"
+          fillRule="evenodd"
+          clipRule="evenodd"
+        />
+        <Path
+          d="M17.921 16.3682L18.3187 17.2487L19.2419 17.3908L18.5743 18.0583L18.7306 19.0241L17.921 18.5696L17.0972 19.0241L17.2535 18.0583L16.5859 17.3908L17.5091 17.2487L17.921 16.3682Z"
+          stroke="#FFCC00"
+          strokeWidth="1.65249"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <Path
+          d="M36.4693 26.9775L36.8812 27.8439L37.8044 27.9859L37.1368 28.6677L37.2931 29.6335L36.4693 29.179L35.6597 29.6335L35.816 28.6677L35.1484 27.9859L36.0716 27.8439L36.4693 26.9775Z"
+          fill="#FFCC00"
+          fillRule="evenodd"
+          clipRule="evenodd"
+        />
+        <Path
+          d="M36.4693 26.9775L36.8812 27.8439L37.8044 27.9859L37.1368 28.6677L37.2931 29.6335L36.4693 29.179L35.6597 29.6335L35.816 28.6677L35.1484 27.9859L36.0716 27.8439L36.4693 26.9775Z"
+          stroke="#FFCC00"
+          strokeWidth="1.65249"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <Path
+          d="M17.921 26.9775L18.3187 27.8439L19.2419 27.9859L18.5743 28.6677L18.7306 29.6335L17.921 29.179L17.0972 29.6335L17.2535 28.6677L16.5859 27.9859L17.5091 27.8439L17.921 26.9775Z"
+          fill="#FFCC00"
+          fillRule="evenodd"
+          clipRule="evenodd"
+        />
+        <Path
+          d="M17.921 26.9775L18.3187 27.8439L19.2419 27.9859L18.5743 28.6677L18.7306 29.6335L17.921 29.179L17.0972 29.6335L17.2535 28.6677L16.5859 27.9859L17.5091 27.8439L17.921 26.9775Z"
+          stroke="#FFCC00"
+          strokeWidth="1.65249"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <Path
+          d="M32.4927 30.9551L32.9046 31.8215L33.8278 31.9635L33.1603 32.6452L33.3165 33.611L32.4927 33.1565L31.6832 33.611L31.8394 32.6452L31.1719 31.9635L32.0951 31.8215L32.4927 30.9551Z"
+          fill="#FFCC00"
+          fillRule="evenodd"
+          clipRule="evenodd"
+        />
+        <Path
+          d="M32.4927 30.9551L32.9046 31.8215L33.8278 31.9635L33.1603 32.6452L33.3165 33.611L32.4927 33.1565L31.6832 33.611L31.8394 32.6452L31.1719 31.9635L32.0951 31.8215L32.4927 30.9551Z"
+          stroke="#FFCC00"
+          strokeWidth="1.65249"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <Path
+          d="M21.8976 30.9551L22.2953 31.8215L23.2184 31.9635L22.5509 32.6452L22.7071 33.611L21.8976 33.1565L21.0738 33.611L21.23 32.6452L20.5625 31.9635L21.4857 31.8215L21.8976 30.9551Z"
+          fill="#FFCC00"
+          fillRule="evenodd"
+          clipRule="evenodd"
+        />
+        <Path
+          d="M21.8976 30.9551L22.2953 31.8215L23.2184 31.9635L22.5509 32.6452L22.7071 33.611L21.8976 33.1565L21.0738 33.611L21.23 32.6452L20.5625 31.9635L21.4857 31.8215L21.8976 30.9551Z"
+          stroke="#FFCC00"
+          strokeWidth="1.65249"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <Path
+          d="M38.4132 21.6797L38.8109 22.5461L39.7341 22.6881L39.0665 23.3698L39.2228 24.3214L38.4132 23.8669L37.5894 24.3214L37.7457 23.3698L37.0781 22.6881L38.0013 22.5461L38.4132 21.6797Z"
+          fill="#FFCC00"
+          fillRule="evenodd"
+          clipRule="evenodd"
+        />
+        <Path
+          d="M38.4132 21.6797L38.8109 22.5461L39.7341 22.6881L39.0665 23.3698L39.2228 24.3214L38.4132 23.8669L37.5894 24.3214L37.7457 23.3698L37.0781 22.6881L38.0013 22.5461L38.4132 21.6797Z"
+          stroke="#FFCC00"
+          strokeWidth="1.65249"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <Path
+          d="M16.5929 21.6797L17.0048 22.5461L17.9138 22.6881L17.2462 23.3698L17.4025 24.3214L16.5929 23.8669L15.7691 24.3214L15.9253 23.3698L15.2578 22.6881L16.181 22.5461L16.5929 21.6797Z"
+          fill="#FFCC00"
+          fillRule="evenodd"
+          clipRule="evenodd"
+        />
+        <Path
+          d="M16.5929 21.6797L17.0048 22.5461L17.9138 22.6881L17.2462 23.3698L17.4025 24.3214L16.5929 23.8669L15.7691 24.3214L15.9253 23.3698L15.2578 22.6881L16.181 22.5461L16.5929 21.6797Z"
+          stroke="#FFCC00"
+          strokeWidth="1.65249"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <Path
+          d="M27.192 32.2744L27.6038 33.155L28.5128 33.297L27.8595 33.9788L28.0157 34.9304L27.192 34.4759L26.3682 34.9304L26.5244 33.9788L25.8711 33.297L26.7801 33.155L27.192 32.2744Z"
+          fill="#FFCC00"
+          fillRule="evenodd"
+          clipRule="evenodd"
+        />
+        <Path
+          d="M27.192 32.2744L27.6038 33.155L28.5128 33.297L27.8595 33.9788L28.0157 34.9304L27.192 34.4759L26.3682 34.9304L26.5244 33.9788L25.8711 33.297L26.7801 33.155L27.192 32.2744Z"
+          stroke="#FFCC00"
+          strokeWidth="1.65249"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </G>
+      <Defs>
+        <Filter
+          id="filter0_dd_1453_14934"
+          x="0.642858"
+          y="0.714286"
+          width="53.7143"
+          height="53.7143"
+          filterUnits="userSpaceOnUse"
+        >
+          <FeFlood result="BackgroundImageFix" floodOpacity="0" />
+          <FeColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <FeOffset dy="4.57143" />
+          <FeGaussianBlur stdDeviation="3.42857" />
+          <FeComposite in2="hardAlpha" operator="out" />
+          <FeColorMatrix
+            type="matrix"
+            values="0 0 0 0 0.258824 0 0 0 0 0.278431 0 0 0 0 0.298039 0 0 0 0.08 0"
+          />
+          <FeBlend
+            mode="normal"
+            in2="BackgroundImageFix"
+            result="effect1_dropShadow_1453_14934"
+          />
+          <FeColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <FeOffset />
+          <FeGaussianBlur stdDeviation="0.285714" />
+          <FeComposite in2="hardAlpha" operator="out" />
+          <FeColorMatrix
+            type="matrix"
+            values="0 0 0 0 0.258824 0 0 0 0 0.278431 0 0 0 0 0.298039 0 0 0 0.32 0"
+          />
+          <FeBlend
+            mode="normal"
+            in2="effect1_dropShadow_1453_14934"
+            result="effect2_dropShadow_1453_14934"
+          />
+          <FeBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="effect2_dropShadow_1453_14934"
+            result="shape"
+          />
+        </Filter>
+      </Defs>
+    </Svg>
+  )
+}
+
+Icon.displayName = 'EuropeanUnion'
+
+export const EuropeanUnion = memo(Icon)
