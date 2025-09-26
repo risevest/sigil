@@ -169,4 +169,8 @@ const Icon = (props: IconProps) => {
 
 Icon.displayName = 'EuropeanUnion'
 
+/**
+ * Flags by `Deji.Zeal`: European Union
+ * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
+ */
 export const EuropeanUnion = memo(Icon)
