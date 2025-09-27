@@ -16,17 +16,11 @@ const fillRewriterWeb = new HTMLRewriter().on("*[fill]:not([fill='none'])", {
   },
 });
 
-const fillRewriterNative = new HTMLRewriter()
-  .on("svg", {
-    element(element) {
-      element.removeAttribute("xmlns");
-    },
-  })
-  .on("*[fill]:not([fill='none'])", {
-    element(element) {
-      element.setAttribute("fill", "{color}");
-    },
-  });
+const fillRewriterNative = new HTMLRewriter().on("*[fill]:not([fill='none'])", {
+  element(element) {
+    element.setAttribute("fill", "{color}");
+  },
+});
 
 const getFillRewriter = (native: boolean) => (native ? fillRewriterNative : fillRewriterWeb);
 
