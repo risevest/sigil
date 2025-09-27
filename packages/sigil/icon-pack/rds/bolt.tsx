@@ -1,34 +1,28 @@
 import { memo } from 'react'
+import Svg, { Mask, Path, G } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Mask, Path, Rect } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 25 25" fill="none" height={size} width={size} {...otherProps}>
+    <Svg fill="none" viewBox="0 0 25 25" width={size} height={size} {...props}>
       <Mask
-        id="mask0_1009_42118"
+        id="a"
+        width={25}
+        height={25}
+        x={0}
+        y={0}
+        maskUnits="userSpaceOnUse"
         style={{
           maskType: 'alpha',
         }}
-        maskUnits="userSpaceOnUse"
-        x="0"
-        y="0"
-        width="25"
-        height="25"
       >
-        <Rect x="0.890625" y="0.5" width="24" height="24" fill={color} />
+        <Path fill={color} d="M.891.5h24v24h-24z" />
       </Mask>
-      <G mask="url(#mask0_1009_42118)">
-        <Path
-          d="M8.89062 22.5L9.89062 15.5H4.89062L13.8906 2.5H15.8906L14.8906 10.5H20.8906L10.8906 22.5H8.89062Z"
-          fill={color}
-        />
+      <G mask="url(#a)">
+        <Path fill={color} d="m8.89 22.5 1-7h-5l9-13h2l-1 8h6l-10 12z" />
       </G>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Bolt'
-
-export const Bolt = memo(Icon)
+export const Bolt = Icon

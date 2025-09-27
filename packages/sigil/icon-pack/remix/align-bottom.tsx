@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M3 19H21V21H3V19ZM8 13H11L7 17L3 13H6V3H8V13ZM18 13H21L17 17L13 13H16V3H18V13Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M3 19h18v2H3zm5-6h3l-4 4-4-4h3V3h2zm10 0h3l-4 4-4-4h3V3h2z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'AlignBottom'
-
 /**
  * Remix Icon: Align Bottom
  * @see {@link https://remixicon.com/icon/align-bottom Remix Icon Docs}
  */
-export const AlignBottom = memo(Icon)
+export const AlignBottom = Icon

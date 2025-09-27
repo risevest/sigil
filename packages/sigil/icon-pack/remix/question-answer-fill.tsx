@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M8 18H18.2372L20 19.3851V9H21C21.5523 9 22 9.44772 22 10V23.5L17.5455 20H9C8.44772 20 8 19.5523 8 19V18ZM5.45455 16L1 19.5V4C1 3.44772 1.44772 3 2 3H17C17.5523 3 18 3.44772 18 4V16H5.45455Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M8 18h10.237L20 19.385V9h1a1 1 0 0 1 1 1v13.5L17.546 20H9a1 1 0 0 1-1-1zm-2.545-2L1 19.5V4a1 1 0 0 1 1-1h15a1 1 0 0 1 1 1v12z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'QuestionAnswerFill'
-
 /**
  * Remix Icon: Question Answer Fill
  * @see {@link https://remixicon.com/icon/question-answer-fill Remix Icon Docs}
  */
-export const QuestionAnswerFill = memo(Icon)
+export const QuestionAnswerFill = Icon

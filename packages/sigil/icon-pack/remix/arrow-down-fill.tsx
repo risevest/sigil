@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M13 12H20L12 20L4 12H11V4H13V12Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M13 12h7l-8 8-8-8h7V4h2z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'ArrowDownFill'
-
 /**
  * Remix Icon: Arrow Down Fill
  * @see {@link https://remixicon.com/icon/arrow-down-fill Remix Icon Docs}
  */
-export const ArrowDownFill = memo(Icon)
+export const ArrowDownFill = Icon

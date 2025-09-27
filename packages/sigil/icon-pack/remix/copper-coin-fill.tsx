@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M12.0049 22.0027C6.48204 22.0027 2.00488 17.5256 2.00488 12.0027C2.00488 6.4799 6.48204 2.00275 12.0049 2.00275C17.5277 2.00275 22.0049 6.4799 22.0049 12.0027C22.0049 17.5256 17.5277 22.0027 12.0049 22.0027ZM12.0049 7.76011L7.76224 12.0027L12.0049 16.2454L16.2475 12.0027L12.0049 7.76011Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M12.005 22.003c-5.523 0-10-4.477-10-10s4.477-10 10-10 10 4.477 10 10-4.477 10-10 10m0-14.243-4.243 4.243 4.243 4.242 4.242-4.242z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'CopperCoinFill'
-
 /**
  * Remix Icon: Copper Coin Fill
  * @see {@link https://remixicon.com/icon/copper-coin-fill Remix Icon Docs}
  */
-export const CopperCoinFill = memo(Icon)
+export const CopperCoinFill = Icon

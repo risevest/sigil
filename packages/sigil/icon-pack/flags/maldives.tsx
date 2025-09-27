@@ -1,35 +1,32 @@
 import { memo } from 'react'
+import Svg, { G, Path, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 40 40" fill="none" height={size} width={size} {...otherProps}>
-      <G clipPath="url(#clip0_51_1113)">
+    <Svg fill="none" viewBox="0 0 40 40" width={size} height={size} {...props}>
+      <G clipPath="url(#a)">
         <Path
-          d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.95431 0 0 8.9543 0 20C0 31.0457 8.95431 40 20 40Z"
           fill="#D80027"
+          d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20"
         />
-        <Path d="M6.95605 10.4348H33.043V29.5653H6.95605V10.4348Z" fill="#6DA544" />
+        <Path fill="#6DA544" d="M6.956 10.435h26.087v19.13H6.956z" />
         <Path
-          d="M23.2212 25.6522C20.0996 25.6522 17.569 23.1216 17.569 20C17.569 16.8785 20.0996 14.3478 23.2212 14.3478C24.1945 14.3478 25.1103 14.5939 25.9099 15.0272C24.6556 13.8006 22.9403 13.0435 21.0473 13.0435C17.2054 13.0435 14.0908 16.158 14.0908 19.9999C14.0908 23.8419 17.2054 26.9564 21.0473 26.9564C22.9403 26.9564 24.6557 26.1993 25.9099 24.9727C25.1103 25.4061 24.1945 25.6522 23.2212 25.6522Z"
           fill="#F0F0F0"
+          d="M23.221 25.652a5.652 5.652 0 1 1 2.689-10.625 6.957 6.957 0 1 0 0 9.946c-.8.433-1.715.68-2.689.68"
         />
       </G>
       <Defs>
-        <ClipPath id="clip0_51_1113">
-          <Rect width="40" height="40" fill="white" />
+        <ClipPath id="a">
+          <Path fill="#fff" d="M0 0h40v40H0z" />
         </ClipPath>
       </Defs>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Maldives'
-
 /**
  * Flags by `Deji.Zeal`: Maldives
  * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
  */
-export const Maldives = memo(Icon)
+export const Maldives = Icon

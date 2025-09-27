@@ -1,38 +1,35 @@
 import { memo } from 'react'
+import Svg, { G, Path, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 40 40" fill="none" height={size} width={size} {...otherProps}>
-      <G clipPath="url(#clip0_51_1653)">
+    <Svg fill="none" viewBox="0 0 40 40" width={size} height={size} {...props}>
+      <G clipPath="url(#a)">
         <Path
-          d="M0 19.9999C0 22.4463 0.440078 24.7898 1.24398 26.9564L20 27.826L38.756 26.9565C39.56 24.7898 40 22.4463 40 19.9999C40 17.5535 39.56 15.2101 38.756 13.0434L20 12.1738L1.24398 13.0434C0.440078 15.2101 0 17.5535 0 19.9999H0Z"
-          fill="black"
+          fill="#000"
+          d="M0 20c0 2.446.44 4.79 1.244 6.956l18.756.87 18.756-.87A20 20 0 0 0 40 20c0-2.447-.44-4.79-1.244-6.957L20 12.173l-18.756.87A20 20 0 0 0 0 20"
         />
         <Path
-          d="M20.0001 -6.10352e-05C11.4009 -6.10352e-05 4.07 5.42744 1.24414 13.0435H38.7562C35.9303 5.42744 28.5994 -6.10352e-05 20.0001 -6.10352e-05V-6.10352e-05Z"
           fill="#0052B4"
+          d="M20 0C11.4 0 4.07 5.427 1.244 13.044h37.512C35.93 5.427 28.6 0 20 0"
         />
         <Path
-          d="M38.7562 26.9564H1.24414C4.07 34.5724 11.4009 39.9999 20.0002 39.9999C28.5994 39.9999 35.9303 34.5724 38.7562 26.9564Z"
           fill="#F0F0F0"
+          d="M38.756 26.956H1.244C4.07 34.572 11.401 40 20 40s15.93-5.428 18.756-13.044"
         />
       </G>
       <Defs>
-        <ClipPath id="clip0_51_1653">
-          <Rect width="40" height="40" fill="white" />
+        <ClipPath id="a">
+          <Path fill="#fff" d="M0 0h40v40H0z" />
         </ClipPath>
       </Defs>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Estonia'
-
 /**
  * Flags by `Deji.Zeal`: Estonia
  * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
  */
-export const Estonia = memo(Icon)
+export const Estonia = Icon

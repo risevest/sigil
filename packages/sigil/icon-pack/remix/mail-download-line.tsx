@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M20 7.23792L12.0718 14.338L4 7.21594V19H13V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V12H20V7.23792ZM19.501 5H4.51146L12.0619 11.662L19.501 5ZM20 18H23L19 22L15 18H18V14H20V18Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="m20 7.238-7.928 7.1L4 7.216V19h9v2H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v8h-2zM19.501 5H4.511l7.55 6.662zM20 18h3l-4 4-4-4h3v-4h2z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'MailDownloadLine'
-
 /**
  * Remix Icon: Mail Download Line
  * @see {@link https://remixicon.com/icon/mail-download-line Remix Icon Docs}
  */
-export const MailDownloadLine = memo(Icon)
+export const MailDownloadLine = Icon

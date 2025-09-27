@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M2.80815 1.39343L20.4858 19.0711L19.0716 20.4853L15.3889 16.8024L12.0005 21L0.689941 6.99674C1.60407 6.25747 2.59204 5.60589 3.64107 5.05479L1.39394 2.80765L2.80815 1.39343ZM12.0005 3.00003C16.2849 3.00003 20.2196 4.49687 23.3104 6.99611L17.9039 13.689L7.72504 3.51088C9.09547 3.17702 10.5273 3.00003 12.0005 3.00003Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="m2.808 1.393 17.678 17.678-1.414 1.414-3.683-3.683L12 21 .69 6.997c.914-.74 1.902-1.391 2.951-1.942L1.394 2.808zM12.001 3c4.284 0 8.219 1.497 11.31 3.996l-5.407 6.693L7.725 3.511C9.095 3.177 10.527 3 12.001 3" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'SignalWifiOffFill'
-
 /**
  * Remix Icon: Signal Wifi Off Fill
  * @see {@link https://remixicon.com/icon/signal-wifi-off-fill Remix Icon Docs}
  */
-export const SignalWifiOffFill = memo(Icon)
+export const SignalWifiOffFill = Icon

@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M2.00488 19H22.0049V21H2.00488V19ZM2.00488 5L7.00488 8L12.0049 2L17.0049 8L22.0049 5V17H2.00488V5Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M2.005 19h20v2h-20zm0-14 5 3 5-6 5 6 5-3v12h-20z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'VipCrownFill'
-
 /**
  * Remix Icon: Vip Crown Fill
  * @see {@link https://remixicon.com/icon/vip-crown-fill Remix Icon Docs}
  */
-export const VipCrownFill = memo(Icon)
+export const VipCrownFill = Icon

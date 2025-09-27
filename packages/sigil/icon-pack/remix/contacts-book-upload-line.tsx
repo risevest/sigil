@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M19.0049 2C20.1068 2 21 2.89821 21 3.9908V20.0092C21 21.1087 20.1074 22 19.0049 22H3V2H19.0049ZM7 4H5V20H7V4ZM19 4H9V20H19V4ZM14 8L18 12H15V16H13V12H10L14 8ZM24 12V16H22V12H24ZM24 6V10H22V6H24Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M19.005 2C20.107 2 21 2.898 21 3.99v16.02c0 1.099-.893 1.99-1.995 1.99H3V2zM7 4H5v16h2zm12 0H9v16h10zm-5 4 4 4h-3v4h-2v-4h-3zm10 4v4h-2v-4zm0-6v4h-2V6z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'ContactsBookUploadLine'
-
 /**
  * Remix Icon: Contacts Book Upload Line
  * @see {@link https://remixicon.com/icon/contacts-book-upload-line Remix Icon Docs}
  */
-export const ContactsBookUploadLine = memo(Icon)
+export const ContactsBookUploadLine = Icon

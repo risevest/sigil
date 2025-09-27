@@ -1,11 +1,10 @@
 import { memo } from 'react'
+import Svg, { G, Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" height={size} width={size} {...otherProps}>
+    <Svg viewBox="0 0 24 24" width={size} height={size} {...props}>
       <G fill="none" fillRule="evenodd">
         <Path d="M0 0h24v24H0z" />
         <Path
@@ -15,12 +14,10 @@ const Icon = (props: IconProps) => {
       </G>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'CurrencyDollarFill'
-
 /**
  * MingCute Icon: Currency Dollar Fill
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const CurrencyDollarFill = memo(Icon)
+export const CurrencyDollarFill = Icon

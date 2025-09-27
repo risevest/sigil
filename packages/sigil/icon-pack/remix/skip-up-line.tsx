@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M12 13.9142L16.7929 18.7071L18.2071 17.2929L12 11.0858L5.79289 17.2929L7.20711 18.7071L12 13.9142ZM6 7L18 7V9L6 9L6 7Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="m12 13.914 4.793 4.793 1.414-1.414L12 11.086l-6.207 6.207 1.414 1.414zM6 7h12v2H6z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'SkipUpLine'
-
 /**
  * Remix Icon: Skip Up Line
  * @see {@link https://remixicon.com/icon/skip-up-line Remix Icon Docs}
  */
-export const SkipUpLine = memo(Icon)
+export const SkipUpLine = Icon

@@ -1,6 +1,6 @@
 name: Npm Publish
 
-on: 
+on:
   release:
     types: [published]
   workflow_dispatch:
@@ -21,9 +21,15 @@ jobs:
       - name: 📦 Install packages and prebuild
         run: bun install --frozen-lockfile
         shell: bash
-
-      - name: 🚀 Publish
-        run: bun publish --access public
+      - name: 🔄 Sync versions
+        run: bun sync
+      - name: 🚀 Publish Sigil
+        run: cd packages/sigil && bun publish --access public
+        env:
+          CI: true
+          NPM_CONFIG_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: 🚀 Publish Sicily
+        run: cd packages/sicily && bun publish --access public
         env:
           CI: true
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

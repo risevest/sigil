@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M14.8027 4C14.4513 4.60738 14.2034 5.28208 14.083 6H3V18H21V12.917C21.7179 12.7966 22.3926 12.5487 23 12.1973V18.9991C23 19.5519 22.5605 20 21.9975 20H2.00246C1.44882 20 1 19.5554 1 18.9991V5.00087C1 4.44811 1.43946 4 2.00246 4H14.8027ZM20 9C21.1046 9 22 8.10457 22 7C22 5.89543 21.1046 5 20 5C18.8954 5 18 5.89543 18 7C18 8.10457 18.8954 9 20 9ZM20 11C17.7909 11 16 9.20914 16 7C16 4.79086 17.7909 3 20 3C22.2091 3 24 4.79086 24 7C24 9.20914 22.2091 11 20 11ZM18 13H20V16H18V13Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M14.803 4a6 6 0 0 0-.72 2H3v12h18v-5.083a6 6 0 0 0 2-.72V19c0 .553-.44 1.001-1.003 1.001H2.002A1 1 0 0 1 1 19V5c0-.552.44-1 1.002-1zM20 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4m0 2a4 4 0 1 1 0-8 4 4 0 0 1 0 8m-2 2h2v3h-2z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'PhoneCameraLine'
-
 /**
  * Remix Icon: Phone Camera Line
  * @see {@link https://remixicon.com/icon/phone-camera-line Remix Icon Docs}
  */
-export const PhoneCameraLine = memo(Icon)
+export const PhoneCameraLine = Icon

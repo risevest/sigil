@@ -1,31 +1,28 @@
 import { memo } from 'react'
+import Svg, { Mask, Path, G } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Mask, Path, Rect } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 25 24" fill={color} height={size} width={size} {...otherProps}>
+    <Svg fill={color} viewBox="0 0 25 24" width={size} height={size} {...props}>
       <Mask
-        id="mask0_1009_49442"
+        id="a"
+        width={25}
+        height={24}
+        x={0}
+        y={0}
+        maskUnits="userSpaceOnUse"
         style={{
           maskType: 'alpha',
         }}
-        maskUnits="userSpaceOnUse"
-        x="0"
-        y="0"
-        width="25"
-        height="24"
       >
-        <Rect x="0.890625" width="24" height="24" />
+        <Path d="M.891 0h24v24h-24z" />
       </Mask>
-      <G mask="url(#mask0_1009_49442)">
-        <Path d="M4.39062 18.5L2.89062 17L10.3906 9.5L14.3906 13.5L21.4906 5.5L22.8906 6.9L14.3906 16.5L10.3906 12.5L4.39062 18.5Z" />
+      <G mask="url(#a)">
+        <Path d="M4.39 18.5 2.89 17l7.5-7.5 4 4 7.1-8 1.4 1.4-8.5 9.6-4-4z" />
       </G>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'ShowChart'
-
-export const ShowChart = memo(Icon)
+export const ShowChart = Icon

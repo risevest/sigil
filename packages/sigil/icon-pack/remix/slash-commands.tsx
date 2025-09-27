@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M3 3H5V7H3V3ZM9.78839 21H7.66003L14.2115 3H16.3398L9.78839 21ZM21 3H19V7H21V3Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M3 3h2v4H3zm6.788 18H7.66l6.551-18h2.129zM21 3h-2v4h2z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'SlashCommands'
-
 /**
  * Remix Icon: Slash Commands
  * @see {@link https://remixicon.com/icon/slash-commands Remix Icon Docs}
  */
-export const SlashCommands = memo(Icon)
+export const SlashCommands = Icon

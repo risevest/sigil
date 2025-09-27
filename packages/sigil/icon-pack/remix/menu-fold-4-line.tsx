@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M20.9997 4H6.99967V6H20.9997V4ZM20.9997 11H10.9997V13H20.9997V11ZM20.9997 18H6.99967V20H20.9997V18ZM1.98926 8.81412L3.40347 7.3999L7.99967 11.9961L3.40347 16.5923L1.98926 15.1781L5.17124 11.9961L1.98926 8.81412Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M21 4H7v2h14zm0 7H11v2h10zm0 7H7v2h14zM1.99 8.814 3.402 7.4 8 11.996l-4.597 4.596-1.414-1.414 3.182-3.182z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'MenuFold4Line'
-
 /**
  * Remix Icon: Menu Fold 4 Line
  * @see {@link https://remixicon.com/icon/menu-fold-4-line Remix Icon Docs}
  */
-export const MenuFold4Line = memo(Icon)
+export const MenuFold4Line = Icon

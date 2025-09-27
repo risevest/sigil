@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M9.00008 10C9.00008 10.5523 8.55236 11 8.00008 11 7.44779 11 7.00008 10.5523 7.00008 10 7.00008 9.44772 7.44779 9 8.00008 9 8.55236 9 9.00008 9.44772 9.00008 10ZM2 4C1.44772 4 1 4.44772 1 5V19C1 19.5523 1.44772 20 2 20H22C22.5523 20 23 19.5523 23 19V5C23 4.44772 22.5523 4 22 4H2ZM11.0001 10C11.0001 11.6569 9.65693 13 8.00008 13 6.34322 13 5.00008 11.6569 5.00008 10 5.00008 8.34315 6.34322 7 8.00008 7 9.65693 7 11.0001 8.34315 11.0001 10ZM5.52725 17.0251 4.11304 15.6109C5.10725 14.6167 6.48362 14 8.00212 14 9.52063 14 10.897 14.6167 11.8912 15.6109L10.477 17.0251C9.84253 16.3907 8.9689 16 8.00212 16 7.03535 16 6.16172 16.3907 5.52725 17.0251ZM16.0001 10.5858 17.793 8.79289 19.2072 10.2071 17.4143 12 19.2072 13.7929 17.793 15.2071 16.0001 13.4142 14.2072 15.2071 12.793 13.7929 14.5859 12 12.793 10.2071 14.2072 8.79289 16.0001 10.5858Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M9 10a1 1 0 1 1-2 0 1 1 0 0 1 2 0M2 4a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h20a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm9 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-5.473 7.025-1.414-1.414A5.49 5.49 0 0 1 8.003 14c1.518 0 2.894.617 3.888 1.61l-1.414 1.415A3.49 3.49 0 0 0 8.002 16c-.967 0-1.84.39-2.475 1.025M16 10.585l1.793-1.792 1.414 1.414L17.414 12l1.793 1.793-1.414 1.414L16 13.414l-1.793 1.793-1.414-1.414L14.586 12l-1.793-1.793 1.414-1.414z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'PassExpiredFill'
-
 /**
  * Remix Icon: Pass Expired Fill
  * @see {@link https://remixicon.com/icon/pass-expired-fill Remix Icon Docs}
  */
-export const PassExpiredFill = memo(Icon)
+export const PassExpiredFill = Icon

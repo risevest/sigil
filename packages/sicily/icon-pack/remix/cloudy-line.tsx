@@ -1,0 +1,16 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const props = _props
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
+      <path d="M9.5 6a6.5 6.5 0 0 0 0 13h7a4.5 4.5 0 1 0-.957-8.898A6.5 6.5 0 0 0 9.5 6m7 15h-7a8.5 8.5 0 1 1 7.215-12.997A6.5 6.5 0 0 1 16.5 21" />
+    </svg>
+  )
+})
+Icon.displayName = 'CloudyLine'
+/**
+ * Remix Icon: Cloudy Line
+ * @see {@link https://remixicon.com/icon/cloudy-line Remix Icon Docs}
+ */
+export const CloudyLine = Icon

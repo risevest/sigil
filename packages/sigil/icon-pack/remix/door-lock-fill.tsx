@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 12.792V16H13V12.792C13.883 12.4062 14.5 11.5252 14.5 10.5C14.5 9.11929 13.3807 8 12 8C10.6193 8 9.5 9.11929 9.5 10.5C9.5 11.5252 10.117 12.4062 11 12.792Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10m-1-9.208V16h2v-3.208a2.5 2.5 0 1 0-2 0" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'DoorLockFill'
-
 /**
  * Remix Icon: Door Lock Fill
  * @see {@link https://remixicon.com/icon/door-lock-fill Remix Icon Docs}
  */
-export const DoorLockFill = memo(Icon)
+export const DoorLockFill = Icon

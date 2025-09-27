@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M10.071 4.92896L11.4852 6.34317L6.82834 11L16.0002 11.0002L16.0002 13.0002L6.82839 13L11.4852 17.6569L10.071 19.0711L2.99994 12L10.071 4.92896ZM18.0001 19V4.99997H20.0001V19H18.0001Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="m10.071 4.929 1.414 1.414L6.828 11H16v2H6.828l4.657 4.657-1.414 1.414L3 12zM18.001 19V5h2v14z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'ExpandLeftLine'
-
 /**
  * Remix Icon: Expand Left Line
  * @see {@link https://remixicon.com/icon/expand-left-line Remix Icon Docs}
  */
-export const ExpandLeftLine = memo(Icon)
+export const ExpandLeftLine = Icon

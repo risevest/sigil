@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M2 4C2 3.44772 2.44772 3 3 3H10.4142L12.4142 5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.5523 21 21 21L3 21C2.45 21 2 20.55 2 20V4ZM10.5858 6L9.58579 5H4V7H9.58579L10.5858 6ZM4 9V19L20 19V7H12.4142L10.4142 9H4Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M2 4a1 1 0 0 1 1-1h7.414l2 2H21a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3c-.55 0-1-.45-1-1zm8.586 2-1-1H4v2h5.586zM4 9v10h16V7h-7.586l-2 2z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Folder6Line'
-
 /**
  * Remix Icon: Folder 6 Line
  * @see {@link https://remixicon.com/icon/folder-6-line Remix Icon Docs}
  */
-export const Folder6Line = memo(Icon)
+export const Folder6Line = Icon

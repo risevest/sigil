@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M11 11.0001L11 2.0005L13 2.00049L13 11.0001L22.0001 10.9999L22.0002 12.9999L13 13.0001L13.0001 22L11.0001 22L11.0001 13.0001L2.00004 13.0003L2 11.0003L11 11.0001Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M11 11V2h2v9h9v2h-9v9h-2v-9H2v-2z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'AddLargeFill'
-
 /**
  * Remix Icon: Add Large Fill
  * @see {@link https://remixicon.com/icon/add-large-fill Remix Icon Docs}
  */
-export const AddLargeFill = memo(Icon)
+export const AddLargeFill = Icon

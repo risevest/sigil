@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M19 5H11.5L14.5429 8.04289L8.04289 14.5429L5 11.5V19H12.5L9.45711 15.9571L15.9571 9.45711L19 12.5V5Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M19 5h-7.5l3.043 3.043-6.5 6.5L5 11.5V19h7.5l-3.043-3.043 6.5-6.5L19 12.5z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'ExpandDiagonalSFill'
-
 /**
  * Remix Icon: Expand Diagonal S Fill
  * @see {@link https://remixicon.com/icon/expand-diagonal-s-fill Remix Icon Docs}
  */
-export const ExpandDiagonalSFill = memo(Icon)
+export const ExpandDiagonalSFill = Icon

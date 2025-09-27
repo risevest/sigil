@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M13.5039 2.00098L3.50391 12.001L6.58724 15.0843L19.6673 2.00098H13.5039ZM13.4985 11.1989L8.12328 16.6199L13.4956 21.9998H19.6842L14.2975 16.5999L19.6856 11.1998L13.4985 11.1989Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="m13.504 2.001-10 10 3.083 3.083 13.08-13.083zm-.005 9.198-5.376 5.42L13.496 22h6.188l-5.387-5.4 5.389-5.4z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'FlutterFill'
-
 /**
  * Remix Icon: Flutter Fill
  * @see {@link https://remixicon.com/icon/flutter-fill Remix Icon Docs}
  */
-export const FlutterFill = memo(Icon)
+export const FlutterFill = Icon

@@ -1,19 +1,16 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 25 24" fill="none" height={size} width={size} {...otherProps}>
+    <Svg fill="none" viewBox="0 0 25 24" width={size} height={size} {...props}>
       <Path
-        d="M12.8946 22.0019C7.37169 22.0019 2.89453 17.5248 2.89453 12.0019C2.89453 6.4791 7.37169 2.00195 12.8946 2.00195C18.4174 2.00195 22.8946 6.4791 22.8946 12.0019C22.8946 17.5248 18.4174 22.0019 12.8946 22.0019ZM12.8946 7.75931L8.65189 12.0019L12.8946 16.2446L17.1372 12.0019L12.8946 7.75931Z"
         fill={color}
+        d="M12.895 22.002c-5.523 0-10-4.477-10-10s4.477-10 10-10 10 4.477 10 10-4.478 10-10 10m0-14.243-4.243 4.243 4.243 4.243 4.242-4.243z"
       />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'CopperCoinFill'
-
-export const CopperCoinFill = memo(Icon)
+export const CopperCoinFill = Icon

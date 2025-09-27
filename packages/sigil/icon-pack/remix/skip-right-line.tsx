@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M10.0858 12L5.29289 16.7929L6.70711 18.2071L12.9142 12L6.70711 5.79291L5.29289 7.20712L10.0858 12ZM17 6.00002L17 18H15L15 6.00002L17 6.00002Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="m10.086 12-4.793 4.793 1.414 1.414L12.914 12 6.707 5.793 5.293 7.207zM17 6v12h-2V6z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'SkipRightLine'
-
 /**
  * Remix Icon: Skip Right Line
  * @see {@link https://remixicon.com/icon/skip-right-line Remix Icon Docs}
  */
-export const SkipRightLine = memo(Icon)
+export const SkipRightLine = Icon

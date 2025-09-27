@@ -1,42 +1,36 @@
 import { memo } from 'react'
+import Svg, { G, Path, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 40 40" fill="none" height={size} width={size} {...otherProps}>
-      <G clipPath="url(#clip0_51_1088)">
+    <Svg fill="none" viewBox="0 0 40 40" width={size} height={size} {...props}>
+      <G clipPath="url(#a)">
         <Path
-          d="M20 40C31.0456 40 40 31.0456 40 20C40 16.6435 39.1719 13.4808 37.7108 10.7031L19.9765 20.0234L29.2969 2.28922C26.5192 0.828125 23.3565 0 20 0C8.95437 0 0 8.95437 0 20C0 25.5229 2.23859 30.5229 5.85781 34.1422C9.47711 37.7615 14.4771 40 20 40Z"
           fill="#0052B4"
+          d="M20 40c11.046 0 20-8.954 20-20 0-3.357-.828-6.52-2.29-9.297l-17.733 9.32 9.32-17.734A19.9 19.9 0 0 0 20 0C8.954 0 0 8.954 0 20a19.94 19.94 0 0 0 5.858 14.142A19.94 19.94 0 0 0 20 40"
         />
         <Path
-          d="M37.6892 10.725C36.7738 8.9825 35.5835 7.34648 34.1184 5.88133C32.6531 4.41617 31.0173 3.22594 29.2747 2.31055L5.83398 34.1656L37.6892 10.725Z"
           fill="#F0F0F0"
+          d="M37.69 10.725a20 20 0 0 0-3.572-4.844 20 20 0 0 0-4.843-3.57L5.834 34.166z"
         />
+        <Path fill="#FF9811" d="m5.834 34.166 31.855-23.441a20 20 0 0 0-3.57-4.844z" />
         <Path
-          d="M5.83398 34.1656L37.6892 10.725C36.7738 8.98252 35.5835 7.3465 34.1184 5.88135L5.83398 34.1656Z"
-          fill="#FF9811"
-        />
-        <Path
-          d="M17.3676 11.7283L14.9251 12.8772L16.2258 15.2428L13.5734 14.7354L13.2373 17.4148L11.3898 15.4441L9.54234 17.4148L9.20641 14.7354L6.55406 15.2427L7.85461 12.8771L5.41211 11.7283L7.85469 10.5793L6.55406 8.21386L9.20625 8.72112L9.54242 6.04175L11.3898 8.01245L13.2373 6.04175L13.5734 8.72112L16.2259 8.21386L14.9252 10.5794L17.3676 11.7283Z"
           fill="#F0F0F0"
+          d="m17.368 11.728-2.443 1.15 1.3 2.365-2.652-.508-.336 2.68-1.847-1.97-1.848 1.97-.336-2.68-2.652.508 1.3-2.366-2.442-1.149 2.443-1.149-1.3-2.365 2.651.507.336-2.68 1.848 1.971 1.847-1.97.336 2.68 2.653-.508-1.3 2.365z"
         />
       </G>
       <Defs>
-        <ClipPath id="clip0_51_1088">
-          <Rect width="40" height="40" fill="white" />
+        <ClipPath id="a">
+          <Path fill="#fff" d="M0 0h40v40H0z" />
         </ClipPath>
       </Defs>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'MarshallIsland'
-
 /**
  * Flags by `Deji.Zeal`: Marshall Island
  * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
  */
-export const MarshallIsland = memo(Icon)
+export const MarshallIsland = Icon

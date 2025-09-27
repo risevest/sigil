@@ -1,38 +1,35 @@
 import { memo } from 'react'
+import Svg, { G, Path, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 40 40" fill="none" height={size} width={size} {...otherProps}>
-      <G clipPath="url(#clip0_51_2065)">
+    <Svg fill="none" viewBox="0 0 40 40" width={size} height={size} {...props}>
+      <G clipPath="url(#a)">
         <Path
-          d="M26.9568 1.24398C24.7902 0.440078 22.4467 0 20.0003 0C17.5539 0 15.2105 0.440078 13.0438 1.24398L11.3047 20L13.0438 38.756C15.2105 39.56 17.5539 40 20.0003 40C22.4467 40 24.7902 39.56 26.9568 38.756L28.6959 20L26.9568 1.24398Z"
           fill="#FFDA44"
+          d="M26.957 1.244A20 20 0 0 0 20 0c-2.446 0-4.79.44-6.956 1.244L11.304 20l1.74 18.756A20 20 0 0 0 20 40c2.447 0 4.79-.44 6.957-1.244L28.696 20z"
         />
         <Path
-          d="M39.9996 20C39.9996 11.4007 34.5721 4.0698 26.9561 1.24402V38.7561C34.5721 35.9301 39.9996 28.5993 39.9996 20V20Z"
           fill="#D80027"
+          d="M40 20c0-8.6-5.428-15.93-13.044-18.756v37.512C34.572 35.93 40 28.6 40 20"
         />
         <Path
-          d="M0 20C0 28.5993 5.4275 35.9301 13.0435 38.756V1.24402C5.4275 4.0698 0 11.4007 0 20V20Z"
-          fill="black"
+          fill="#000"
+          d="M0 20c0 8.6 5.428 15.93 13.044 18.756V1.244C5.428 4.07 0 11.401 0 20"
         />
       </G>
       <Defs>
-        <ClipPath id="clip0_51_2065">
-          <Rect width="40" height="40" fill="white" />
+        <ClipPath id="a">
+          <Path fill="#fff" d="M0 0h40v40H0z" />
         </ClipPath>
       </Defs>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Belgium'
-
 /**
  * Flags by `Deji.Zeal`: Belgium
  * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
  */
-export const Belgium = memo(Icon)
+export const Belgium = Icon

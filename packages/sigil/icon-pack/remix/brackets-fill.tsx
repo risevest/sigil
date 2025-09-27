@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M9 3V5H6V19H9V21H4V3H9ZM15 3H20V21H15V19H18V5H15V3Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M9 3v2H6v14h3v2H4V3zm6 0h5v18h-5v-2h3V5h-3z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'BracketsFill'
-
 /**
  * Remix Icon: Brackets Fill
  * @see {@link https://remixicon.com/icon/brackets-fill Remix Icon Docs}
  */
-export const BracketsFill = memo(Icon)
+export const BracketsFill = Icon

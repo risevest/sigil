@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M4 12H20C20.5523 12 21 12.4477 21 13V21C21 21.5523 20.5523 22 20 22H4C3.44772 22 3 21.5523 3 21V13C3 12.4477 3.44772 12 4 12ZM5 2H19V10H5V2ZM9 5V7H11V5H9ZM13 5V7H15V5H13Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M4 12h16a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1M5 2h14v8H5zm4 3v2h2V5zm4 0v2h2V5z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'UDiskFill'
-
 /**
  * Remix Icon: U Disk Fill
  * @see {@link https://remixicon.com/icon/u-disk-fill Remix Icon Docs}
  */
-export const UDiskFill = memo(Icon)
+export const UDiskFill = Icon

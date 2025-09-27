@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M18 9 12 3 6 9H18ZM18 15 12 21 6 15H18Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="m18 9-6-6-6 6zm0 6-6 6-6-6z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'ExpandUpDownFill'
-
 /**
  * Remix Icon: Expand Up Down Fill
  * @see {@link https://remixicon.com/icon/expand-up-down-fill Remix Icon Docs}
  */
-export const ExpandUpDownFill = memo(Icon)
+export const ExpandUpDownFill = Icon

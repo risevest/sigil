@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M10.0001 4.99989L19 4.99976L19 6.99976L12.0001 6.99986L12 14.5859H17.4142L11 21.0001L4.58578 14.5859L10 14.5859L10.0001 4.99989Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M10 5h9v2h-7v7.586h5.414L11 21l-6.414-6.414H10z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'CornerLeftDownFill'
-
 /**
  * Remix Icon: Corner Left Down Fill
  * @see {@link https://remixicon.com/icon/corner-left-down-fill Remix Icon Docs}
  */
-export const CornerLeftDownFill = memo(Icon)
+export const CornerLeftDownFill = Icon

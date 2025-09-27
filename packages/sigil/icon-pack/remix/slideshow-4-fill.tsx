@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M8.17071 3C8.58254 1.83481 9.69378 1 11 1H13C14.3062 1 15.4175 1.83481 15.8293 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H8.17071ZM10 9V15L15 12L10 9ZM11 3C10.4477 3 10 3.44772 10 4C10 4.55228 10.4477 5 11 5H13C13.5523 5 14 4.55228 14 4C14 3.44772 13.5523 3 13 3H11Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M8.17 3A3 3 0 0 1 11 1h2c1.306 0 2.418.835 2.83 2H21a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM10 9v6l5-3zm1-6a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Slideshow4Fill'
-
 /**
  * Remix Icon: Slideshow 4 Fill
  * @see {@link https://remixicon.com/icon/slideshow-4-fill Remix Icon Docs}
  */
-export const Slideshow4Fill = memo(Icon)
+export const Slideshow4Fill = Icon

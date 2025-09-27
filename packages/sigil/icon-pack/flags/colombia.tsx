@@ -1,38 +1,32 @@
 import { memo } from 'react'
+import Svg, { G, Path, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 40 40" fill="none" height={size} width={size} {...otherProps}>
-      <G clipPath="url(#clip0_51_1867)">
+    <Svg fill="none" viewBox="0 0 40 40" width={size} height={size} {...props}>
+      <G clipPath="url(#a)">
+        <Path fill="#FFDA44" d="M0 20C0 8.954 8.954 0 20 0s20 8.954 20 20l-20 1.74z" />
         <Path
-          d="M0 20C0 8.95437 8.95437 0 20 0C31.0456 0 40 8.95437 40 20L20 21.7391L0 20Z"
-          fill="#FFDA44"
-        />
-        <Path
-          d="M2.67676 29.9999C6.13496 35.9777 12.5978 39.9999 20.0005 39.9999C27.4032 39.9999 33.8661 35.9777 37.3243 29.9999L20.0005 28.6956L2.67676 29.9999Z"
           fill="#D80027"
+          d="M2.677 30C6.135 35.978 12.597 40 20 40c7.402 0 13.865-4.022 17.323-10l-17.323-1.304z"
         />
         <Path
-          d="M37.3238 30C39.0255 27.0583 40 23.643 40 20H0C0 23.643 0.974532 27.0583 2.67625 30H37.3238Z"
           fill="#0052B4"
+          d="M37.324 30A19.9 19.9 0 0 0 40 20H0c0 3.643.975 7.058 2.676 10z"
         />
       </G>
       <Defs>
-        <ClipPath id="clip0_51_1867">
-          <Rect width="40" height="40" fill="white" />
+        <ClipPath id="a">
+          <Path fill="#fff" d="M0 0h40v40H0z" />
         </ClipPath>
       </Defs>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Colombia'
-
 /**
  * Flags by `Deji.Zeal`: Colombia
  * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
  */
-export const Colombia = memo(Icon)
+export const Colombia = Icon

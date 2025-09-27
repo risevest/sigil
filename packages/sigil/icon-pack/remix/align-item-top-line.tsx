@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M21 3H3V5L21 5V3ZM15 9V15H18V9H15ZM13 8C13 7.44772 13.4477 7 14 7L19 7C19.5523 7 20 7.44772 20 8V16C20 16.5523 19.5523 17 19 17H14C13.4477 17 13 16.5523 13 16V8ZM9 9L9 19H6L6 9H9ZM5 7C4.44772 7 4 7.44772 4 8L4 20C4 20.5523 4.44772 21 5 21H10C10.5523 21 11 20.5523 11 20L11 8C11 7.44772 10.5523 7 10 7L5 7Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M21 3H3v2h18zm-6 6v6h3V9zm-2-1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1zM9 9v10H6V9zM5 7a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'AlignItemTopLine'
-
 /**
  * Remix Icon: Align Item Top Line
  * @see {@link https://remixicon.com/icon/align-item-top-line Remix Icon Docs}
  */
-export const AlignItemTopLine = memo(Icon)
+export const AlignItemTopLine = Icon

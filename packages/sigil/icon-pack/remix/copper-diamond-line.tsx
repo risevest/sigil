@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M12.0049 22.0027C6.48204 22.0027 2.00488 17.5256 2.00488 12.0027C2.00488 6.4799 6.48204 2.00275 12.0049 2.00275C17.5277 2.00275 22.0049 6.4799 22.0049 12.0027C22.0049 17.5256 17.5277 22.0027 12.0049 22.0027ZM12.0049 20.0027C16.4232 20.0027 20.0049 16.421 20.0049 12.0027C20.0049 7.58447 16.4232 4.00275 12.0049 4.00275C7.5866 4.00275 4.00488 7.58447 4.00488 12.0027C4.00488 16.421 7.5866 20.0027 12.0049 20.0027ZM9.00488 8.00275H15.0049L17.5049 11.5027L12.0041 17.0027L6.50488 11.5027L9.00488 8.00275ZM10.0349 10.0027L9.11488 11.2927L12.0041 14.1827L14.8949 11.2927L13.9749 10.0027H10.0349Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M12.005 22.003c-5.523 0-10-4.477-10-10s4.477-10 10-10 10 4.477 10 10-4.477 10-10 10m0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16m-3-12h6l2.5 3.5-5.5 5.5-5.5-5.5zm1.03 2-.92 1.29 2.89 2.89 2.89-2.89-.92-1.29z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'CopperDiamondLine'
-
 /**
  * Remix Icon: Copper Diamond Line
  * @see {@link https://remixicon.com/icon/copper-diamond-line Remix Icon Docs}
  */
-export const CopperDiamondLine = memo(Icon)
+export const CopperDiamondLine = Icon

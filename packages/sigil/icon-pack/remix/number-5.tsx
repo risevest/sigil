@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M18.0001 2V4H9.30024L8.62337 10.4448C9.6075 9.84532 10.7634 9.5 12.0001 9.5C15.5899 9.5 18.5001 12.4101 18.5001 16C18.5001 19.5899 15.5899 22.5 12.0001 22.5C8.95434 22.5 6.39789 20.4052 5.69287 17.5778L7.63351 17.0922C8.12156 19.0497 9.89144 20.5 12.0001 20.5C14.4853 20.5 16.5001 18.4853 16.5001 16C16.5001 13.5147 14.4853 11.5 12.0001 11.5C9.97783 11.5 8.72237 12.139 8.03985 13.0293L6.46487 11.848L7.50006 2H18.0001Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M18 2v2H9.3l-.677 6.445a6.5 6.5 0 1 1-2.93 7.133l1.94-.486A4.502 4.502 0 0 0 16.5 16a4.5 4.5 0 0 0-4.5-4.5c-2.022 0-3.278.639-3.96 1.53l-1.575-1.182L7.5 2z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Number5'
-
 /**
  * Remix Icon: Number 5
  * @see {@link https://remixicon.com/icon/number-5 Remix Icon Docs}
  */
-export const Number5 = memo(Icon)
+export const Number5 = Icon

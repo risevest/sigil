@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M16 21V10H21V20C21 20.5523 20.5523 21 20 21H16ZM14 21H4C3.44772 21 3 20.5523 3 20V10H14V21ZM21 8H3V4C3 3.44772 3.44772 3 4 3H20C20.5523 3 21 3.44772 21 4V8Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M16 21V10h5v10a1 1 0 0 1-1 1zm-2 0H4a1 1 0 0 1-1-1V10h11zm7-13H3V4a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'LayoutFill'
-
 /**
  * Remix Icon: Layout Fill
  * @see {@link https://remixicon.com/icon/layout-fill Remix Icon Docs}
  */
-export const LayoutFill = memo(Icon)
+export const LayoutFill = Icon

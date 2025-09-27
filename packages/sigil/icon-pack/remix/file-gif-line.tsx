@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M16 2L20.9997 7L21 20.9925C21 21.5489 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44749 2 3.9985 2H16ZM15 4H5V20H19V8H15V4ZM13 10V15H12V10H13ZM11 10V11H9C8.44772 11 8 11.4477 8 12V13C8 13.5523 8.44772 14 9 14H10V13H9V12H11V14C11 14.5523 10.5523 15 10 15H9C7.89543 15 7 14.1046 7 13V12C7 10.8954 7.89543 10 9 10H11ZM17 10V11H15V12H17V13H15V15H14V10H17Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="m16 2 5 5v13.993A1 1 0 0 1 20.007 22H3.993A1 1 0 0 1 3 21.008V2.992C3 2.444 3.447 2 3.999 2zm-1 2H5v16h14V8h-4zm-2 6v5h-1v-5zm-2 0v1H9a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1v-1H9v-1h2v2a1 1 0 0 1-1 1H9a2 2 0 0 1-2-2v-1a2 2 0 0 1 2-2zm6 0v1h-2v1h2v1h-2v2h-1v-5z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'FileGifLine'
-
 /**
  * Remix Icon: File Gif Line
  * @see {@link https://remixicon.com/icon/file-gif-line Remix Icon Docs}
  */
-export const FileGifLine = memo(Icon)
+export const FileGifLine = Icon

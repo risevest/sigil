@@ -1,42 +1,36 @@
 import { memo } from 'react'
+import Svg, { G, Path, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 40 40" fill="none" height={size} width={size} {...otherProps}>
-      <G clipPath="url(#clip0_51_1762)">
+    <Svg fill="none" viewBox="0 0 40 40" width={size} height={size} {...props}>
+      <G clipPath="url(#a)">
         <Path
-          d="M18.2605 21.7391C18.2605 21.7391 5.86914 5.85508 5.85742 5.85789C9.47664 2.23859 14.4767 0 19.9996 0C31.0452 0 39.9996 8.95437 39.9996 20L18.2605 21.7391Z"
           fill="#338AF3"
+          d="M18.26 21.74S5.87 5.854 5.858 5.857A19.94 19.94 0 0 1 20 0c11.045 0 20 8.954 20 20z"
         />
         <Path
-          d="M18.2605 20C18.2605 20 5.86914 34.1449 5.85742 34.1421C9.47664 37.7614 14.4767 40 19.9996 40C31.0452 40 39.9996 31.0456 39.9996 20H18.2605Z"
           fill="#6DA544"
+          d="M18.26 20S5.87 34.145 5.858 34.142A19.94 19.94 0 0 0 20 40c11.045 0 20-8.954 20-20z"
         />
+        <Path fill="#F0F0F0" d="M5.858 5.858c-7.81 7.81-7.81 20.474 0 28.284L20 20z" />
         <Path
-          d="M5.85785 5.85779C-1.95262 13.6683 -1.95262 26.3316 5.85785 34.1422C9.08543 30.9146 12.1896 27.8104 20 20L5.85785 5.85779Z"
-          fill="#F0F0F0"
-        />
-        <Path
-          d="M8.09426 14.7826L9.38918 18.7682H13.5803L10.1898 21.2317L11.4846 25.2174L8.09426 22.7541L4.70371 25.2174L5.99887 21.2317L2.6084 18.7682H6.79918L8.09426 14.7826Z"
           fill="#D80027"
+          d="m8.094 14.783 1.295 3.985h4.191l-3.39 2.464 1.295 3.985-3.39-2.463-3.391 2.463 1.295-3.985-3.39-2.464h4.19z"
         />
       </G>
       <Defs>
-        <ClipPath id="clip0_51_1762">
-          <Rect width="40" height="40" fill="white" />
+        <ClipPath id="a">
+          <Path fill="#fff" d="M0 0h40v40H0z" />
         </ClipPath>
       </Defs>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Djibouti'
-
 /**
  * Flags by `Deji.Zeal`: Djibouti
  * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
  */
-export const Djibouti = memo(Icon)
+export const Djibouti = Icon

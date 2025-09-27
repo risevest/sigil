@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M16.9492 7.44926L11.9995 2.49951L7.05223 7.44678L8.46644 8.86099L10.9995 6.32794L10.9995 17.6704L8.46449 15.1353L7.05028 16.5496L12 21.4995L16.9497 16.5498L15.5355 15.1356L12.9995 17.6716L12.9995 6.32794L15.535 8.86347L16.9492 7.44926Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M16.95 7.45 12 2.5 7.051 7.447 8.466 8.86 11 6.328V17.67l-2.536-2.535L7.05 16.55 12 21.5l4.95-4.95-1.414-1.414L13 17.672V6.328l2.535 2.535z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'ExpandVerticalSLine'
-
 /**
  * Remix Icon: Expand Vertical S Line
  * @see {@link https://remixicon.com/icon/expand-vertical-s-line Remix Icon Docs}
  */
-export const ExpandVerticalSLine = memo(Icon)
+export const ExpandVerticalSLine = Icon

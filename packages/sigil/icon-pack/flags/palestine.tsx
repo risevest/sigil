@@ -1,33 +1,27 @@
 import { memo } from 'react'
+import Svg, { G, Rect, Path, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 40 40" fill="none" height={size} width={size} {...otherProps}>
-      <G clipPath="url(#clip0_65_2699)">
-        <Rect width="40" height="40" rx="20" fill="white" />
-        <Rect x="-4" y="-1.7998" width="48" height="14.6" fill="black" />
-        <Rect x="-4" y="27" width="48" height="14.6" fill="#017B3D" />
-        <Path
-          d="M0.278646 2.3999L22.6 20.1374L0.121451 37.9999L-22.2 20.2624L0.278646 2.3999Z"
-          fill="#CD1125"
-        />
+    <Svg fill="none" viewBox="0 0 40 40" width={size} height={size} {...props}>
+      <G clipPath="url(#a)">
+        <Rect width={40} height={40} fill="#fff" rx={20} />
+        <Path fill="#000" d="M-4-1.8h48v14.6H-4z" />
+        <Path fill="#017B3D" d="M-4 27h48v14.6H-4z" />
+        <Path fill="#CD1125" d="M.279 2.4 22.6 20.137.121 38-22.2 20.262z" />
       </G>
       <Defs>
-        <ClipPath id="clip0_65_2699">
-          <Rect width="40" height="40" rx="20" fill="white" />
+        <ClipPath id="a">
+          <Rect width={40} height={40} fill="#fff" rx={20} />
         </ClipPath>
       </Defs>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Palestine'
-
 /**
  * Flags by `Deji.Zeal`: Palestine
  * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
  */
-export const Palestine = memo(Icon)
+export const Palestine = Icon

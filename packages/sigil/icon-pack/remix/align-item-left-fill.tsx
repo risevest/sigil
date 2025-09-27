@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M3 21V3H5V21H3ZM7 14C7 13.4477 7.44772 13 8 13H16C16.5523 13 17 13.4477 17 14V19C17 19.5523 16.5523 20 16 20H8C7.44772 20 7 19.5523 7 19V14ZM8 4C7.44772 4 7 4.44772 7 5V10C7 10.5523 7.44772 11 8 11H20C20.5523 11 21 10.5523 21 10V5C21 4.44772 20.5523 4 20 4H8Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M3 21V3h2v18zm4-7a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1zM8 4a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'AlignItemLeftFill'
-
 /**
  * Remix Icon: Align Item Left Fill
  * @see {@link https://remixicon.com/icon/align-item-left-fill Remix Icon Docs}
  */
-export const AlignItemLeftFill = memo(Icon)
+export const AlignItemLeftFill = Icon

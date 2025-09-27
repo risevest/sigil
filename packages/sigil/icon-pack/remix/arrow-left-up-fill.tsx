@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M12.3608 10.9468L18.0176 16.6037L16.6034 18.0179L10.9466 12.361L5.99683 17.3108V5.99707H17.3105L12.3608 10.9468Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="m12.36 10.947 5.658 5.657-1.415 1.414-5.656-5.657-4.95 4.95V5.997H17.31z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'ArrowLeftUpFill'
-
 /**
  * Remix Icon: Arrow Left Up Fill
  * @see {@link https://remixicon.com/icon/arrow-left-up-fill Remix Icon Docs}
  */
-export const ArrowLeftUpFill = memo(Icon)
+export const ArrowLeftUpFill = Icon

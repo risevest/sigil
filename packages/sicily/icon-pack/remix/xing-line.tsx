@@ -1,0 +1,16 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const props = _props
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
+      <path d="M20.444 3.5 13.81 14.99 17.857 22h-2.31l-4.045-7.009H11.5L18.134 3.5zM8.31 7l2.422 4.196-.002.001L7.67 16.5H5.36l3.061-5.305L6.002 7z" />
+    </svg>
+  )
+})
+Icon.displayName = 'XingLine'
+/**
+ * Remix Icon: Xing Line
+ * @see {@link https://remixicon.com/icon/xing-line Remix Icon Docs}
+ */
+export const XingLine = Icon

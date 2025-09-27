@@ -1,38 +1,32 @@
 import { memo } from 'react'
+import Svg, { G, Path, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 40 40" fill="none" height={size} width={size} {...otherProps}>
-      <G clipPath="url(#clip0_51_1783)">
+    <Svg fill="none" viewBox="0 0 40 40" width={size} height={size} {...props}>
+      <G clipPath="url(#a)">
         <Path
-          d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.95431 0 0 8.9543 0 20C0 31.0457 8.95431 40 20 40Z"
           fill="#F0F0F0"
+          d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20"
         />
         <Path
-          d="M18.2605 20C18.2605 20 5.86914 34.1449 5.85742 34.1421C9.47664 37.7614 14.4767 40 19.9996 40C31.0452 40 39.9996 31.0456 39.9996 20H18.2605Z"
           fill="#D80027"
+          d="M18.26 20S5.87 34.145 5.858 34.142A19.94 19.94 0 0 0 20 40c11.045 0 20-8.954 20-20z"
         />
-        <Path
-          d="M5.85785 5.85791C-1.95262 13.6684 -1.95262 26.3317 5.85785 34.1423C9.08543 30.9147 12.1896 27.8106 20 20.0001L5.85785 5.85791Z"
-          fill="#0052B4"
-        />
+        <Path fill="#0052B4" d="M5.858 5.858c-7.81 7.81-7.81 20.474 0 28.284L20 20z" />
       </G>
       <Defs>
-        <ClipPath id="clip0_51_1783">
-          <Rect width="40" height="40" fill="white" />
+        <ClipPath id="a">
+          <Path fill="#fff" d="M0 0h40v40H0z" />
         </ClipPath>
       </Defs>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'CzechRepublic'
-
 /**
  * Flags by `Deji.Zeal`: Czech Republic
  * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
  */
-export const CzechRepublic = memo(Icon)
+export const CzechRepublic = Icon

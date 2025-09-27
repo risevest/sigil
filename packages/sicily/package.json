@@ -1,0 +1,16 @@
+{
+  "name": "@risemaxi/sicily",
+  "version": "1.2.0-beta.0",
+  "description": "Icons and Signs for the Rise Design System",
+  "homepage": "https://risevest.com",
+  "main": "build/index.js",
+  "type": "module",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "bun run build"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.13"
+  }
+}

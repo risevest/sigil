@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M5 11H19V13H5V11ZM12 8C11.1716 8 10.5 7.32843 10.5 6.5C10.5 5.67157 11.1716 5 12 5C12.8284 5 13.5 5.67157 13.5 6.5C13.5 7.32843 12.8284 8 12 8ZM12 19C11.1716 19 10.5 18.3284 10.5 17.5C10.5 16.6716 11.1716 16 12 16C12.8284 16 13.5 16.6716 13.5 17.5C13.5 18.3284 12.8284 19 12 19Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M5 11h14v2H5zm7-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m0 11a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'DivideLine'
-
 /**
  * Remix Icon: Divide Line
  * @see {@link https://remixicon.com/icon/divide-line Remix Icon Docs}
  */
-export const DivideLine = memo(Icon)
+export const DivideLine = Icon

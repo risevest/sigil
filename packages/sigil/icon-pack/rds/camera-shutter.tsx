@@ -1,17 +1,14 @@
 import { memo } from 'react'
+import Svg, { Rect, Circle } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Circle as _Circle, Rect } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 65 64" fill="none" height={size} width={size} {...otherProps}>
-      <Rect x="0.5" width="64" height="64" rx="32" fill={color} />
-      <_Circle cx="32.5" cy="32" r="26" fill={color} stroke="#222222" strokeWidth="2" />
+    <Svg fill="none" viewBox="0 0 65 64" width={size} height={size} {...props}>
+      <Rect width={64} height={64} x={0.5} fill={color} rx={32} />
+      <Circle cx={32.5} cy={32} r={26} fill={color} stroke="#222" strokeWidth={2} />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'CameraShutter'
-
-export const CameraShutter = memo(Icon)
+export const CameraShutter = Icon

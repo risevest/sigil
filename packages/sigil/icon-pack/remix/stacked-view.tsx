@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M4 2C3.44772 2 3 2.44772 3 3V14C3 14.5523 3.44772 15 4 15H20C20.5523 15 21 14.5523 21 14V3C21 2.44772 20.5523 2 20 2H4ZM5 13V4H19V13H5ZM4 17C3.44772 17 3 17.4477 3 18V22H5V19H19V22H21V18C21 17.4477 20.5523 17 20 17H4Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M4 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm1 11V4h14v9zm-1 4a1 1 0 0 0-1 1v4h2v-3h14v3h2v-4a1 1 0 0 0-1-1z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'StackedView'
-
 /**
  * Remix Icon: Stacked View
  * @see {@link https://remixicon.com/icon/stacked-view Remix Icon Docs}
  */
-export const StackedView = memo(Icon)
+export const StackedView = Icon

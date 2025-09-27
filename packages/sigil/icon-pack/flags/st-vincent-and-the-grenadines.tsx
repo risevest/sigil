@@ -1,9 +1,9 @@
 import { memo } from 'react'
+import { ClipPath, Defs, G, Path, Rect, Svg } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
 
 const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+  const { size = 24, ...otherProps } = props
   return (
     <Svg viewBox="0 0 40 40" fill="none" height={size} width={size} {...otherProps}>
       <G clipPath="url(#clip0_51_678)">

@@ -1,42 +1,32 @@
 import { memo } from 'react'
+import Svg, { G, Rect, Path, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 40 40" fill="none" height={size} width={size} {...otherProps}>
-      <G clipPath="url(#clip0_65_5554)">
-        <Rect width="40" height="40" rx="20" fill="#FFCF00" />
-        <Rect x="-4" width="48" height="10" fill="#002C87" />
-        <Rect x="-4" y="10" width="48" height="10" fill="white" />
-        <Rect x="-4" y="20" width="48" height="10" fill="#01980C" />
-        <Rect
-          x="25"
-          y="-4"
-          width="48"
-          height="10"
-          transform="rotate(90 25 -4)"
-          fill="#F60631"
-        />
+    <Svg fill="none" viewBox="0 0 40 40" width={size} height={size} {...props}>
+      <G clipPath="url(#a)">
+        <Rect width={40} height={40} fill="#FFCF00" rx={20} />
+        <Path fill="#002C87" d="M-4 0h48v10H-4z" />
+        <Path fill="#fff" d="M-4 10h48v10H-4z" />
+        <Path fill="#01980C" d="M-4 20h48v10H-4z" />
+        <Path fill="#F60631" d="M25-4v48H15V-4z" />
         <Path
-          d="M11.8037 5.46749L10.5438 6.45112L11.09 7.95331L9.76517 7.05904L8.50528 8.04267L8.94639 6.50634L7.62158 5.61207L9.21901 5.55685L9.66013 4.02053L10.2063 5.52271L11.8037 5.46749Z"
           fill="#FFCF00"
+          d="m11.804 5.467-1.26.984.546 1.502-1.325-.894-1.26.984.441-1.537-1.324-.894 1.597-.055.441-1.536.546 1.502z"
         />
       </G>
       <Defs>
-        <ClipPath id="clip0_65_5554">
-          <Rect width="40" height="40" rx="20" fill="white" />
+        <ClipPath id="a">
+          <Rect width={40} height={40} fill="#fff" rx={20} />
         </ClipPath>
       </Defs>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'CentralAfricanRepublic'
-
 /**
  * Flags by `Deji.Zeal`: Central African Republic
  * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
  */
-export const CentralAfricanRepublic = memo(Icon)
+export const CentralAfricanRepublic = Icon

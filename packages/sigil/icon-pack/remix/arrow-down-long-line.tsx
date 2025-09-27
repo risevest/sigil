@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M13.0001 1.99974L11.0002 1.9996L11.0002 18.1715L7.05044 14.2218L5.63623 15.636L12.0002 22L18.3642 15.636L16.9499 14.2218L13.0002 18.1716L13.0001 1.99974Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M13 2h-2v16.172l-3.95-3.95-1.414 1.414L12 22l6.364-6.364-1.414-1.414-3.95 3.95z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'ArrowDownLongLine'
-
 /**
  * Remix Icon: Arrow Down Long Line
  * @see {@link https://remixicon.com/icon/arrow-down-long-line Remix Icon Docs}
  */
-export const ArrowDownLongLine = memo(Icon)
+export const ArrowDownLongLine = Icon

@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M18.3277 4.25809L10.5858 12L12 13.4142L19.7419 5.6723C21.153 7.39641 22 9.5999 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2C14.4001 2 16.6036 2.84695 18.3277 4.25809Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M18.328 4.258 10.586 12 12 13.414l7.742-7.742A9.96 9.96 0 0 1 22 12c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2c2.4 0 4.604.847 6.328 2.258" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Compass2Fill'
-
 /**
  * Remix Icon: Compass 2 Fill
  * @see {@link https://remixicon.com/icon/compass-2-fill Remix Icon Docs}
  */
-export const Compass2Fill = memo(Icon)
+export const Compass2Fill = Icon

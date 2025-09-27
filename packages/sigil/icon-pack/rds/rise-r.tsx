@@ -1,17 +1,13 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 14 14" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M3.01664 5.4771L2.91773 0.213741H0V14H3.01664V8.57634C3.09082 4.38168 4.5744 3.01908 8.55537 2.75191V0C4.99475 0 3.68425 1.46947 3.11554 5.4771H3.01664Z" />
-      <Path d="M14 1.75C14 2.7165 13.3036 3.5 12.4445 3.5C11.5854 3.5 10.889 2.7165 10.889 1.75C10.889 0.783502 11.5854 0 12.4445 0C13.3036 0 14 0.783502 14 1.75Z" />
+    <Svg fill={color} viewBox="0 0 14 14" width={size} height={size} {...props}>
+      <Path d="m3.017 5.477-.1-5.263H0V14h3.017V8.576C3.09 4.382 4.574 3.02 8.555 2.752V0c-3.56 0-4.87 1.47-5.44 5.477zM14 1.75c0 .966-.696 1.75-1.556 1.75-.859 0-1.555-.784-1.555-1.75S11.585 0 12.445 0C13.304 0 14 .784 14 1.75" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'RiseR'
-
-export const RiseR = memo(Icon)
+export const RiseR = Icon

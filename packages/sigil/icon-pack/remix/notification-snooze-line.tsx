@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M22 17H20V10C20 5.58172 16.4183 2 12 2C7.58172 2 4 5.58172 4 10V17H2V19H22V17ZM18 10V17H6V10C6 6.68629 8.68629 4 12 4C15.3137 4 18 6.68629 18 10ZM15 23V21H9V23H15ZM9 9H12.5858L9 12.5858V15H15V13H11.4142L15 9.41421V7H9V9Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M22 17h-2v-7a8 8 0 1 0-16 0v7H2v2h20zm-4-7v7H6v-7a6 6 0 1 1 12 0m-3 13v-2H9v2zM9 9h3.586L9 12.586V15h6v-2h-3.586L15 9.414V7H9z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'NotificationSnoozeLine'
-
 /**
  * Remix Icon: Notification Snooze Line
  * @see {@link https://remixicon.com/icon/notification-snooze-line Remix Icon Docs}
  */
-export const NotificationSnoozeLine = memo(Icon)
+export const NotificationSnoozeLine = Icon

@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M17.0002 2V4L13.0002 3.999V6H16.0002V8C18.2093 8 20.0002 9.79086 20.0002 12V20C20.0002 21.1046 19.1048 22 18.0002 22H6.0002C4.89563 22 4.0002 21.1046 4.0002 20V12C4.0002 9.79086 5.79106 8 8.0002 8V6H11.0002V3.999L7.5002 4C6.8702 4 6.1302 4.49 5.3002 5.6L3.7002 4.4C4.8702 2.84 6.1302 2 7.5002 2H17.0002ZM16.0002 10H8.0002C6.89563 10 6.0002 10.8954 6.0002 12V20H18.0002V12C18.0002 10.8954 17.1048 10 16.0002 10ZM13.0002 12V14H15.0002V16H12.9992L13.0002 18H11.0002L10.9992 16H9.0002V14H11.0002V12H13.0002Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M17 2v2l-4-.001V6h3v2a4 4 0 0 1 4 4v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a4 4 0 0 1 4-4V6h3V3.999L7.5 4c-.63 0-1.37.49-2.2 1.6L3.7 4.4C4.87 2.84 6.13 2 7.5 2zm-1 8H8a2 2 0 0 0-2 2v8h12v-8a2 2 0 0 0-2-2m-3 2v2h2v2h-2v2h-2v-2H9v-2h2v-2z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'HandSanitizerLine'
-
 /**
  * Remix Icon: Hand Sanitizer Line
  * @see {@link https://remixicon.com/icon/hand-sanitizer-line Remix Icon Docs}
  */
-export const HandSanitizerLine = memo(Icon)
+export const HandSanitizerLine = Icon

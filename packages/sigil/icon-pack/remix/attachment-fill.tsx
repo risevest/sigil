@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M20.997 2.9918L20.9998 21.0082C20.9998 21.5447 20.5552 22 20.0066 22H3.9934C3.44495 22 3 21.556 3 21.0082V2.9918C3 2.45531 3.44468 2 3.99322 2H20.0036C20.5519 2 20.9969 2.44405 20.997 2.9918ZM9 13V9C9 8.44772 9.44772 8 10 8C10.5523 8 11 8.44772 11 9V13C11 13.5523 11.4477 14 12 14C12.5523 14 13 13.5523 13 13V9C13 7.34315 11.6569 6 10 6C8.34315 6 7 7.34315 7 9V13C7 15.7614 9.23858 18 12 18C14.7614 18 17 15.7614 17 13V8H15V13C15 14.6569 13.6569 16 12 16C10.3431 16 9 14.6569 9 13Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M20.997 2.992 21 21.008a1 1 0 0 1-.993.992H3.993A.993.993 0 0 1 3 21.008V2.992A1 1 0 0 1 3.993 2h16.01c.549 0 .994.444.994.992M9 13V9a1 1 0 0 1 2 0v4a1 1 0 1 0 2 0V9a3 3 0 1 0-6 0v4a5 5 0 0 0 10 0V8h-2v5a3 3 0 1 1-6 0" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'AttachmentFill'
-
 /**
  * Remix Icon: Attachment Fill
  * @see {@link https://remixicon.com/icon/attachment-fill Remix Icon Docs}
  */
-export const AttachmentFill = memo(Icon)
+export const AttachmentFill = Icon

@@ -1,38 +1,35 @@
 import { memo } from 'react'
+import Svg, { G, Path, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 40 40" fill="none" height={size} width={size} {...otherProps}>
-      <G clipPath="url(#clip0_51_586)">
+    <Svg fill="none" viewBox="0 0 40 40" width={size} height={size} {...props}>
+      <G clipPath="url(#a)">
         <Path
-          d="M38.756 26.9566C39.56 24.7899 40 22.4465 40 20.0001C40 17.5537 39.56 15.2102 38.756 13.0436L20 11.3044L1.24398 13.0436C0.44 15.2102 0 17.5537 0 20.0001C0 22.4465 0.44 24.7899 1.24398 26.9566L20 28.6957L38.756 26.9566Z"
           fill="#F0F0F0"
+          d="M38.756 26.957A20 20 0 0 0 40 20c0-2.446-.44-4.79-1.244-6.956L20 11.304l-18.756 1.74A20 20 0 0 0 0 20c0 2.447.44 4.79 1.244 6.957L20 28.696z"
         />
         <Path
-          d="M20.0002 39.9998C28.5994 39.9998 35.9304 34.5723 38.7562 26.9563H1.24414C4.07008 34.5723 11.4009 39.9998 20.0002 39.9998Z"
           fill="#338AF3"
+          d="M20 40c8.6 0 15.93-5.428 18.756-13.044H1.244C4.07 34.572 11.401 40 20 40"
         />
         <Path
-          d="M20.0002 0C11.4009 0 4.07008 5.4275 1.24414 13.0435H38.7562C35.9304 5.4275 28.5994 0 20.0002 0Z"
           fill="#6DA544"
+          d="M20 0C11.4 0 4.07 5.428 1.244 13.044h37.512C35.93 5.428 28.6 0 20 0"
         />
       </G>
       <Defs>
-        <ClipPath id="clip0_51_586">
-          <Rect width="40" height="40" fill="white" />
+        <ClipPath id="a">
+          <Path fill="#fff" d="M0 0h40v40H0z" />
         </ClipPath>
       </Defs>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'SierraLeone'
-
 /**
  * Flags by `Deji.Zeal`: Sierra Leone
  * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
  */
-export const SierraLeone = memo(Icon)
+export const SierraLeone = Icon

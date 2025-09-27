@@ -1,0 +1,16 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const props = _props
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
+      <path d="M4 4v7h7V4h2v16h-2v-7H4v7H2V4zm14.5 4a3.75 3.75 0 0 1 2.978 6.03l-.148.18L18.034 18H22v2h-7v-1.556l4.82-5.546a1.75 1.75 0 1 0-3.065-1.292l-.005.144h-2A3.75 3.75 0 0 1 18.5 8" />
+    </svg>
+  )
+})
+Icon.displayName = 'H2'
+/**
+ * Remix Icon: H 2
+ * @see {@link https://remixicon.com/icon/h-2 Remix Icon Docs}
+ */
+export const H2 = Icon

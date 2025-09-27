@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M17 11V4H19V21H17V13H7V21H5V4H7V11H17Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M17 11V4h2v17h-2v-8H7v8H5V4h2v7z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Heading'
-
 /**
  * Remix Icon: Heading
  * @see {@link https://remixicon.com/icon/heading Remix Icon Docs}
  */
-export const Heading = memo(Icon)
+export const Heading = Icon

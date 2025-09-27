@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M8 4V9.79335C8 10.455 7.73768 11.0897 7.27052 11.5584L6 12.8329V20H18V4H8ZM7 2H19C19.5523 2 20 2.44772 20 3V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V12.4196C4 12.1549 4.10493 11.901 4.29179 11.7135L5.8541 10.1464C5.94754 10.0526 6 9.92569 6 9.79335V3C6 2.44772 6.44772 2 7 2ZM15 5H17V9H15V5ZM12 5H14V9H12V5ZM9 5H11V9H9V5Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M8 4v5.793a2.5 2.5 0 0 1-.73 1.765L6 12.833V20h12V4zM7 2h12a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8.58a1 1 0 0 1 .292-.707l1.562-1.567A.5.5 0 0 0 6 9.793V3a1 1 0 0 1 1-1m8 3h2v4h-2zm-3 0h2v4h-2zM9 5h2v4H9z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'SdCardMiniLine'
-
 /**
  * Remix Icon: Sd Card Mini Line
  * @see {@link https://remixicon.com/icon/sd-card-mini-line Remix Icon Docs}
  */
-export const SdCardMiniLine = memo(Icon)
+export const SdCardMiniLine = Icon

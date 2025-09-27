@@ -1,24 +1,17 @@
 import { memo } from 'react'
+import Svg, { Rect, Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path, Rect } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 32 32" fill="none" height={size} width={size} {...otherProps}>
-      <Rect width="32" height="32" rx="16" fill="#006D79" />
+    <Svg fill="none" viewBox="0 0 32 32" width={size} height={size} {...props}>
+      <Rect width={32} height={32} fill="#006D79" rx={16} />
       <Path
-        d="M13.0166 14.4771L12.9177 9.21374H10V23H13.0166V17.5763C13.0908 13.3817 14.5744 12.0191 18.5554 11.7519V9C14.9948 9 13.6843 10.4695 13.1155 14.4771H13.0166Z"
-        fill="white"
-      />
-      <Path
-        d="M24 10.75C24 11.7165 23.3036 12.5 22.4445 12.5C21.5854 12.5 20.889 11.7165 20.889 10.75C20.889 9.7835 21.5854 9 22.4445 9C23.3036 9 24 9.7835 24 10.75Z"
-        fill="white"
+        fill="#fff"
+        d="m13.017 14.477-.1-5.263H10V23h3.017v-5.424c.074-4.194 1.557-5.557 5.538-5.824V9c-3.56 0-4.87 1.47-5.44 5.477zM24 10.75c0 .966-.696 1.75-1.555 1.75-.86 0-1.556-.784-1.556-1.75S21.585 9 22.445 9C23.304 9 24 9.784 24 10.75"
       />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'RiseLogo'
-
-export const RiseLogo = memo(Icon)
+export const RiseLogo = Icon

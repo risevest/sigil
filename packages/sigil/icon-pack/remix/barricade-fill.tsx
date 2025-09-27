@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M19.5556 19H21V21H3V19H4.44444L5.33333 15H18.6667L19.5556 19ZM17.3333 9L18.2222 13H5.77778L6.66667 9H17.3333ZM16.8889 7H7.11111L7.82598 3.78307C7.92766 3.32553 8.33347 3 8.80217 3H15.1978C15.6665 3 16.0723 3.32553 16.174 3.78307L16.8889 7Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M19.556 19H21v2H3v-2h1.444l.89-4h13.333zM17.333 9l.89 4H5.777l.889-4zm-.444-2H7.11l.715-3.217A1 1 0 0 1 8.802 3h6.396a1 1 0 0 1 .976.783z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'BarricadeFill'
-
 /**
  * Remix Icon: Barricade Fill
  * @see {@link https://remixicon.com/icon/barricade-fill Remix Icon Docs}
  */
-export const BarricadeFill = memo(Icon)
+export const BarricadeFill = Icon

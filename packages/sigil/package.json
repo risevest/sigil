@@ -1,15 +1,14 @@
 {
   "name": "@risemaxi/sigil",
-  "version": "1.5.7",
+  "version": "1.2.0-beta.0",
   "description": "Icons and Signs for the Rise Design System",
   "homepage": "https://risevest.com",
   "main": "build/index.js",
+  "type": "module",
   "types": "build/index.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "format": "bunx biome check --write icon-pack *.ts",
-    "prepare": "bun run build",
-    "generate": "bun ./scripts/build-icons.js"
+    "prepare": "bun run build"
   },
   "keywords": [
     "sigil",
@@ -38,13 +37,11 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.2",
-    "@types/react": "18",
     "camelcase": "^6.0.0",
     "cheerio": "^1.0.0",
     "glob": "^7.1.6",
     "react": "*",
     "react-native-svg": "^15.11.1",
-    "uppercamelcase": "^3.0.0",
-    "typescript": "~5.0.0"
+    "uppercamelcase": "^3.0.0"
   }
 }

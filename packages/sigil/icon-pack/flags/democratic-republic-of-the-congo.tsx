@@ -1,60 +1,38 @@
 import { memo } from 'react'
+import Svg, { G, Rect, Path, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 40 40" fill="none" height={size} width={size} {...otherProps}>
-      <G clipPath="url(#clip0_65_5561)">
-        <G clipPath="url(#clip1_65_5561)">
-          <Rect width="40" height="40" rx="20" fill="#0182FF" />
-          <Rect
-            x="-6.40002"
-            y="36"
-            width="60"
-            height="5.6"
-            transform="rotate(-35.257 -6.40002 36)"
-            fill="#F00A17"
+    <Svg fill="none" viewBox="0 0 40 40" width={size} height={size} {...props}>
+      <G clipPath="url(#a)">
+        <G clipPath="url(#b)">
+          <Rect width={40} height={40} fill="#0182FF" rx={20} />
+          <Path fill="#F00A17" d="M-6.4 36 42.594 1.365l3.233 4.573-48.994 34.635z" />
+          <Path
+            fill="#FCD504"
+            d="m8 8.4 1.123 3.455h3.632L9.816 13.99l1.123 3.455L8 15.31l-2.939 2.135 1.123-3.455-2.94-2.135h3.633z"
           />
           <Path
-            d="M7.99997 8.3999L9.12254 11.8548H12.7553L9.81633 13.9901L10.9389 17.445L7.99997 15.3097L5.06105 17.445L6.18362 13.9901L3.24469 11.8548H6.8774L7.99997 8.3999Z"
-            fill="#FCD504"
-          />
-          <Rect
-            x="-7.40002"
-            y="34.835"
-            width="60"
-            height="1.6"
-            transform="rotate(-35.257 -7.40002 34.835)"
             fill="#FFD600"
-          />
-          <Rect
-            x="-3.79999"
-            y="41.0347"
-            width="60"
-            height="1.6"
-            transform="rotate(-35.257 -3.79999 41.0347)"
-            fill="#FFD600"
+            d="M-7.4 34.835 41.594.2l.924 1.307-48.994 34.635zM-3.8 41.035 45.194 6.4l.924 1.307L-2.876 42.34z"
           />
         </G>
       </G>
       <Defs>
-        <ClipPath id="clip0_65_5561">
-          <Rect width="40" height="40" fill="white" />
+        <ClipPath id="a">
+          <Path fill="#fff" d="M0 0h40v40H0z" />
         </ClipPath>
-        <ClipPath id="clip1_65_5561">
-          <Rect width="40" height="40" rx="20" fill="white" />
+        <ClipPath id="b">
+          <Rect width={40} height={40} fill="#fff" rx={20} />
         </ClipPath>
       </Defs>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'DemocraticRepublicOfTheCongo'
-
 /**
  * Flags by `Deji.Zeal`: Democratic Republic Of The Congo
  * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
  */
-export const DemocraticRepublicOfTheCongo = memo(Icon)
+export const DemocraticRepublicOfTheCongo = Icon

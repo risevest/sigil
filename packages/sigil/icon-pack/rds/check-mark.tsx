@@ -1,22 +1,14 @@
 import { memo } from 'react'
+import Svg, { Rect, Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path, Rect } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 20 20" fill={color} height={size} width={size} {...otherProps}>
-      <Rect width="20" height="20" rx="10" stroke="none" strokeWidth="0" />
-      <Path
-        d="M6 11.2667L8.31111 13.4L14 7"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+    <Svg fill={color} viewBox="0 0 20 20" width={size} height={size} {...props}>
+      <Rect width={20} height={20} rx={10} />
+      <Path d="M6 11.267 8.311 13.4 14 7" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'CheckMark'
-
-export const CheckMark = memo(Icon)
+export const CheckMark = Icon

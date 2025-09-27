@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M7 14V3H3C2.44772 3 2 3.44772 2 4V14H7ZM15 14V3H9V14H15ZM22 14V4C22 3.44772 21.5523 3 21 3H17V14H22ZM21 21C21.5523 21 22 20.5523 22 20V16H2V20C2 20.5523 2.44772 21 3 21H21Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M7 14V3H3a1 1 0 0 0-1 1v10zm8 0V3H9v11zm7 0V4a1 1 0 0 0-1-1h-4v11zm-1 7a1 1 0 0 0 1-1v-4H2v4a1 1 0 0 0 1 1z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'TableAltFill'
-
 /**
  * Remix Icon: Table Alt Fill
  * @see {@link https://remixicon.com/icon/table-alt-fill Remix Icon Docs}
  */
-export const TableAltFill = memo(Icon)
+export const TableAltFill = Icon

@@ -1,19 +1,16 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 12 13" fill="none" height={size} width={size} {...otherProps}>
+    <Svg fill="none" viewBox="0 0 12 13" width={size} height={size} {...props}>
       <Path
-        d="M9.85473 10.1032C7.98951 11.9678 5.13262 12.2473 2.96935 10.9461L1.41518 12.4997L0.781158 11.8659L2.23237 10.4152L4.08025 8.5669L5.36238 8.55498L6.88187 8.53982L9.16869 2.83342L3.46031 5.11836L3.43213 7.91793L1.58425 9.76625C-0.293971 7.55823 -0.191011 4.23104 1.8953 2.14545C4.09 -0.0484831 7.66112 -0.0484831 9.85582 2.14545C12.0505 4.33938 12.0505 7.90926 9.85582 10.1021L9.85473 10.1032Z"
         fill={color}
+        d="M9.855 10.103a5.64 5.64 0 0 1-6.886.843L1.415 12.5l-.634-.634 1.451-1.45 1.848-1.85 1.282-.011 1.52-.015 2.287-5.707L3.46 5.118l-.028 2.8-1.848 1.848a5.633 5.633 0 0 1 .311-7.62 5.637 5.637 0 0 1 7.96 0 5.63 5.63 0 0 1 0 7.956z"
       />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'ChakaLeaf'
-
-export const ChakaLeaf = memo(Icon)
+export const ChakaLeaf = Icon

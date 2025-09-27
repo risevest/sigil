@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M3 12H5V21H3V12ZM19 8H21V21H19V8ZM11 2H13V21H11V2Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M3 12h2v9H3zm16-4h2v13h-2zm-8-6h2v19h-2z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'BarChartLine'
-
 /**
  * Remix Icon: Bar Chart Line
  * @see {@link https://remixicon.com/icon/bar-chart-line Remix Icon Docs}
  */
-export const BarChartLine = memo(Icon)
+export const BarChartLine = Icon

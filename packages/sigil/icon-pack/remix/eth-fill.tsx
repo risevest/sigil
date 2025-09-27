@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M11.9999 0 4.62988 12.2201 11.9999 16.5743 19.3699 12.2201 11.9999 0ZM11.9999 24 4.62988 13.6172 11.9999 18 19.3699 13.6172 11.9999 24Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M12 0 4.63 12.22 12 16.574l7.37-4.354zm0 24L4.63 13.617 12 18l7.37-4.383z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'EthFill'
-
 /**
  * Remix Icon: Eth Fill
  * @see {@link https://remixicon.com/icon/eth-fill Remix Icon Docs}
  */
-export const EthFill = memo(Icon)
+export const EthFill = Icon

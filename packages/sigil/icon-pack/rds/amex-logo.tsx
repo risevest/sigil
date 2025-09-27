@@ -1,21 +1,18 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 32 24" fill="none" height={size} width={size} {...otherProps}>
+    <Svg fill="none" viewBox="0 0 32 24" width={size} height={size} {...props}>
       <Path
-        d="M28 2.31785H24.346L22.436 7.75326L20.4429 2.31785H16.7059V10.7812L12.8858 2.31785H9.81328L5.99313 10.9649H8.65047L9.39787 9.23561H13.3841L14.1315 10.9649H19.1142V4.95307L21.3564 10.9649H23.4325L25.6746 4.95307V10.9649H28V12.2825H24.9272L22.436 15.0002L19.8616 12.2825H9.31493V20.9296H19.7787L22.3528 18.1297L24.9272 20.9296H28V22H24.346L22.3528 19.859L20.3597 22H7.98626V12.1178H4L8.9827 1H13.7993L15.5431 4.78834V1H21.5225L22.519 3.88244L23.5156 1H28V2.31785ZM28 14.1766L25.7578 16.5648L28 18.9531V20.9296L23.9308 16.5648L28 12.2825V14.1766ZM16.7059 20.9296V18.8708H11.7232V17.5532H16.6227V15.5767H11.7232V14.2591H16.7059V12.2825L20.8581 16.5648L16.7059 20.9296ZM10.1453 7.34131L11.3081 4.54136L12.4706 7.34131H10.1453Z"
         fill="#006FCF"
         fillRule="evenodd"
+        d="M28 2.318h-3.654l-1.91 5.435-1.993-5.435h-3.737v8.463l-3.82-8.463H9.813l-3.82 8.647H8.65l.748-1.73h3.986l.748 1.73h4.982V4.953l2.242 6.012h2.076l2.243-6.012v6.012H28v1.318h-3.073L22.436 15l-2.574-2.717H9.315v8.647h10.464l2.574-2.8 2.574 2.8H28V22h-3.654l-1.993-2.141L20.36 22H7.986v-9.882H4L8.983 1h4.816l1.744 3.788V1h5.98l.996 2.882L23.516 1H28zm0 11.859-2.242 2.388L28 18.953v1.977l-4.07-4.365L28 12.282zM16.706 20.93v-2.06h-4.983v-1.317h4.9v-1.976h-4.9v-1.318h4.983v-1.976l4.152 4.282zM10.146 7.34l1.162-2.8 1.163 2.8z"
         clipRule="evenodd"
       />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'AmexLogo'
-
-export const AmexLogo = memo(Icon)
+export const AmexLogo = Icon

@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M21 17.9995V19.9995H3V17.9995H21ZM17.4038 3.90332L22 8.49951L17.4038 13.0957L15.9896 11.6815L19.1716 8.49951L15.9896 5.31753L17.4038 3.90332ZM12 10.9995V12.9995H3V10.9995H12ZM12 3.99951V5.99951H3V3.99951H12Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M21 18v2H3v-2zM17.404 3.903 22 8.5l-4.596 4.596-1.414-1.415L19.172 8.5 15.99 5.318zM12 11v2H3v-2zm0-7v2H3V4z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'MenuUnfoldLine'
-
 /**
  * Remix Icon: Menu Unfold Line
  * @see {@link https://remixicon.com/icon/menu-unfold-line Remix Icon Docs}
  */
-export const MenuUnfoldLine = memo(Icon)
+export const MenuUnfoldLine = Icon

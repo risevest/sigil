@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M4 2H20V6.45994L13.5366 12L20 17.5401V22H4V17.5401L10.4634 12L4 6.45994V2ZM16.2967 7L18 5.54007V4H6V5.54007L7.70326 7H16.2967ZM12 13.3171L6 18.4599V20H7L12 17L17 20H18V18.4599L12 13.3171Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M4 2h16v4.46L13.537 12 20 17.54V22H4v-4.46L10.463 12 4 6.46zm12.297 5L18 5.54V4H6v1.54L7.703 7zM12 13.317 6 18.46V20h1l5-3 5 3h1v-1.54z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Hourglass2Fill'
-
 /**
  * Remix Icon: Hourglass 2 Fill
  * @see {@link https://remixicon.com/icon/hourglass-2-fill Remix Icon Docs}
  */
-export const Hourglass2Fill = memo(Icon)
+export const Hourglass2Fill = Icon

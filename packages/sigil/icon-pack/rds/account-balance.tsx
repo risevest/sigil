@@ -1,31 +1,28 @@
 import { memo } from 'react'
+import Svg, { Mask, Path, G } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Mask, Path, Rect } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 25 24" fill={color} height={size} width={size} {...otherProps}>
+    <Svg fill={color} viewBox="0 0 25 24" width={size} height={size} {...props}>
       <Mask
-        id="mask0_1009_49486"
+        id="a"
+        width={25}
+        height={24}
+        x={0}
+        y={0}
+        maskUnits="userSpaceOnUse"
         style={{
           maskType: 'alpha',
         }}
-        maskUnits="userSpaceOnUse"
-        x="0"
-        y="0"
-        width="25"
-        height="24"
       >
-        <Rect x="0.890625" width="24" height="24" fill={color} />
+        <Path d="M.891 0h24v24h-24z" />
       </Mask>
-      <G mask="url(#mask0_1009_49486)">
-        <Path d="M5.89062 17V10H7.89062V17H5.89062ZM11.8906 17V10H13.8906V17H11.8906ZM2.89062 21V19H22.8906V21H2.89062ZM17.8906 17V10H19.8906V17H17.8906ZM2.89062 8V6L12.8906 1L22.8906 6V8H2.89062Z" />
+      <G mask="url(#a)">
+        <Path d="M5.89 17v-7h2v7zm6 0v-7h2v7zm-9 4v-2h20v2zm15-4v-7h2v7zm-15-9V6l10-5 10 5v2z" />
       </G>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'AccountBalance'
-
-export const AccountBalance = memo(Icon)
+export const AccountBalance = Icon

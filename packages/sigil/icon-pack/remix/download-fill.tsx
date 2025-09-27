@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M3 19H21V21H3V19ZM13 9H20L12 17L4 9H11V1H13V9Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M3 19h18v2H3zM13 9h7l-8 8-8-8h7V1h2z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'DownloadFill'
-
 /**
  * Remix Icon: Download Fill
  * @see {@link https://remixicon.com/icon/download-fill Remix Icon Docs}
  */
-export const DownloadFill = memo(Icon)
+export const DownloadFill = Icon

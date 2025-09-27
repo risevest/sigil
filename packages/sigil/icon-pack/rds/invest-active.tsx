@@ -1,16 +1,13 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 28 28" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M22.66 4.96C22.36 4.37 21.76 4 21.09 4H6.37C5.7 4 5.1 4.37 4.78 5.03L3 9.55V23.46H24.46V9.55L22.66 4.96ZM15.87 18.57C15.87 18.9 15.6 19.17 15.27 19.17H14.55V20.14H13.05V19.17H11.6V17.97H14.67V17.02H12.18C11.85 17.02 11.58 16.75 11.58 16.42V14.31C11.58 13.98 11.85 13.71 12.18 13.71H13.05V12.74H14.55V13.71H15.83V14.92H12.78V15.81H15.27C15.6 15.81 15.87 16.08 15.87 16.42V18.57ZM20.48 10.45H6.98V8.95H20.48V10.45Z" />
+    <Svg fill={color} viewBox="0 0 28 28" width={size} height={size} {...props}>
+      <Path d="M22.66 4.96c-.3-.59-.9-.96-1.57-.96H6.37c-.67 0-1.27.37-1.59 1.03L3 9.55v13.91h21.46V9.55zm-6.79 13.61c0 .33-.27.6-.6.6h-.72v.97h-1.5v-.97H11.6v-1.2h3.07v-.95h-2.49c-.33 0-.6-.27-.6-.6v-2.11c0-.33.27-.6.6-.6h.87v-.97h1.5v.97h1.28v1.21h-3.05v.89h2.49c.33 0 .6.27.6.61zm4.61-8.12H6.98v-1.5h13.5z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'InvestActive'
-
-export const InvestActive = memo(Icon)
+export const InvestActive = Icon

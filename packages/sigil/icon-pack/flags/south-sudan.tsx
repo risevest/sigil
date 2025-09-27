@@ -1,50 +1,44 @@
 import { memo } from 'react'
+import Svg, { G, Path, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 40 40" fill="none" height={size} width={size} {...otherProps}>
-      <G clipPath="url(#clip0_51_491)">
+    <Svg fill="none" viewBox="0 0 40 40" width={size} height={size} {...props}>
+      <G clipPath="url(#a)">
         <Path
-          d="M20 40.0002C31.0457 40.0002 40 31.0459 40 20.0002C40 8.95455 31.0457 0.000244141 20 0.000244141C8.95431 0.000244141 0 8.95455 0 20.0002C0 31.0459 8.95431 40.0002 20 40.0002Z"
           fill="#F0F0F0"
+          d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.955 0 20s8.954 20 20 20"
         />
         <Path
-          d="M38.4406 12.2463C35.4118 5.05172 28.2968 0 20.0009 0C14.4779 0 9.47844 2.23898 5.85938 5.85851L10.868 12.2463H38.4406Z"
-          fill="black"
+          fill="#000"
+          d="M38.44 12.246C35.413 5.052 28.298 0 20 0A19.93 19.93 0 0 0 5.86 5.859l5.008 6.387z"
         />
         <Path
-          d="M10.9248 27.6812L5.85938 34.1414C9.47844 37.7609 14.4779 39.9999 20.0009 39.9999C28.3248 39.9999 35.4601 34.9144 38.4715 27.6812H10.9248Z"
           fill="#496E2D"
+          d="m10.925 27.681-5.066 6.46A19.93 19.93 0 0 0 20.001 40c8.324 0 15.46-5.086 18.47-12.319z"
         />
         <Path
-          d="M4.34766 14.7102V25.2174H39.3109C39.7595 23.554 39.9998 21.8053 39.9998 20C39.9998 18.1686 39.7531 16.3952 39.2919 14.7102H4.34766Z"
           fill="#A2001D"
+          d="M4.348 14.71v10.507H39.31A20 20 0 0 0 40 20a20 20 0 0 0-.708-5.29z"
         />
+        <Path fill="#0052B4" d="M5.858 5.858c-7.81 7.81-7.81 20.474 0 28.284L20 20z" />
         <Path
-          d="M5.85785 5.85791C-1.95262 13.6684 -1.95262 26.3317 5.85785 34.1423C9.08543 30.9147 12.1896 27.8106 20 20.0001L5.85785 5.85791Z"
-          fill="#0052B4"
-        />
-        <Path
-          d="M6.51547 15.0276L8.95648 18.4339L12.9509 17.1648L10.4656 20.5392L12.9066 23.9457L8.92945 22.6249L6.44414 25.9992L6.47148 21.8084L2.49414 20.4874L6.4882 19.2183L6.51547 15.0276Z"
           fill="#FFDA44"
+          d="m6.515 15.028 2.441 3.406 3.995-1.27-2.485 3.375 2.44 3.407-3.977-1.321-2.485 3.374.027-4.19-3.977-1.322 3.994-1.269z"
         />
       </G>
       <Defs>
-        <ClipPath id="clip0_51_491">
-          <Rect width="40" height="40" fill="white" />
+        <ClipPath id="a">
+          <Path fill="#fff" d="M0 0h40v40H0z" />
         </ClipPath>
       </Defs>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'SouthSudan'
-
 /**
  * Flags by `Deji.Zeal`: South Sudan
  * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
  */
-export const SouthSudan = memo(Icon)
+export const SouthSudan = Icon

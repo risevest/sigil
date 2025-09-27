@@ -1,38 +1,35 @@
 import { memo } from 'react'
+import Svg, { G, Path, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 40 40" fill="none" height={size} width={size} {...otherProps}>
-      <G clipPath="url(#clip0_51_1079)">
+    <Svg fill="none" viewBox="0 0 40 40" width={size} height={size} {...props}>
+      <G clipPath="url(#a)">
         <Path
-          d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.95431 0 0 8.9543 0 20C0 31.0457 8.95431 40 20 40Z"
           fill="#496E2D"
+          d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20"
         />
         <Path
-          d="M19.9995 23.1056C16.6693 23.1056 13.8873 20.7651 13.2047 17.6397C13.0998 18.1202 13.043 18.6184 13.043 19.1304C13.043 22.9725 16.1574 26.0869 19.9995 26.0869C23.8415 26.0869 26.9559 22.9725 26.9559 19.1304C26.9559 18.6184 26.8991 18.1202 26.7942 17.6396C26.1116 20.7652 23.3296 23.1056 19.9995 23.1056Z"
           fill="#FFDA44"
+          d="M20 23.106a6.96 6.96 0 0 1-6.795-5.466 6.956 6.956 0 1 0 13.59 0 6.96 6.96 0 0 1-6.796 5.466"
         />
         <Path
-          d="M19.9997 13.9131L20.6472 15.906H22.7428L21.0475 17.1376L21.695 19.1305L19.9997 17.8988L18.3045 19.1305L18.9521 17.1376L17.2568 15.906H19.3522L19.9997 13.9131Z"
           fill="#FFDA44"
+          d="m20 13.913.647 1.993h2.096l-1.695 1.232.647 1.992L20 17.9l-1.695 1.232.647-1.993-1.695-1.232h2.095z"
         />
       </G>
       <Defs>
-        <ClipPath id="clip0_51_1079">
-          <Rect width="40" height="40" fill="white" />
+        <ClipPath id="a">
+          <Path fill="#fff" d="M0 0h40v40H0z" />
         </ClipPath>
       </Defs>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Mauritania'
-
 /**
  * Flags by `Deji.Zeal`: Mauritania
  * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
  */
-export const Mauritania = memo(Icon)
+export const Mauritania = Icon

@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M17.998 3C18.5503 3 18.998 3.44772 18.998 4V20C18.998 20.5523 18.5503 21 17.998 21H5.99805C5.44576 21 4.99805 20.5523 4.99805 20V4C4.99805 3.44772 5.44576 3 5.99805 3H17.998ZM16.998 5H6.99805V19H16.998V5ZM14.998 11V13H12.998V11H14.998Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M17.998 3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm-1 2h-10v14h10zm-2 6v2h-2v-2z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'DoorLine'
-
 /**
  * Remix Icon: Door Line
  * @see {@link https://remixicon.com/icon/door-line Remix Icon Docs}
  */
-export const DoorLine = memo(Icon)
+export const DoorLine = Icon

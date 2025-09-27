@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M4 5V19H13V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V9H20V5H4ZM19.7071 11.2929L19 10.5858L18.2929 11.2929L15.2929 14.2929L16.7071 15.7071L19 13.4142L21.2929 15.7071L22.7071 14.2929L19.7071 11.2929ZM16.7071 17.2929L19 19.5858L21.2929 17.2929L22.7071 18.7071L19.7071 21.7071L19 22.4142L18.2929 21.7071L15.2929 18.7071L16.7071 17.2929Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M4 5v14h9v2H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v5h-2V5zm15.707 6.293L19 10.586l-.707.707-3 3 1.414 1.414L19 13.414l2.293 2.293 1.414-1.414zm-3 6L19 19.586l2.293-2.293 1.414 1.414-3 3-.707.707-.707-.707-3-3z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'DropdownList'
-
 /**
  * Remix Icon: Dropdown List
  * @see {@link https://remixicon.com/icon/dropdown-list Remix Icon Docs}
  */
-export const DropdownList = memo(Icon)
+export const DropdownList = Icon

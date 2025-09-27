@@ -1,0 +1,16 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const props = _props
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
+      <path d="M21.005 14v7a1 1 0 0 1-1 1h-16a1 1 0 0 1-1-1v-7a2 2 0 1 0 0-4V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v7a2 2 0 1 0 0 4m-2 1.465a4 4 0 0 1-2-3.465c0-1.48.804-2.773 2-3.465V4h-14v4.535c1.195.692 2 1.984 2 3.465s-.805 2.773-2 3.465V20h14zM9.005 6h6v2h-6zm0 10h6v2h-6z" />
+    </svg>
+  )
+})
+Icon.displayName = 'Coupon5Line'
+/**
+ * Remix Icon: Coupon 5 Line
+ * @see {@link https://remixicon.com/icon/coupon-5-line Remix Icon Docs}
+ */
+export const Coupon5Line = Icon

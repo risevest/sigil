@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M12 3L2 5.996L3 15.46L12 22.5L21 15.46L22 5.996L12 3ZM19.8367 7.43572L12 19.9608L4.16326 7.43572L12 5.08783L19.8367 7.43572Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M12 3 2 5.996l1 9.464 9 7.04 9-7.04 1-9.464zm7.837 4.436L12 19.96 4.163 7.436 12 5.088z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'OpenbaseLine'
-
 /**
  * Remix Icon: Openbase Line
  * @see {@link https://remixicon.com/icon/openbase-line Remix Icon Docs}
  */
-export const OpenbaseLine = memo(Icon)
+export const OpenbaseLine = Icon

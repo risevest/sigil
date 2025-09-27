@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM15.5355 7.05025L10.5858 12L12 13.4142L16.9497 8.46447L15.5355 7.05025Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2m3.536 5.05L10.586 12 12 13.414l4.95-4.95z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Timer2Fill'
-
 /**
  * Remix Icon: Timer 2 Fill
  * @see {@link https://remixicon.com/icon/timer-2-fill Remix Icon Docs}
  */
-export const Timer2Fill = memo(Icon)
+export const Timer2Fill = Icon

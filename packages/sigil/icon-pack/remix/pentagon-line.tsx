@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M12.0004 3.03043L20.5309 9.22822L17.2725 19.2564H6.72821L3.46984 9.22822L12.0004 3.03043ZM22.7473 8.50806L12.0004 0.699951L1.25342 8.50806L5.35838 21.1418H18.6423L22.7473 8.50806Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="m12 3.03 8.53 6.198-3.258 10.028H6.729L3.47 9.228zm10.747 5.478L12 .7 1.253 8.508l4.105 12.634h13.284z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'PentagonLine'
-
 /**
  * Remix Icon: Pentagon Line
  * @see {@link https://remixicon.com/icon/pentagon-line Remix Icon Docs}
  */
-export const PentagonLine = memo(Icon)
+export const PentagonLine = Icon

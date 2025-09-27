@@ -1,0 +1,16 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const props = _props
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
+      <path d="m12.36 10.947 5.658 5.657-1.415 1.414-5.656-5.657-4.95 4.95V5.997H17.31z" />
+    </svg>
+  )
+})
+Icon.displayName = 'ArrowLeftUpFill'
+/**
+ * Remix Icon: Arrow Left Up Fill
+ * @see {@link https://remixicon.com/icon/arrow-left-up-fill Remix Icon Docs}
+ */
+export const ArrowLeftUpFill = Icon

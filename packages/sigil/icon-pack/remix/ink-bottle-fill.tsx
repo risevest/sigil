@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M16 8.99669L20.3714 10.7452C20.751 10.8971 21 11.2648 21 11.6737V20.9967C21 21.549 20.5523 21.9967 20 21.9967H4C3.44772 21.9967 3 21.549 3 20.9967V11.6737C3 11.2648 3.24895 10.8971 3.62861 10.7452L8 8.99669H16ZM20 13.9967H8V18.9967H20V13.9967ZM16 2.99669C16.5523 2.99669 17 3.4444 17 3.99669V7.99669H7V3.99669C7 3.4444 7.44772 2.99669 8 2.99669H16Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="m16 8.997 4.371 1.748a1 1 0 0 1 .629.929v9.323a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-9.323a1 1 0 0 1 .629-.929L8 8.997zm4 5H8v5h12zm-4-11a1 1 0 0 1 1 1v4H7v-4a1 1 0 0 1 1-1z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'InkBottleFill'
-
 /**
  * Remix Icon: Ink Bottle Fill
  * @see {@link https://remixicon.com/icon/ink-bottle-fill Remix Icon Docs}
  */
-export const InkBottleFill = memo(Icon)
+export const InkBottleFill = Icon

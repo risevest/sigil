@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M6 4H19V6H8V12H18V14H8V21H6V4Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M6 4h13v2H8v6h10v2H8v7H6z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'FontMono'
-
 /**
  * Remix Icon: Font Mono
  * @see {@link https://remixicon.com/icon/font-mono Remix Icon Docs}
  */
-export const FontMono = memo(Icon)
+export const FontMono = Icon

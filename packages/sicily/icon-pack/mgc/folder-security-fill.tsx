@@ -1,0 +1,22 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const props = _props
+  return (
+    <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
+      <g fill="none">
+        <path d="M24 0v24H0V0zM12.593 23.258l-.011.002-.071.035-.02.004-.014-.004-.071-.035q-.016-.005-.024.005l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427q-.004-.016-.017-.018m.265-.113-.013.002-.185.093-.01.01-.003.011.018.43.005.012.008.007.201.093q.019.005.029-.008l.004-.014-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014-.034.614q.001.018.017.024l.015-.002.201-.093.01-.008.004-.011.017-.43-.003-.012-.01-.01z" />
+        <path
+          fill="currentColor"
+          d="M9.52 3a2 2 0 0 1 1.561.75l1.4 1.75H20a2 2 0 0 1 2 2v6.768a2 2 0 0 0-.367-.165l-3-1a2 2 0 0 0-1.265 0l-3 1A2 2 0 0 0 13 16v1.671c0 1.252.432 2.412 1.162 3.329H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM18 15l3 1v1.671a3.346 3.346 0 0 1-2.977 3.326h-.046a3.35 3.35 0 0 1-2.972-3.144L15 17.671V16z"
+        />
+      </g>
+    </svg>
+  )
+})
+Icon.displayName = 'FolderSecurityFill'
+/**
+ * MingCute Icon: Folder Security Fill
+ * @see {@link https://www.mingcute.com MingCute Icon Docs}
+ */
+export const FolderSecurityFill = Icon

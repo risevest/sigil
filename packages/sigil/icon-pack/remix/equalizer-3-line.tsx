@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M7 3V6H3V8H7V11H9V3H7ZM11 8H21V6H11V8ZM17 13V16H21V18H17V21H15V13H17ZM13 18H3V16H13V18Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M7 3v3H3v2h4v3h2V3zm4 5h10V6H11zm6 5v3h4v2h-4v3h-2v-8zm-4 5H3v-2h10z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Equalizer3Line'
-
 /**
  * Remix Icon: Equalizer 3 Line
  * @see {@link https://remixicon.com/icon/equalizer-3-line Remix Icon Docs}
  */
-export const Equalizer3Line = memo(Icon)
+export const Equalizer3Line = Icon

@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M7.73703 13H16.263L12 6.60558L7.73703 13ZM12.416 3.62407L19.4818 14.2227C19.6349 14.4524 19.5729 14.7629 19.3431 14.9161C19.261 14.9708 19.1645 15 19.0657 15H4.93426C4.65812 15 4.43426 14.7762 4.43426 14.5C4.43426 14.4013 4.46348 14.3048 4.51823 14.2227L11.584 3.62407C11.7372 3.39431 12.0476 3.33222 12.2774 3.4854C12.3323 3.52201 12.3794 3.56914 12.416 3.62407ZM5 17H19C19.5523 17 20 17.4477 20 18C20 18.5523 19.5523 19 19 19H5C4.44772 19 4 18.5523 4 18C4 17.4477 4.44772 17 5 17Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M7.737 13h8.526L12 6.606zm4.679-9.376 7.066 10.599a.5.5 0 0 1-.416.777H4.934a.5.5 0 0 1-.416-.777l7.066-10.599a.5.5 0 0 1 .832 0M5 17h14a1 1 0 1 1 0 2H5a1 1 0 1 1 0-2" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'EjectLine'
-
 /**
  * Remix Icon: Eject Line
  * @see {@link https://remixicon.com/icon/eject-line Remix Icon Docs}
  */
-export const EjectLine = memo(Icon)
+export const EjectLine = Icon

@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M4 3.5L9 8.49955L4 13.5V3.5ZM21 19.9995V17.9995H3V19.9995H21ZM21 12.9995V10.9995H12V12.9995H21ZM21 5.99951V3.99951H12V5.99951H21Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="m4 3.5 5 5-5 5zM21 20v-2H3v2zm0-7v-2h-9v2zm0-7V4h-9v2z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'MenuFold2Fill'
-
 /**
  * Remix Icon: Menu Fold 2 Fill
  * @see {@link https://remixicon.com/icon/menu-fold-2-fill Remix Icon Docs}
  */
-export const MenuFold2Fill = memo(Icon)
+export const MenuFold2Fill = Icon

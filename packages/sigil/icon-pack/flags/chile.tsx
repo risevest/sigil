@@ -1,42 +1,36 @@
 import { memo } from 'react'
+import Svg, { G, Path, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, G, Path, Rect, Defs, ClipPath } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 40 40" fill="none" height={size} width={size} {...otherProps}>
-      <G clipPath="url(#clip0_51_1887)">
+    <Svg fill="none" viewBox="0 0 40 40" width={size} height={size} {...props}>
+      <G clipPath="url(#a)">
         <Path
-          d="M20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0C8.9543 0 0 8.95431 0 20C0 31.0457 8.9543 40 20 40Z"
           fill="#F0F0F0"
+          d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20"
         />
         <Path
-          d="M40 20C40 31.0456 31.0456 40 20 40C8.95437 40 0 31.0456 0 20C0 8.95436 20 20 20 20C20 20 35.1376 20 40 20Z"
           fill="#D80027"
+          d="M40 20c0 11.046-8.954 20-20 20S0 31.046 0 20s20 0 20 0z"
         />
+        <Path fill="#0052B4" d="M0 20C0 8.954 8.954 0 20 0v20z" />
         <Path
-          d="M0 20C0 8.95437 8.95437 0 20 0V20C20 20 6.95648 20 0 20Z"
-          fill="#0052B4"
-        />
-        <Path
-          d="M11.9049 6.95654L13.2 10.9423H17.3908L14.0004 13.4056L15.2954 17.3914L11.9049 14.928L8.51441 17.3914L9.80941 13.4056L6.41895 10.9423H10.6098L11.9049 6.95654Z"
           fill="#F0F0F0"
+          d="m11.905 6.957 1.295 3.985h4.19L14 13.406l1.295 3.985-3.39-2.463-3.39 2.463 1.294-3.985-3.39-2.464h4.19z"
         />
       </G>
       <Defs>
-        <ClipPath id="clip0_51_1887">
-          <Rect width="40" height="40" fill="white" />
+        <ClipPath id="a">
+          <Path fill="#fff" d="M0 0h40v40H0z" />
         </ClipPath>
       </Defs>
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'Chile'
-
 /**
  * Flags by `Deji.Zeal`: Chile
  * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
  */
-export const Chile = memo(Icon)
+export const Chile = Icon

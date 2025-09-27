@@ -1,21 +1,18 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 32 23" fill="none" height={size} width={size} {...otherProps}>
+    <Svg fill="none" viewBox="0 0 32 23" width={size} height={size} {...props}>
       <Path
-        d="M28 1.9846H24.346L22.436 7.42001L20.4429 1.9846H16.7059V10.4479L12.8858 1.9846H9.81328L5.99313 10.6317H8.65047L9.39787 8.90235H13.3841L14.1315 10.6317H19.1142V4.61982L21.3564 10.6317H23.4325L25.6746 4.61982V10.6317H28V11.9493H24.9272L22.436 14.667L19.8616 11.9493H9.31493V20.5964H19.7787L22.3528 17.7964L24.9272 20.5964H28V21.6667H24.346L22.3528 19.5257L20.3597 21.6667H7.98626V11.7846H4L8.9827 0.666748H13.7993L15.5431 4.45509V0.666748H21.5225L22.519 3.54919L23.5156 0.666748H28V1.9846ZM28 13.8433L25.7578 16.2316L28 18.6198V20.5964L23.9308 16.2316L28 11.9493V13.8433ZM16.7059 20.5964V18.5376H11.7232V17.22H16.6227V15.2434H11.7232V13.9258H16.7059V11.9493L20.8581 16.2316L16.7059 20.5964ZM10.1453 7.00806L11.3081 4.20811L12.4706 7.00806H10.1453Z"
-        fill="white"
+        fill="#fff"
         fillRule="evenodd"
+        d="M28 1.985h-3.654l-1.91 5.435-1.993-5.435h-3.737v8.463l-3.82-8.463H9.813l-3.82 8.647H8.65l.748-1.73h3.986l.748 1.73h4.982V4.62l2.242 6.012h2.076l2.243-6.012v6.012H28v1.317h-3.073l-2.491 2.718-2.574-2.718H9.315v8.647h10.464l2.574-2.8 2.574 2.8H28v1.07h-3.654l-1.993-2.14-1.993 2.14H7.986v-9.881H4L8.983.667h4.816l1.744 3.788V.667h5.98l.996 2.882.997-2.882H28zm0 11.858-2.242 2.389L28 18.62v1.976l-4.07-4.364L28 11.949zm-11.294 6.753v-2.058h-4.983V17.22h4.9v-1.977h-4.9v-1.317h4.983v-1.977l4.152 4.283zm-6.56-13.588 1.162-2.8 1.163 2.8z"
         clipRule="evenodd"
       />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'AmexLogoDark'
-
-export const AmexLogoDark = memo(Icon)
+export const AmexLogoDark = Icon

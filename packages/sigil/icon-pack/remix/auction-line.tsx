@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M14.0049 20.0028V22.0028H2.00488V20.0028H14.0049ZM14.5907 0.689087L22.3688 8.46726L20.9546 9.88147L19.894 9.52792L17.4191 12.0028L23.076 17.6597L21.6617 19.0739L16.0049 13.417L13.6007 15.8212L13.8836 16.9525L12.4693 18.3668L4.69117 10.5886L6.10539 9.17437L7.23676 9.45721L13.53 3.16396L13.1765 2.1033L14.5907 0.689087ZM15.2978 4.22462L8.22671 11.2957L11.7622 14.8312L18.8333 7.76015L15.2978 4.22462Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M14.005 20.003v2h-12v-2zM14.59.689l7.778 7.778-1.414 1.414-1.061-.353-2.475 2.475 5.657 5.657-1.414 1.414-5.657-5.657-2.404 2.404.283 1.132-1.415 1.414-7.778-7.778 1.414-1.415 1.132.283 6.293-6.293-.353-1.06zm.707 3.536-7.071 7.07 3.535 3.536 7.071-7.07z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'AuctionLine'
-
 /**
  * Remix Icon: Auction Line
  * @see {@link https://remixicon.com/icon/auction-line Remix Icon Docs}
  */
-export const AuctionLine = memo(Icon)
+export const AuctionLine = Icon

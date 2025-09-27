@@ -1,0 +1,16 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const props = _props
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
+      <path d="M3 19V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v8h2a2 2 0 0 1 2 2v4a1 1 0 1 0 2 0v-7h-2a1 1 0 0 1-1-1V6.414l-1.657-1.657 1.414-1.414 4.95 4.95A1 1 0 0 1 22 9v9a3 3 0 1 1-6 0v-4h-2v5h1v2H2v-2zM5 5v6h7V5z" />
+    </svg>
+  )
+})
+Icon.displayName = 'GasStationFill'
+/**
+ * Remix Icon: Gas Station Fill
+ * @see {@link https://remixicon.com/icon/gas-station-fill Remix Icon Docs}
+ */
+export const GasStationFill = Icon

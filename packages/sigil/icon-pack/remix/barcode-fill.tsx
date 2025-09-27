@@ -1,20 +1,17 @@
 import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-import { Svg, Path } from 'react-native-svg'
-
-const Icon = (props: IconProps) => {
-  const { color = 'black', size = 24, ...otherProps } = props
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
   return (
-    <Svg viewBox="0 0 24 24" fill={color} height={size} width={size} {...otherProps}>
-      <Path d="M2 4H4V20H2V4ZM6 4H8V20H6V4ZM9 4H12V20H9V4ZM13 4H15V20H13V4ZM16 4H18V20H16V4ZM19 4H22V20H19V4Z" />
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M2 4h2v16H2zm4 0h2v16H6zm3 0h3v16H9zm4 0h2v16h-2zm3 0h2v16h-2zm3 0h3v16h-3z" />
     </Svg>
   )
-}
-
+})
 Icon.displayName = 'BarcodeFill'
-
 /**
  * Remix Icon: Barcode Fill
  * @see {@link https://remixicon.com/icon/barcode-fill Remix Icon Docs}
  */
-export const BarcodeFill = memo(Icon)
+export const BarcodeFill = Icon

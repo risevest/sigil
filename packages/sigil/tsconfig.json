@@ -5,7 +5,7 @@
     "jsx": "react-native",
     "declaration": true,
     "strict": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "outDir": "./build",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
