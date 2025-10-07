@@ -1,0 +1,17 @@
+import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
+  return (
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M17 12c0-3.314-2.238-6-5-6-2.177 0-4.03 1.67-4.716 4H6l2.5 3 2.5-3H9.401C9.92 8.805 10.89 8 12 8c1.657 0 3 1.79 3 4s-1.343 4-3 4c-1.11 0-2.08-.804-2.598-1.999H7.285C7.97 16.33 9.823 18 12 18c2.762 0 5-2.686 5-6M12 2a9.97 9.97 0 0 0-7.07 2.93A9.97 9.97 0 0 0 2 12a9.97 9.97 0 0 0 2.93 7.07A9.97 9.97 0 0 0 12 22a9.97 9.97 0 0 0 7.07-2.93A9.97 9.97 0 0 0 22 12a9.97 9.97 0 0 0-2.93-7.07A9.97 9.97 0 0 0 12 2M6.344 6.344A7.97 7.97 0 0 1 12 4c2.208 0 4.206.895 5.656 2.344A7.97 7.97 0 0 1 20 12a7.97 7.97 0 0 1-2.344 5.656A7.97 7.97 0 0 1 12 20a7.97 7.97 0 0 1-5.656-2.344A7.97 7.97 0 0 1 4 12c0-2.208.895-4.206 2.344-5.656" />
+    </Svg>
+  )
+})
+Icon.displayName = 'CreativeCommonsSaLine'
+/**
+ * Remix Icon: Creative Commons Sa Line
+ * @see {@link https://remixicon.com/icon/creative-commons-sa-line Remix Icon Docs}
+ */
+export const CreativeCommonsSaLine = Icon

@@ -1,0 +1,16 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const props = _props
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
+      <path d="M10.001 10v4h4v-4h7v11h-18V10zm-2 2h-3v7h14v-7h-3L16 16H8zm8-9v6h-8V3zm-2 2h-4v2h4z" />
+    </svg>
+  )
+})
+Icon.displayName = 'UnsplashLine'
+/**
+ * Remix Icon: Unsplash Line
+ * @see {@link https://remixicon.com/icon/unsplash-line Remix Icon Docs}
+ */
+export const UnsplashLine = Icon

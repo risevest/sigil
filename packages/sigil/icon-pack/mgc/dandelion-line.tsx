@@ -1,0 +1,23 @@
+import { memo } from 'react'
+import Svg, { G, Path } from 'react-native-svg'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
+  return (
+    <Svg viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <G fill="none">
+        <Path d="M24 0v24H0V0zM12.594 23.258l-.012.002-.071.035-.02.004-.014-.004-.071-.036q-.016-.004-.024.006l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427q-.004-.016-.016-.018m.264-.113-.014.002-.184.093-.01.01-.003.011.018.43.005.012.008.008.201.092q.019.005.029-.008l.004-.014-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014-.034.614q.001.018.017.024l.015-.002.201-.093.01-.008.003-.011.018-.43-.003-.012-.01-.01z" />
+        <Path
+          fill={color}
+          d="M12 8a2 2 0 0 1 1.942 2.479C16.768 13.51 18 17.268 18 21a1 1 0 1 1-2 0c0-3.242-1.049-6.461-3.447-9.077A2.001 2.001 0 1 1 12 8m0-6a7.99 7.99 0 0 1 6.122 2.85A7.97 7.97 0 0 1 20 10a8 8 0 0 1-.77 3.43 1 1 0 0 1-1.807-.86A5.96 5.96 0 0 0 18 10a5.97 5.97 0 0 0-1.408-3.862 6 6 0 1 0-3.734 9.8 1 1 0 0 1 .284 1.981A8 8 0 1 1 12 2"
+        />
+      </G>
+    </Svg>
+  )
+})
+Icon.displayName = 'DandelionLine'
+/**
+ * MingCute Icon: Dandelion Line
+ * @see {@link https://www.mingcute.com MingCute Icon Docs}
+ */
+export const DandelionLine = Icon

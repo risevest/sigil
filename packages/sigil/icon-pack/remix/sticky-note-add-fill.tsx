@@ -1,0 +1,17 @@
+import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
+  return (
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M4 1v3H1v2h3v3h2V6h3V4H6V1zm7 4a6 6 0 0 1-8 5.659v9.348c0 .548.447.993.998.993H14v-6c0-.55.45-1 1-1h6V3.999A.996.996 0 0 0 20.007 3h-9.348A6 6 0 0 1 11 5m10 11-5 4.997V16z" />
+    </Svg>
+  )
+})
+Icon.displayName = 'StickyNoteAddFill'
+/**
+ * Remix Icon: Sticky Note Add Fill
+ * @see {@link https://remixicon.com/icon/sticky-note-add-fill Remix Icon Docs}
+ */
+export const StickyNoteAddFill = Icon

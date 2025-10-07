@@ -1,0 +1,16 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const props = _props
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
+      <path d="M2 2h5v5H2zm0 15h5v5H2zM17 2h5v5h-5zm0 15h5v5h-5zM8 4h8v2H8zM4 8h2v8H4zm14 0h2v8h-2zM8 18h8v2H8z" />
+    </svg>
+  )
+})
+Icon.displayName = 'Shape2Fill'
+/**
+ * Remix Icon: Shape 2 Fill
+ * @see {@link https://remixicon.com/icon/shape-2-fill Remix Icon Docs}
+ */
+export const Shape2Fill = Icon

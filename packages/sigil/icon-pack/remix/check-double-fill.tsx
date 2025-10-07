@@ -1,0 +1,17 @@
+import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
+  return (
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="m11.602 13.76 1.412 1.412 8.466-8.466 1.414 1.415-9.88 9.88-6.364-6.365 1.414-1.414 2.125 2.125zm.002-2.828 4.952-4.953 1.41 1.41-4.952 4.953zm-2.827 5.655L7.364 18 1 11.636l1.414-1.414 1.413 1.413-.001.001z" />
+    </Svg>
+  )
+})
+Icon.displayName = 'CheckDoubleFill'
+/**
+ * Remix Icon: Check Double Fill
+ * @see {@link https://remixicon.com/icon/check-double-fill Remix Icon Docs}
+ */
+export const CheckDoubleFill = Icon

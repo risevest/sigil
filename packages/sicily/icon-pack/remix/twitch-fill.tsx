@@ -1,0 +1,16 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const props = _props
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
+      <path d="M21.001 3v11.74l-4.696 4.695h-3.913l-2.437 2.348H6.914v-2.348H3.001V6.13L4.228 3zm-1.565 1.565H6.13v11.74h3.13v2.347l2.349-2.348h4.695l3.13-3.13zm-3.13 3.13v4.696H14.74V7.696zm-3.914 0v4.696h-1.565V7.696z" />
+    </svg>
+  )
+})
+Icon.displayName = 'TwitchFill'
+/**
+ * Remix Icon: Twitch Fill
+ * @see {@link https://remixicon.com/icon/twitch-fill Remix Icon Docs}
+ */
+export const TwitchFill = Icon

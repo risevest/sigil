@@ -1,0 +1,17 @@
+import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
+  return (
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M20 19v-9h-5.586V4.586L8 11l6.414 6.414V12H18v7zM10.164 6.05 8.75 4.636 2.386 11l6.364 6.364 1.414-1.414L5.214 11z" />
+    </Svg>
+  )
+})
+Icon.displayName = 'CornerUpLeftDoubleFill'
+/**
+ * Remix Icon: Corner Up Left Double Fill
+ * @see {@link https://remixicon.com/icon/corner-up-left-double-fill Remix Icon Docs}
+ */
+export const CornerUpLeftDoubleFill = Icon

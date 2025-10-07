@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "skipLibCheck": true,
+    "jsx": "react-native",
+    "declaration": true,
+    "strict": true,
+    "moduleResolution": "bundler",
+    "outDir": "./build",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  },
+  "include": ["*.ts", "icon-pack"],
+  "exclude": ["**/node_modules/**"]
+}

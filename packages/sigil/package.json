@@ -1,0 +1,47 @@
+{
+  "name": "@risemaxi/sigil",
+  "version": "1.2.0-beta.0",
+  "description": "Icons and Signs for the Rise Design System",
+  "homepage": "https://risevest.com",
+  "main": "build/index.js",
+  "type": "module",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "bun run build"
+  },
+  "keywords": [
+    "sigil",
+    "remix icons",
+    "ming cute icons",
+    "Deji.zeal",
+    "icon",
+    "drawable",
+    "icon library",
+    "icon pack"
+  ],
+  "files": [
+    "build"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/risevest/sigil.git"
+  },
+  "bugs": "https://github.com/risevest/sigil/issues",
+  "contributors": [
+    "Rise Developers"
+  ],
+  "peerDependencies": {
+    "react-native-svg": ">=12"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.2",
+    "camelcase": "^6.0.0",
+    "cheerio": "^1.0.0",
+    "glob": "^7.1.6",
+    "react": "*",
+    "react-native-svg": "^15.11.1",
+    "uppercamelcase": "^3.0.0"
+  }
+}

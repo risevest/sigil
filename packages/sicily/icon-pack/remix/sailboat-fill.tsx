@@ -1,0 +1,16 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const props = _props
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
+      <path d="M3 18h18a.5.5 0 0 1 .4.8l-2.1 2.8a1 1 0 0 1-.8.4h-13a1 1 0 0 1-.8-.4l-2.1-2.8A.5.5 0 0 1 3 18M15 2.425V15a1 1 0 0 1-1 1H4.04a.5.5 0 0 1-.39-.812L14.11 2.113a.5.5 0 0 1 .89.312" />
+    </svg>
+  )
+})
+Icon.displayName = 'SailboatFill'
+/**
+ * Remix Icon: Sailboat Fill
+ * @see {@link https://remixicon.com/icon/sailboat-fill Remix Icon Docs}
+ */
+export const SailboatFill = Icon

@@ -1,0 +1,17 @@
+import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
+  return (
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M11.141 2h1.718c2.014 0 3.094.278 4.071.801A5.45 5.45 0 0 1 19.2 5.07c.522.978.801 2.058.801 4.072v5.718c0 2.014-.279 3.094-.801 4.071A5.45 5.45 0 0 1 16.93 21.2c-.977.522-2.057.801-4.071.801H11.14c-2.014 0-3.094-.279-4.072-.801a5.45 5.45 0 0 1-2.268-2.269C4.278 17.954 4 16.874 4 14.86V9.14c0-2.014.278-3.094.801-4.072A5.45 5.45 0 0 1 7.07 2.801C8.047 2.278 9.127 2 11.141 2M11 6v5h2V6z" />
+    </Svg>
+  )
+})
+Icon.displayName = 'MouseFill'
+/**
+ * Remix Icon: Mouse Fill
+ * @see {@link https://remixicon.com/icon/mouse-fill Remix Icon Docs}
+ */
+export const MouseFill = Icon

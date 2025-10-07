@@ -1,0 +1,17 @@
+import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
+  return (
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M6.027 17.43A8.003 8.003 0 0 1 9 2a8 8 0 0 1 7.458 5.099A5.5 5.5 0 1 1 18 17.978a6 6 0 0 0-11.973-.549M13 16.267l1.964-1.134 1 1.732L14 18l1.964 1.134-1 1.732L13 19.732V22h-2v-2.268l-1.964 1.134-1-1.732L10 18l-1.964-1.134 1-1.732L11 16.268V14h2z" />
+    </Svg>
+  )
+})
+Icon.displayName = 'SnowyFill'
+/**
+ * Remix Icon: Snowy Fill
+ * @see {@link https://remixicon.com/icon/snowy-fill Remix Icon Docs}
+ */
+export const SnowyFill = Icon

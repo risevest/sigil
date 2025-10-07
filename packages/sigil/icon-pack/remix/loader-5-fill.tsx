@@ -1,0 +1,17 @@
+import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
+  return (
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M12 3a9 9 0 0 1 9 9h-2a7 7 0 0 0-7-7z" />
+    </Svg>
+  )
+})
+Icon.displayName = 'Loader5Fill'
+/**
+ * Remix Icon: Loader 5 Fill
+ * @see {@link https://remixicon.com/icon/loader-5-fill Remix Icon Docs}
+ */
+export const Loader5Fill = Icon

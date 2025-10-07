@@ -1,0 +1,17 @@
+import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
+  return (
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M21 2v20h-2v-8h-3V7a5 5 0 0 1 5-5M9 13.9V22H7v-8.1A5 5 0 0 1 3 9V3h2v7h2V3h2v7h2V3h2v6a5 5 0 0 1-4 4.9" />
+    </Svg>
+  )
+})
+Icon.displayName = 'RestaurantFill'
+/**
+ * Remix Icon: Restaurant Fill
+ * @see {@link https://remixicon.com/icon/restaurant-fill Remix Icon Docs}
+ */
+export const RestaurantFill = Icon

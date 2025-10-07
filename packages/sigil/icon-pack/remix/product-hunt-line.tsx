@@ -1,0 +1,17 @@
+import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
+  return (
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M12.001 22c-5.523 0-10-4.477-10-10s4.477-10 10-10 10 4.477 10 10-4.477 10-10 10m0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16m1.334-8a1.5 1.5 0 0 0 0-3H10.5v3zm0-5a3.5 3.5 0 1 1 0 7H10.5v3h-2V7z" />
+    </Svg>
+  )
+})
+Icon.displayName = 'ProductHuntLine'
+/**
+ * Remix Icon: Product Hunt Line
+ * @see {@link https://remixicon.com/icon/product-hunt-line Remix Icon Docs}
+ */
+export const ProductHuntLine = Icon

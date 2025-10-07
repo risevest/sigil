@@ -1,0 +1,16 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const props = _props
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
+      <path d="M7 9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m0 2a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9m10.5 2a2 2 0 1 0 0-4 2 2 0 0 0 0 4m0 2a4 4 0 1 1 0-8 4 4 0 0 1 0 8m2.5 6v-.5a2.5 2.5 0 0 0-5 0v.5h-2v-.5a4.5 4.5 0 1 1 9 0v.5zm-10 0v-4a3 3 0 1 0-6 0v4H2v-4a5 5 0 0 1 10 0v4z" />
+    </svg>
+  )
+})
+Icon.displayName = 'ParentLine'
+/**
+ * Remix Icon: Parent Line
+ * @see {@link https://remixicon.com/icon/parent-line Remix Icon Docs}
+ */
+export const ParentLine = Icon

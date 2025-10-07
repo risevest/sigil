@@ -1,0 +1,31 @@
+import { memo } from 'react'
+import Svg, { G, Path, Defs, ClipPath } from 'react-native-svg'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
+  return (
+    <Svg fill="none" viewBox="0 0 40 40" width={size} height={size} {...props}>
+      <G clipPath="url(#a)">
+        <Path
+          fill="#D80027"
+          d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20"
+        />
+        <Path
+          fill="#FFDA44"
+          d="m10.945 12.172 1.727 5.312h5.586l-4.516 3.29 1.727 5.312-4.524-3.281-4.523 3.28 1.734-5.312-4.523-3.289h5.586zM23.71 30.977l-1.32-1.625-1.953.757 1.133-1.757-1.32-1.633 2.023.539 1.141-1.758.11 2.094 2.03.539-1.96.75zM26.336 26.21l.625-2L25.25 23l2.094-.031.617-2 .68 1.984 2.093-.023-1.68 1.25.673 1.984-1.711-1.21zM29.875 14.68l-.922 1.883 1.5 1.46-2.07-.296-.922 1.875-.36-2.063-2.078-.297 1.86-.976-.36-2.07 1.5 1.46zM23.766 8.977l-.157 2.085 1.946.79-2.04.5-.148 2.093-1.101-1.78-2.04.5 1.352-1.602-1.11-1.774 1.946.79z"
+        />
+      </G>
+      <Defs>
+        <ClipPath id="a">
+          <Path fill="#fff" d="M0 0h40v40H0z" />
+        </ClipPath>
+      </Defs>
+    </Svg>
+  )
+})
+Icon.displayName = 'China'
+/**
+ * Flags by `Deji.Zeal`: China
+ * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
+ */
+export const China = Icon

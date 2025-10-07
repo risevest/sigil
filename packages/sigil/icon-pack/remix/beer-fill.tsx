@@ -1,0 +1,17 @@
+import { memo } from 'react'
+import Svg, { Path } from 'react-native-svg'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
+  return (
+    <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <Path d="M9 3a2 2 0 0 1 1.972 2.335l1.973.33a4 4 0 0 0-.005-1.361A2 2 0 0 1 15.733 7H5a1 1 0 1 1 .539-1.843 1 1 0 0 0 1.513-.614A2 2 0 0 1 9 3m1.516-1.703A3.998 3.998 0 0 0 5.51 3.043 3 3 0 0 0 3 8.236V20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2h2a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-2v-.354a4 4 0 0 0-4.896-6.169 4 4 0 0 0-1.588-1.18M17 18v-7h2v7zM7 11h2v7H7zm4 0h2v7h-2z" />
+    </Svg>
+  )
+})
+Icon.displayName = 'BeerFill'
+/**
+ * Remix Icon: Beer Fill
+ * @see {@link https://remixicon.com/icon/beer-fill Remix Icon Docs}
+ */
+export const BeerFill = Icon

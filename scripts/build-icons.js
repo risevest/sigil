@@ -1,3 +1,8 @@
+/**
+ * @deprecated Use `scripts/generate-icons.ts` instead
+ *
+ */
+
 const fs = require("node:fs");
 const glob = require("glob");
 const camelcase = require("camelcase");
@@ -78,89 +83,76 @@ function toSnakeCase(str) {
   return str.toLowerCase().split("-").join("_");
 }
 
-assetsFiles.forEach(
-  ({ attr, dir, id, index, prefix, isStrokeIcon, out, ...rest }) => {
-    glob(`${dir}/**/*.svg`, (_, icons) => {
-      fs.writeFileSync(index, "", "utf-8");
-      const outDir = path.join(rootDir, ...out);
+assetsFiles.forEach(({ attr, dir, id, index, prefix, isStrokeIcon, out, ...rest }) => {
+  glob(`${dir}/**/*.svg`, (_, icons) => {
+    fs.writeFileSync(index, "", "utf-8");
+    const outDir = path.join(rootDir, ...out);
 
-      icons.forEach(async (i) => {
-        const svg = fs.readFileSync(i, "utf-8");
-        const name = path.basename(i, ".svg");
-        const $ = cheerio.load(svg, {
-          xmlMode: true,
-        });
-        const fileName = path.basename(i).replace(".svg", ".tsx");
-        const location = path.join(outDir, fileName);
-        const keepColor =
-          typeof rest.keepColor === "function"
-            ? rest.keepColor(name)
-            : rest.keepColor;
+    icons.forEach(async (i) => {
+      const svg = fs.readFileSync(i, "utf-8");
+      const name = path.basename(i, ".svg");
+      const $ = cheerio.load(svg, {
+        xmlMode: true,
+      });
+      const fileName = path.basename(i).replace(".svg", ".tsx");
+      const location = path.join(outDir, fileName);
+      const keepColor = typeof rest.keepColor === "function" ? rest.keepColor(name) : rest.keepColor;
 
-        // Because CSS does not exist on Native platforms
-        // We need to duplicate the styles applied to the
-        // SVG to its children
-        const svgAttribs = $("svg")[0].attribs;
-        if (!svgAttribs["viewBox"]) {
-          svgAttribs["viewBox"] = "0 0 24 24";
+      // Because CSS does not exist on Native platforms
+      // We need to duplicate the styles applied to the
+      // SVG to its children
+      const svgAttribs = $("svg")[0].attribs;
+      if (!svgAttribs["viewBox"]) {
+        svgAttribs["viewBox"] = "0 0 24 24";
+      }
+      delete svgAttribs["xmlns"];
+      delete svgAttribs["xmlns:xlink"];
+      const attribsOfInterest = {};
+      Object.keys(svgAttribs).forEach((key) => {
+        if (
+          !["height", "width", "viewBox", "fill", "stroke-width", "stroke-linecap", "stroke-linejoin"].includes(key)
+        ) {
+          attribsOfInterest[key] = svgAttribs[key];
         }
-        delete svgAttribs["xmlns"];
-        delete svgAttribs["xmlns:xlink"];
-        const attribsOfInterest = {};
-        Object.keys(svgAttribs).forEach((key) => {
-          if (
-            ![
-              "height",
-              "width",
-              "viewBox",
-              "fill",
-              "stroke-width",
-              "stroke-linecap",
-              "stroke-linejoin",
-            ].includes(key)
-          ) {
-            attribsOfInterest[key] = svgAttribs[key];
+      });
+
+      $("*").each((index, el) => {
+        if (id === "mgc" && el.name === "g") {
+          return;
+        }
+
+        Object.keys(el.attribs).forEach((x) => {
+          if (x.includes("-")) {
+            $(el).attr(camelcase(x), el.attribs[x]).removeAttr(x);
+          }
+          if (keepColor) return;
+          if (x === "fill") {
+            const preserveNone = isStrokeIcon || (el.name === "svg" && el.attribs[x] === "none");
+            $(el).attr(x, preserveNone ? "none" : "currentColor");
+          }
+          if (isStrokeIcon && x === "stroke") {
+            $(el).attr(x, "currentColor");
           }
         });
 
-        $("*").each((index, el) => {
-          if (id === "mgc" && el.name === "g") {
-            return;
-          }
-
-          Object.keys(el.attribs).forEach((x) => {
-            if (x.includes("-")) {
-              $(el).attr(camelcase(x), el.attribs[x]).removeAttr(x);
-            }
-            if (keepColor) return;
-            if (x === "fill") {
-              const preserveNone =
-                isStrokeIcon || (el.name === "svg" && el.attribs[x] === "none");
-              $(el).attr(x, preserveNone ? "none" : "currentColor");
-            }
-            if (isStrokeIcon && x === "stroke") {
-              $(el).attr(x, "currentColor");
-            }
+        // For every element that is NOT svg ...
+        if (el.name !== "svg") {
+          Object.keys(attribsOfInterest).forEach((key) => {
+            $(el).attr(camelcase(key), attribsOfInterest[key]);
           });
-
-          // For every element that is NOT svg ...
-          if (el.name !== "svg") {
-            Object.keys(attribsOfInterest).forEach((key) => {
-              $(el).attr(camelcase(key), attribsOfInterest[key]);
-            });
-          }
-
-          if (el.name === "svg") {
-            $(el).attr("otherProps", "...");
-          }
-        });
-
-        let cname = uppercamelcase(name);
-        if (isNumber(cname[0])) {
-          cname = prefix + cname;
         }
 
-        const element = `
+        if (el.name === "svg") {
+          $(el).attr("otherProps", "...");
+        }
+      });
+
+      let cname = uppercamelcase(name);
+      if (isNumber(cname[0])) {
+        cname = prefix + cname;
+      }
+
+      const element = `
         import React, { memo } from 'react'
         import type { IconProps } from '../../types'
         import {
@@ -208,23 +200,12 @@ assetsFiles.forEach(
                       }}`;
               })
               .replace(
-                keepColor
-                  ? ""
-                  : isStrokeIcon
-                  ? /stroke="currentColor"/g
-                  : /fill="currentColor"/g,
-                keepColor
-                  ? ""
-                  : isStrokeIcon
-                  ? "stroke={color}"
-                  : "fill={color}"
+                keepColor ? "" : isStrokeIcon ? /stroke="currentColor"/g : /fill="currentColor"/g,
+                keepColor ? "" : isStrokeIcon ? "stroke={color}" : "fill={color}"
               )
               .replace(/width="\d+"/, "")
               .replace(/height="\d+"/, "")
-              .replace(
-                'otherProps="..."',
-                "height={size} width={size}  {...otherProps}"
-              )
+              .replace('otherProps="..."', "height={size} width={size}  {...otherProps}")
               .replace("<svg", "<Svg")
               .replace("</svg", "</Svg")
               .replace(/<circle/g, "<_Circle")
@@ -290,22 +271,16 @@ assetsFiles.forEach(
         export const ${cname} = memo(Icon)
       `;
 
-        fs.writeFileSync(location, element, "utf-8");
+      fs.writeFileSync(location, element, "utf-8");
 
-        const exportString = `export { ${cname} } from './${out.join(
-          "/"
-        )}/${name}'\n`;
+      const exportString = `export { ${cname} } from './${out.join("/")}/${name}'\n`;
 
-        fs.appendFileSync(index, exportString, "utf-8");
-      });
-
-      // run biome:
-      require("node:child_process").execSync(
-        `bunx biome check --write ${outDir} ${index}`,
-        {
-          stdio: "inherit",
-        }
-      );
+      fs.appendFileSync(index, exportString, "utf-8");
     });
-  }
-);
+
+    // run biome:
+    require("node:child_process").execSync(`bunx biome check --write ${outDir} ${index}`, {
+      stdio: "inherit",
+    });
+  });
+});

@@ -1,0 +1,16 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const props = _props
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
+      <path d="M2 13h6v8H2zm14-5h6v13h-6zM9 3h6v18H9zM4 15v4h2v-4zm7-10v14h2V5zm7 5v9h2v-9z" />
+    </svg>
+  )
+})
+Icon.displayName = 'BarChart2Line'
+/**
+ * Remix Icon: Bar Chart 2 Line
+ * @see {@link https://remixicon.com/icon/bar-chart-2-line Remix Icon Docs}
+ */
+export const BarChart2Line = Icon

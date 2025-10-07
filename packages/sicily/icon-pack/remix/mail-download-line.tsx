@@ -1,0 +1,16 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const props = _props
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
+      <path d="m20 7.238-7.928 7.1L4 7.216V19h9v2H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v8h-2zM19.501 5H4.511l7.55 6.662zM20 18h3l-4 4-4-4h3v-4h2z" />
+    </svg>
+  )
+})
+Icon.displayName = 'MailDownloadLine'
+/**
+ * Remix Icon: Mail Download Line
+ * @see {@link https://remixicon.com/icon/mail-download-line Remix Icon Docs}
+ */
+export const MailDownloadLine = Icon

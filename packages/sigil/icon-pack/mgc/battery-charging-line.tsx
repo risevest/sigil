@@ -1,0 +1,23 @@
+import { memo } from 'react'
+import Svg, { G, Path } from 'react-native-svg'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const { color = 'black', size = 24, ...props } = _props
+  return (
+    <Svg viewBox="0 0 24 24" width={size} height={size} {...props}>
+      <G fill="none">
+        <Path d="M24 0v24H0V0zM12.593 23.258l-.011.002-.071.035-.02.004-.014-.004-.071-.035q-.016-.005-.024.005l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427q-.004-.016-.017-.018m.265-.113-.013.002-.185.093-.01.01-.003.011.018.43.005.012.008.007.201.093q.019.005.029-.008l.004-.014-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014-.034.614q.001.018.017.024l.015-.002.201-.093.01-.008.004-.011.017-.43-.003-.012-.01-.01z" />
+        <Path
+          fill={color}
+          d="M8 6a1 1 0 1 1 0 2H4v8h3a1 1 0 1 1 0 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm10 0a2 2 0 0 1 2 2v1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2v1a2 2 0 0 1-2 2h-4a1 1 0 1 1 0-2h4V8h-3a1 1 0 1 1 0-2zm-5.485.143a1 1 0 0 1 .342 1.372L10.768 11h2.215c.785 0 1.27.857.866 1.53l-2.99 4.985a1 1 0 1 1-1.715-1.03L11.233 13H9.019a1.01 1.01 0 0 1-.866-1.53l2.99-4.984a1 1 0 0 1 1.373-.343Z"
+        />
+      </G>
+    </Svg>
+  )
+})
+Icon.displayName = 'BatteryChargingLine'
+/**
+ * MingCute Icon: Battery Charging Line
+ * @see {@link https://www.mingcute.com MingCute Icon Docs}
+ */
+export const BatteryChargingLine = Icon

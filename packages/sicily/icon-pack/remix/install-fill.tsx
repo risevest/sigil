@@ -1,0 +1,16 @@
+import { memo } from 'react'
+import type { IconProps } from '../../types'
+const Icon = memo((_props: IconProps) => {
+  const props = _props
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
+      <path d="M11 2v5H8l4 4 4-4h-3V2h7a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm8 14H5v4h14zm-2 1v2h-2v-2z" />
+    </svg>
+  )
+})
+Icon.displayName = 'InstallFill'
+/**
+ * Remix Icon: Install Fill
+ * @see {@link https://remixicon.com/icon/install-fill Remix Icon Docs}
+ */
+export const InstallFill = Icon
