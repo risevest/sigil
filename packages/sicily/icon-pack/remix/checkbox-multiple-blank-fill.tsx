@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const CheckboxMultipleBlankFill = /* @__PURE__ */ memo(function CheckboxMultipleBlankFill(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'CheckboxMultipleBlankFill'
 /**
  * Remix Icon: Checkbox Multiple Blank Fill
  * @see {@link https://remixicon.com/icon/checkbox-multiple-blank-fill Remix Icon Docs}
  */
-export const CheckboxMultipleBlankFill = Icon
+export { CheckboxMultipleBlankFill }

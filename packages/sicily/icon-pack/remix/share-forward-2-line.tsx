@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const ShareForward2Line = /* @__PURE__ */ memo(function ShareForward2Line(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'ShareForward2Line'
 /**
  * Remix Icon: Share Forward 2 Line
  * @see {@link https://remixicon.com/icon/share-forward-2-line Remix Icon Docs}
  */
-export const ShareForward2Line = Icon
+export { ShareForward2Line }

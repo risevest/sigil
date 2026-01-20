@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const FolderUnknowFill = /* @__PURE__ */ memo(function FolderUnknowFill(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'FolderUnknowFill'
 /**
  * Remix Icon: Folder Unknow Fill
  * @see {@link https://remixicon.com/icon/folder-unknow-fill Remix Icon Docs}
  */
-export const FolderUnknowFill = Icon
+export { FolderUnknowFill }

@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const CopperDiamondFill = /* @__PURE__ */ memo(function CopperDiamondFill(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 25 24" width="1em" height="1em" {...props}>
@@ -8,5 +10,4 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'CopperDiamondFill'
-export const CopperDiamondFill = Icon
+export { CopperDiamondFill }

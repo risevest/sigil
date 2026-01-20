@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const MapLine = /* @__PURE__ */ memo(function MapLine(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'MapLine'
 /**
  * Remix Icon: Map Line
  * @see {@link https://remixicon.com/icon/map-line Remix Icon Docs}
  */
-export const MapLine = Icon
+export { MapLine }

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const TimelineView = /* @__PURE__ */ memo(function TimelineView(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'TimelineView'
 /**
  * Remix Icon: Timeline View
  * @see {@link https://remixicon.com/icon/timeline-view Remix Icon Docs}
  */
-export const TimelineView = Icon
+export { TimelineView }

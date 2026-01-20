@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const ScrollToBottomFill = /* @__PURE__ */ memo(function ScrollToBottomFill(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'ScrollToBottomFill'
 /**
  * Remix Icon: Scroll To Bottom Fill
  * @see {@link https://remixicon.com/icon/scroll-to-bottom-fill Remix Icon Docs}
  */
-export const ScrollToBottomFill = Icon
+export { ScrollToBottomFill }

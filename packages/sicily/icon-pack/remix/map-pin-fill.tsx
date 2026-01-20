@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const MapPinFill = /* @__PURE__ */ memo(function MapPinFill(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'MapPinFill'
 /**
  * Remix Icon: Map Pin Fill
  * @see {@link https://remixicon.com/icon/map-pin-fill Remix Icon Docs}
  */
-export const MapPinFill = Icon
+export { MapPinFill }

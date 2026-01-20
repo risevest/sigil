@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const VerifiedBadgeFill = /* @__PURE__ */ memo(function VerifiedBadgeFill(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'VerifiedBadgeFill'
 /**
  * Remix Icon: Verified Badge Fill
  * @see {@link https://remixicon.com/icon/verified-badge-fill Remix Icon Docs}
  */
-export const VerifiedBadgeFill = Icon
+export { VerifiedBadgeFill }

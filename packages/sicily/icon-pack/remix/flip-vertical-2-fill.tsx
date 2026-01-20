@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const FlipVertical2Fill = /* @__PURE__ */ memo(function FlipVertical2Fill(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'FlipVertical2Fill'
 /**
  * Remix Icon: Flip Vertical 2 Fill
  * @see {@link https://remixicon.com/icon/flip-vertical-2-fill Remix Icon Docs}
  */
-export const FlipVertical2Fill = Icon
+export { FlipVertical2Fill }

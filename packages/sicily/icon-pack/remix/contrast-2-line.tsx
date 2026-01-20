@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Contrast2Line = /* @__PURE__ */ memo(function Contrast2Line(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'Contrast2Line'
 /**
  * Remix Icon: Contrast 2 Line
  * @see {@link https://remixicon.com/icon/contrast-2-line Remix Icon Docs}
  */
-export const Contrast2Line = Icon
+export { Contrast2Line }

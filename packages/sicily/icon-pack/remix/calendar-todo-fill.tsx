@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const CalendarTodoFill = /* @__PURE__ */ memo(function CalendarTodoFill(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'CalendarTodoFill'
 /**
  * Remix Icon: Calendar Todo Fill
  * @see {@link https://remixicon.com/icon/calendar-todo-fill Remix Icon Docs}
  */
-export const CalendarTodoFill = Icon
+export { CalendarTodoFill }

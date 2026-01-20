@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { G, Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const GitBranchLine = /* @__PURE__ */ memo(function GitBranchLine(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -15,9 +15,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'GitBranchLine'
 /**
  * MingCute Icon: Git Branch Line
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const GitBranchLine = Icon
+export { GitBranchLine }

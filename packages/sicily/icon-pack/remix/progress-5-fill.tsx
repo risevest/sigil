@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Progress5Fill = /* @__PURE__ */ memo(function Progress5Fill(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'Progress5Fill'
 /**
  * Remix Icon: Progress 5 Fill
  * @see {@link https://remixicon.com/icon/progress-5-fill Remix Icon Docs}
  */
-export const Progress5Fill = Icon
+export { Progress5Fill }

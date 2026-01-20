@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const IrisScanner = /* @__PURE__ */ memo(function IrisScanner(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 28 28" width={size} height={size} {...props}>
@@ -14,5 +14,4 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'IrisScanner'
-export const IrisScanner = Icon
+export { IrisScanner }

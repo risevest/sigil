@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { G, Path, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const VisaLogo = /* @__PURE__ */ memo(function VisaLogo(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill="none" viewBox="0 0 32 11" width={size} height={size} {...props}>
@@ -19,5 +19,4 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'VisaLogo'
-export const VisaLogo = Icon
+export { VisaLogo }

@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { G, Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Qrcode2Line = /* @__PURE__ */ memo(function Qrcode2Line(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -15,9 +15,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'Qrcode2Line'
 /**
  * MingCute Icon: Qrcode 2 Line
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const Qrcode2Line = Icon
+export { Qrcode2Line }

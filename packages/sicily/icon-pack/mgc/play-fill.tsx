@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const PlayFill = /* @__PURE__ */ memo(function PlayFill(_props: IconProps) {
   const props = _props
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -14,9 +14,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'PlayFill'
 /**
  * MingCute Icon: Play Fill
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const PlayFill = Icon
+export { PlayFill }

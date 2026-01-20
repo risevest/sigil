@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const RemoteControl2Line = /* @__PURE__ */ memo(function RemoteControl2Line(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'RemoteControl2Line'
 /**
  * Remix Icon: Remote Control 2 Line
  * @see {@link https://remixicon.com/icon/remote-control-2-line Remix Icon Docs}
  */
-export const RemoteControl2Line = Icon
+export { RemoteControl2Line }

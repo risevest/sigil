@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Rect, Circle } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const CameraShutter = /* @__PURE__ */ memo(function CameraShutter(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill="none" viewBox="0 0 65 64" width={size} height={size} {...props}>
@@ -10,5 +10,4 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'CameraShutter'
-export const CameraShutter = Icon
+export { CameraShutter }

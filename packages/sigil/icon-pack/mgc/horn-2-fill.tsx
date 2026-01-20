@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { G, Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Horn2Fill = /* @__PURE__ */ memo(function Horn2Fill(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -15,9 +15,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'Horn2Fill'
 /**
  * MingCute Icon: Horn 2 Fill
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const Horn2Fill = Icon
+export { Horn2Fill }

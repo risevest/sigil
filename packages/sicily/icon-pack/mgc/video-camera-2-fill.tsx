@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const VideoCamera2Fill = /* @__PURE__ */ memo(function VideoCamera2Fill(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -14,9 +16,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'VideoCamera2Fill'
 /**
  * MingCute Icon: Video Camera 2 Fill
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const VideoCamera2Fill = Icon
+export { VideoCamera2Fill }

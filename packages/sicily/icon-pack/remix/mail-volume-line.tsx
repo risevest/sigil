@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const MailVolumeLine = /* @__PURE__ */ memo(function MailVolumeLine(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'MailVolumeLine'
 /**
  * Remix Icon: Mail Volume Line
  * @see {@link https://remixicon.com/icon/mail-volume-line Remix Icon Docs}
  */
-export const MailVolumeLine = Icon
+export { MailVolumeLine }

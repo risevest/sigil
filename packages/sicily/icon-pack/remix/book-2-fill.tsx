@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Book2Fill = /* @__PURE__ */ memo(function Book2Fill(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'Book2Fill'
 /**
  * Remix Icon: Book 2 Fill
  * @see {@link https://remixicon.com/icon/book-2-fill Remix Icon Docs}
  */
-export const Book2Fill = Icon
+export { Book2Fill }

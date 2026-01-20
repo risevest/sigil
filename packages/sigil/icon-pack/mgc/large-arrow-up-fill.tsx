@@ -1,7 +1,9 @@
 import { memo } from 'react'
 import Svg, { G, Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const LargeArrowUpFill = /* @__PURE__ */ memo(function LargeArrowUpFill(
+  _props: IconProps
+) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -15,9 +17,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'LargeArrowUpFill'
 /**
  * MingCute Icon: Large Arrow Up Fill
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const LargeArrowUpFill = Icon
+export { LargeArrowUpFill }

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Telegram2Fill = /* @__PURE__ */ memo(function Telegram2Fill(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'Telegram2Fill'
 /**
  * Remix Icon: Telegram 2 Fill
  * @see {@link https://remixicon.com/icon/telegram-2-fill Remix Icon Docs}
  */
-export const Telegram2Fill = Icon
+export { Telegram2Fill }

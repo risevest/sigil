@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const MenuUnfold2Line = /* @__PURE__ */ memo(function MenuUnfold2Line(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'MenuUnfold2Line'
 /**
  * Remix Icon: Menu Unfold 2 Line
  * @see {@link https://remixicon.com/icon/menu-unfold-2-line Remix Icon Docs}
  */
-export const MenuUnfold2Line = Icon
+export { MenuUnfold2Line }

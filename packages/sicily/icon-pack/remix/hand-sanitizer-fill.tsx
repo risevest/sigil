@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const HandSanitizerFill = /* @__PURE__ */ memo(function HandSanitizerFill(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'HandSanitizerFill'
 /**
  * Remix Icon: Hand Sanitizer Fill
  * @see {@link https://remixicon.com/icon/hand-sanitizer-fill Remix Icon Docs}
  */
-export const HandSanitizerFill = Icon
+export { HandSanitizerFill }

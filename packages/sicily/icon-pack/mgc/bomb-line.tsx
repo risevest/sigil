@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const BombLine = /* @__PURE__ */ memo(function BombLine(_props: IconProps) {
   const props = _props
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -14,9 +14,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'BombLine'
 /**
  * MingCute Icon: Bomb Line
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const BombLine = Icon
+export { BombLine }

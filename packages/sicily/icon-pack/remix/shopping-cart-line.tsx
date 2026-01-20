@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const ShoppingCartLine = /* @__PURE__ */ memo(function ShoppingCartLine(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'ShoppingCartLine'
 /**
  * Remix Icon: Shopping Cart Line
  * @see {@link https://remixicon.com/icon/shopping-cart-line Remix Icon Docs}
  */
-export const ShoppingCartLine = Icon
+export { ShoppingCartLine }

@@ -1,7 +1,9 @@
 import { memo } from 'react'
 import Svg, { G, Path, Circle, Defs, ClipPath } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const WifiInactiveBlur = /* @__PURE__ */ memo(function WifiInactiveBlur(
+  _props: IconProps
+) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill="none" viewBox="0 0 88 88" width={size} height={size} {...props}>
@@ -22,5 +24,4 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'WifiInactiveBlur'
-export const WifiInactiveBlur = Icon
+export { WifiInactiveBlur }

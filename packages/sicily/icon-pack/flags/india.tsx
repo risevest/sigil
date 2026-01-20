@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const India = /* @__PURE__ */ memo(function India(_props: IconProps) {
   const props = _props
   return (
     <svg fill="none" viewBox="0 0 40 40" width="1em" height="1em" {...props}>
@@ -38,9 +38,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'India'
 /**
  * Flags by `Deji.Zeal`: India
  * @see {@link https://www.figma.com/community/file/1088904439772569873/alphabetical-country-flags Alphabetical Country Flags}
  */
-export const India = Icon
+export { India }

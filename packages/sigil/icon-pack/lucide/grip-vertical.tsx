@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const GripVertical = /* @__PURE__ */ memo(function GripVertical(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill="none" viewBox="0 0 16 17" width={size} height={size} {...props}>
@@ -15,9 +15,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'GripVertical'
 /**
  * Lucide Icon: Grip Vertical
  * @see {@link https://lucide.dev/icons/grip-vertical Lucide Icon Docs}
  */
-export const GripVertical = Icon
+export { GripVertical }

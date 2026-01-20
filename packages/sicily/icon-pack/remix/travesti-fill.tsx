@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const TravestiFill = /* @__PURE__ */ memo(function TravestiFill(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'TravestiFill'
 /**
  * Remix Icon: Travesti Fill
  * @see {@link https://remixicon.com/icon/travesti-fill Remix Icon Docs}
  */
-export const TravestiFill = Icon
+export { TravestiFill }

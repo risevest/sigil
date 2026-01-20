@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const HandHeartLine = /* @__PURE__ */ memo(function HandHeartLine(_props: IconProps) {
   const props = _props
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -14,9 +14,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'HandHeartLine'
 /**
  * MingCute Icon: Hand Heart Line
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const HandHeartLine = Icon
+export { HandHeartLine }

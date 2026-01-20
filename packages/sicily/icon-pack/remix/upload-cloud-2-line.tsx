@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const UploadCloud2Line = /* @__PURE__ */ memo(function UploadCloud2Line(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'UploadCloud2Line'
 /**
  * Remix Icon: Upload Cloud 2 Line
  * @see {@link https://remixicon.com/icon/upload-cloud-2-line Remix Icon Docs}
  */
-export const UploadCloud2Line = Icon
+export { UploadCloud2Line }
