@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Medal2Line = /* @__PURE__ */ memo(function Medal2Line(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'Medal2Line'
 /**
  * Remix Icon: Medal 2 Line
  * @see {@link https://remixicon.com/icon/medal-2-line Remix Icon Docs}
  */
-export const Medal2Line = Icon
+export { Medal2Line }

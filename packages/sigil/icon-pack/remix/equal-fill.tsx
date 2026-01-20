@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const EqualFill = /* @__PURE__ */ memo(function EqualFill(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'EqualFill'
 /**
  * Remix Icon: Equal Fill
  * @see {@link https://remixicon.com/icon/equal-fill Remix Icon Docs}
  */
-export const EqualFill = Icon
+export { EqualFill }

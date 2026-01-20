@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const UserVoiceFill = /* @__PURE__ */ memo(function UserVoiceFill(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'UserVoiceFill'
 /**
  * Remix Icon: User Voice Fill
  * @see {@link https://remixicon.com/icon/user-voice-fill Remix Icon Docs}
  */
-export const UserVoiceFill = Icon
+export { UserVoiceFill }

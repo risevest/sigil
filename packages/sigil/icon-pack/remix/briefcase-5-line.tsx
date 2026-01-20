@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Briefcase5Line = /* @__PURE__ */ memo(function Briefcase5Line(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'Briefcase5Line'
 /**
  * Remix Icon: Briefcase 5 Line
  * @see {@link https://remixicon.com/icon/briefcase-5-line Remix Icon Docs}
  */
-export const Briefcase5Line = Icon
+export { Briefcase5Line }

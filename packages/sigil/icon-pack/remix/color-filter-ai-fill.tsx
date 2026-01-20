@@ -1,7 +1,9 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const ColorFilterAiFill = /* @__PURE__ */ memo(function ColorFilterAiFill(
+  _props: IconProps
+) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 25 24" width={size} height={size} {...props}>
@@ -9,9 +11,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'ColorFilterAiFill'
 /**
  * Remix Icon: Color Filter Ai Fill
  * @see {@link https://remixicon.com/icon/color-filter-ai-fill Remix Icon Docs}
  */
-export const ColorFilterAiFill = Icon
+export { ColorFilterAiFill }

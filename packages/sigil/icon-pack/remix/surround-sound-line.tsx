@@ -1,7 +1,9 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const SurroundSoundLine = /* @__PURE__ */ memo(function SurroundSoundLine(
+  _props: IconProps
+) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +11,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'SurroundSoundLine'
 /**
  * Remix Icon: Surround Sound Line
  * @see {@link https://remixicon.com/icon/surround-sound-line Remix Icon Docs}
  */
-export const SurroundSoundLine = Icon
+export { SurroundSoundLine }

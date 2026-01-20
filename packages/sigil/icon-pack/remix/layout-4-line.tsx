@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Layout4Line = /* @__PURE__ */ memo(function Layout4Line(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'Layout4Line'
 /**
  * Remix Icon: Layout 4 Line
  * @see {@link https://remixicon.com/icon/layout-4-line Remix Icon Docs}
  */
-export const Layout4Line = Icon
+export { Layout4Line }

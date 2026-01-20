@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const MapPin2Line = /* @__PURE__ */ memo(function MapPin2Line(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'MapPin2Line'
 /**
  * Remix Icon: Map Pin 2 Line
  * @see {@link https://remixicon.com/icon/map-pin-2-line Remix Icon Docs}
  */
-export const MapPin2Line = Icon
+export { MapPin2Line }

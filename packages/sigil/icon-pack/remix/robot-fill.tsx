@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const RobotFill = /* @__PURE__ */ memo(function RobotFill(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'RobotFill'
 /**
  * Remix Icon: Robot Fill
  * @see {@link https://remixicon.com/icon/robot-fill Remix Icon Docs}
  */
-export const RobotFill = Icon
+export { RobotFill }

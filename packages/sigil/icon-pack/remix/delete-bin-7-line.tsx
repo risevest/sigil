@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const DeleteBin7Line = /* @__PURE__ */ memo(function DeleteBin7Line(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'DeleteBin7Line'
 /**
  * Remix Icon: Delete Bin 7 Line
  * @see {@link https://remixicon.com/icon/delete-bin-7-line Remix Icon Docs}
  */
-export const DeleteBin7Line = Icon
+export { DeleteBin7Line }

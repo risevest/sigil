@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const FileUnknowLine = /* @__PURE__ */ memo(function FileUnknowLine(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'FileUnknowLine'
 /**
  * Remix Icon: File Unknow Line
  * @see {@link https://remixicon.com/icon/file-unknow-line Remix Icon Docs}
  */
-export const FileUnknowLine = Icon
+export { FileUnknowLine }

@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const TruckLine = /* @__PURE__ */ memo(function TruckLine(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'TruckLine'
 /**
  * Remix Icon: Truck Line
  * @see {@link https://remixicon.com/icon/truck-line Remix Icon Docs}
  */
-export const TruckLine = Icon
+export { TruckLine }

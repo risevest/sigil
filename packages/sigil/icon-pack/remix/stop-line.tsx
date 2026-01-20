@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const StopLine = /* @__PURE__ */ memo(function StopLine(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'StopLine'
 /**
  * Remix Icon: Stop Line
  * @see {@link https://remixicon.com/icon/stop-line Remix Icon Docs}
  */
-export const StopLine = Icon
+export { StopLine }

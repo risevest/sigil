@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Artboard2Fill = /* @__PURE__ */ memo(function Artboard2Fill(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'Artboard2Fill'
 /**
  * Remix Icon: Artboard 2 Fill
  * @see {@link https://remixicon.com/icon/artboard-2-fill Remix Icon Docs}
  */
-export const Artboard2Fill = Icon
+export { Artboard2Fill }

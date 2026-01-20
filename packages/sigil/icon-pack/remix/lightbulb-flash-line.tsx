@@ -1,7 +1,9 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const LightbulbFlashLine = /* @__PURE__ */ memo(function LightbulbFlashLine(
+  _props: IconProps
+) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +11,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'LightbulbFlashLine'
 /**
  * Remix Icon: Lightbulb Flash Line
  * @see {@link https://remixicon.com/icon/lightbulb-flash-line Remix Icon Docs}
  */
-export const LightbulbFlashLine = Icon
+export { LightbulbFlashLine }

@@ -1,7 +1,9 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const DashboardHorizontalFill = /* @__PURE__ */ memo(function DashboardHorizontalFill(
+  _props: IconProps
+) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +11,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'DashboardHorizontalFill'
 /**
  * Remix Icon: Dashboard Horizontal Fill
  * @see {@link https://remixicon.com/icon/dashboard-horizontal-fill Remix Icon Docs}
  */
-export const DashboardHorizontalFill = Icon
+export { DashboardHorizontalFill }

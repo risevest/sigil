@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const SignalWifi3Line = /* @__PURE__ */ memo(function SignalWifi3Line(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'SignalWifi3Line'
 /**
  * Remix Icon: Signal Wifi 3 Line
  * @see {@link https://remixicon.com/icon/signal-wifi-3-line Remix Icon Docs}
  */
-export const SignalWifi3Line = Icon
+export { SignalWifi3Line }

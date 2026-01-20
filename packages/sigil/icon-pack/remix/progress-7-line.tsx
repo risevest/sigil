@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Progress7Line = /* @__PURE__ */ memo(function Progress7Line(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'Progress7Line'
 /**
  * Remix Icon: Progress 7 Line
  * @see {@link https://remixicon.com/icon/progress-7-line Remix Icon Docs}
  */
-export const Progress7Line = Icon
+export { Progress7Line }

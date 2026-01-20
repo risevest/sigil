@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const MailSendFill = /* @__PURE__ */ memo(function MailSendFill(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'MailSendFill'
 /**
  * Remix Icon: Mail Send Fill
  * @see {@link https://remixicon.com/icon/mail-send-fill Remix Icon Docs}
  */
-export const MailSendFill = Icon
+export { MailSendFill }

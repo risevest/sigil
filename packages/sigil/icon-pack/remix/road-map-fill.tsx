@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const RoadMapFill = /* @__PURE__ */ memo(function RoadMapFill(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'RoadMapFill'
 /**
  * Remix Icon: Road Map Fill
  * @see {@link https://remixicon.com/icon/road-map-fill Remix Icon Docs}
  */
-export const RoadMapFill = Icon
+export { RoadMapFill }

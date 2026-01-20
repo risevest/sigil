@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Folder5Line = /* @__PURE__ */ memo(function Folder5Line(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'Folder5Line'
 /**
  * Remix Icon: Folder 5 Line
  * @see {@link https://remixicon.com/icon/folder-5-line Remix Icon Docs}
  */
-export const Folder5Line = Icon
+export { Folder5Line }
