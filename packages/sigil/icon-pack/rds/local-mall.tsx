@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Mask, Path, G } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const LocalMall = /* @__PURE__ */ memo(function LocalMall(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill="none" viewBox="0 0 25 25" width={size} height={size} {...props}>
@@ -27,5 +27,4 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'LocalMall'
-export const LocalMall = Icon
+export { LocalMall }

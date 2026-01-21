@@ -1,7 +1,9 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const CornerUpLeftDoubleFill = /* @__PURE__ */ memo(function CornerUpLeftDoubleFill(
+  _props: IconProps
+) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +11,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'CornerUpLeftDoubleFill'
 /**
  * Remix Icon: Corner Up Left Double Fill
  * @see {@link https://remixicon.com/icon/corner-up-left-double-fill Remix Icon Docs}
  */
-export const CornerUpLeftDoubleFill = Icon
+export { CornerUpLeftDoubleFill }

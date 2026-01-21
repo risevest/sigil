@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const DeleteBin3Line = /* @__PURE__ */ memo(function DeleteBin3Line(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'DeleteBin3Line'
 /**
  * Remix Icon: Delete Bin 3 Line
  * @see {@link https://remixicon.com/icon/delete-bin-3-line Remix Icon Docs}
  */
-export const DeleteBin3Line = Icon
+export { DeleteBin3Line }

@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const TetherLogo = /* @__PURE__ */ memo(function TetherLogo(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg viewBox="0 0 2000 2000" width={size} height={size} {...props}>
@@ -16,5 +16,4 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'TetherLogo'
-export const TetherLogo = Icon
+export { TetherLogo }

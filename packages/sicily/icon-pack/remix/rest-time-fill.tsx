@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const RestTimeFill = /* @__PURE__ */ memo(function RestTimeFill(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'RestTimeFill'
 /**
  * Remix Icon: Rest Time Fill
  * @see {@link https://remixicon.com/icon/rest-time-fill Remix Icon Docs}
  */
-export const RestTimeFill = Icon
+export { RestTimeFill }

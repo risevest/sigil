@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const TaskLine = /* @__PURE__ */ memo(function TaskLine(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'TaskLine'
 /**
  * Remix Icon: Task Line
  * @see {@link https://remixicon.com/icon/task-line Remix Icon Docs}
  */
-export const TaskLine = Icon
+export { TaskLine }

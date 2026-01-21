@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const FolderShieldLine = /* @__PURE__ */ memo(function FolderShieldLine(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'FolderShieldLine'
 /**
  * Remix Icon: Folder Shield Line
  * @see {@link https://remixicon.com/icon/folder-shield-line Remix Icon Docs}
  */
-export const FolderShieldLine = Icon
+export { FolderShieldLine }

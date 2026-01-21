@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Camera2AiLine = /* @__PURE__ */ memo(function Camera2AiLine(_props: IconProps) {
   const props = _props
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -14,9 +14,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'Camera2AiLine'
 /**
  * MingCute Icon: Camera 2 Ai Line
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const Camera2AiLine = Icon
+export { Camera2AiLine }

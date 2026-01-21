@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const HashtagLine = /* @__PURE__ */ memo(function HashtagLine(_props: IconProps) {
   const props = _props
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -14,9 +14,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'HashtagLine'
 /**
  * MingCute Icon: Hashtag Line
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const HashtagLine = Icon
+export { HashtagLine }

@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const MoneyDollarCircleLine = /* @__PURE__ */ memo(function MoneyDollarCircleLine(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'MoneyDollarCircleLine'
 /**
  * Remix Icon: Money Dollar Circle Line
  * @see {@link https://remixicon.com/icon/money-dollar-circle-line Remix Icon Docs}
  */
-export const MoneyDollarCircleLine = Icon
+export { MoneyDollarCircleLine }

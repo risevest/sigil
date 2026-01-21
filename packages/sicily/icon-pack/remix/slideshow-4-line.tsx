@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Slideshow4Line = /* @__PURE__ */ memo(function Slideshow4Line(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'Slideshow4Line'
 /**
  * Remix Icon: Slideshow 4 Line
  * @see {@link https://remixicon.com/icon/slideshow-4-line Remix Icon Docs}
  */
-export const Slideshow4Line = Icon
+export { Slideshow4Line }

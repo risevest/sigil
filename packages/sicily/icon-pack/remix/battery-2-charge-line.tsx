@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Battery2ChargeLine = /* @__PURE__ */ memo(function Battery2ChargeLine(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'Battery2ChargeLine'
 /**
  * Remix Icon: Battery 2 Charge Line
  * @see {@link https://remixicon.com/icon/battery-2-charge-line Remix Icon Docs}
  */
-export const Battery2ChargeLine = Icon
+export { Battery2ChargeLine }

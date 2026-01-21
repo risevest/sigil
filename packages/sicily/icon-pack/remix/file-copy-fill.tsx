@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const FileCopyFill = /* @__PURE__ */ memo(function FileCopyFill(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'FileCopyFill'
 /**
  * Remix Icon: File Copy Fill
  * @see {@link https://remixicon.com/icon/file-copy-fill Remix Icon Docs}
  */
-export const FileCopyFill = Icon
+export { FileCopyFill }

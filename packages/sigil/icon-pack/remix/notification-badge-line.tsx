@@ -1,7 +1,9 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const NotificationBadgeLine = /* @__PURE__ */ memo(function NotificationBadgeLine(
+  _props: IconProps
+) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +11,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'NotificationBadgeLine'
 /**
  * Remix Icon: Notification Badge Line
  * @see {@link https://remixicon.com/icon/notification-badge-line Remix Icon Docs}
  */
-export const NotificationBadgeLine = Icon
+export { NotificationBadgeLine }

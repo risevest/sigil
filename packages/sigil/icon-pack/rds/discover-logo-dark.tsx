@@ -1,7 +1,9 @@
 import { memo } from 'react'
 import Svg, { Path, G, Defs } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const DiscoverLogoDark = /* @__PURE__ */ memo(function DiscoverLogoDark(
+  _props: IconProps
+) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill="none" viewBox="0 0 32 24" width={size} height={size} {...props}>
@@ -41,5 +43,4 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'DiscoverLogoDark'
-export const DiscoverLogoDark = Icon
+export { DiscoverLogoDark }

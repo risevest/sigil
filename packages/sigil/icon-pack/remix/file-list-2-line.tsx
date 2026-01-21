@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const FileList2Line = /* @__PURE__ */ memo(function FileList2Line(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'FileList2Line'
 /**
  * Remix Icon: File List 2 Line
  * @see {@link https://remixicon.com/icon/file-list-2-line Remix Icon Docs}
  */
-export const FileList2Line = Icon
+export { FileList2Line }

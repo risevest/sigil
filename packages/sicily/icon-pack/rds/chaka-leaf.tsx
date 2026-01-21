@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const ChakaLeaf = /* @__PURE__ */ memo(function ChakaLeaf(_props: IconProps) {
   const props = _props
   return (
     <svg fill="none" viewBox="0 0 12 13" width="1em" height="1em" {...props}>
@@ -11,5 +11,4 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'ChakaLeaf'
-export const ChakaLeaf = Icon
+export { ChakaLeaf }

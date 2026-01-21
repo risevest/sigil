@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const SignalWifi1Line = /* @__PURE__ */ memo(function SignalWifi1Line(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'SignalWifi1Line'
 /**
  * Remix Icon: Signal Wifi 1 Line
  * @see {@link https://remixicon.com/icon/signal-wifi-1-line Remix Icon Docs}
  */
-export const SignalWifi1Line = Icon
+export { SignalWifi1Line }

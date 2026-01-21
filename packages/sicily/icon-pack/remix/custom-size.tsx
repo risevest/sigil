@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const CustomSize = /* @__PURE__ */ memo(function CustomSize(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'CustomSize'
 /**
  * Remix Icon: Custom Size
  * @see {@link https://remixicon.com/icon/custom-size Remix Icon Docs}
  */
-export const CustomSize = Icon
+export { CustomSize }

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const WechatPayLine = /* @__PURE__ */ memo(function WechatPayLine(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'WechatPayLine'
 /**
  * Remix Icon: Wechat Pay Line
  * @see {@link https://remixicon.com/icon/wechat-pay-line Remix Icon Docs}
  */
-export const WechatPayLine = Icon
+export { WechatPayLine }

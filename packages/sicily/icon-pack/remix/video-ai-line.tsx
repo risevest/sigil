@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const VideoAiLine = /* @__PURE__ */ memo(function VideoAiLine(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'VideoAiLine'
 /**
  * Remix Icon: Video Ai Line
  * @see {@link https://remixicon.com/icon/video-ai-line Remix Icon Docs}
  */
-export const VideoAiLine = Icon
+export { VideoAiLine }

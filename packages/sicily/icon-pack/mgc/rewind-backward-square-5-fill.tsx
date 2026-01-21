@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const RewindBackwardSquare5Fill = /* @__PURE__ */ memo(function RewindBackwardSquare5Fill(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -14,9 +16,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'RewindBackwardSquare5Fill'
 /**
  * MingCute Icon: Rewind Backward Square 5 Fill
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const RewindBackwardSquare5Fill = Icon
+export { RewindBackwardSquare5Fill }

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const MoreLine = /* @__PURE__ */ memo(function MoreLine(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'MoreLine'
 /**
  * Remix Icon: More Line
  * @see {@link https://remixicon.com/icon/more-line Remix Icon Docs}
  */
-export const MoreLine = Icon
+export { MoreLine }

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Calendar2Fill = /* @__PURE__ */ memo(function Calendar2Fill(_props: IconProps) {
   const props = _props
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -14,9 +14,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'Calendar2Fill'
 /**
  * MingCute Icon: Calendar 2 Fill
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const Calendar2Fill = Icon
+export { Calendar2Fill }

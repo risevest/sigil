@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const ChatSmileAiFill = /* @__PURE__ */ memo(function ChatSmileAiFill(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'ChatSmileAiFill'
 /**
  * Remix Icon: Chat Smile Ai Fill
  * @see {@link https://remixicon.com/icon/chat-smile-ai-fill Remix Icon Docs}
  */
-export const ChatSmileAiFill = Icon
+export { ChatSmileAiFill }

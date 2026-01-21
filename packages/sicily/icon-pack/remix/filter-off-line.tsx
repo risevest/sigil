@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const FilterOffLine = /* @__PURE__ */ memo(function FilterOffLine(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'FilterOffLine'
 /**
  * Remix Icon: Filter Off Line
  * @see {@link https://remixicon.com/icon/filter-off-line Remix Icon Docs}
  */
-export const FilterOffLine = Icon
+export { FilterOffLine }

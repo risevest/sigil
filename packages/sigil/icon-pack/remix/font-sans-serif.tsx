@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const FontSansSerif = /* @__PURE__ */ memo(function FontSansSerif(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'FontSansSerif'
 /**
  * Remix Icon: Font Sans Serif
  * @see {@link https://remixicon.com/icon/font-sans-serif Remix Icon Docs}
  */
-export const FontSansSerif = Icon
+export { FontSansSerif }

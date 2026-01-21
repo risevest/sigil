@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const LandscapeLine = /* @__PURE__ */ memo(function LandscapeLine(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'LandscapeLine'
 /**
  * Remix Icon: Landscape Line
  * @see {@link https://remixicon.com/icon/landscape-line Remix Icon Docs}
  */
-export const LandscapeLine = Icon
+export { LandscapeLine }

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const AnchorFill = /* @__PURE__ */ memo(function AnchorFill(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'AnchorFill'
 /**
  * Remix Icon: Anchor Fill
  * @see {@link https://remixicon.com/icon/anchor-fill Remix Icon Docs}
  */
-export const AnchorFill = Icon
+export { AnchorFill }

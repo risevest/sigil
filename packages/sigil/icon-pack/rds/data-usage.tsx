@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Mask, Path, G } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const DataUsage = /* @__PURE__ */ memo(function DataUsage(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 25 24" width={size} height={size} {...props}>
@@ -24,5 +24,4 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'DataUsage'
-export const DataUsage = Icon
+export { DataUsage }

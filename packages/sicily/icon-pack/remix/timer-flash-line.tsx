@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const TimerFlashLine = /* @__PURE__ */ memo(function TimerFlashLine(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'TimerFlashLine'
 /**
  * Remix Icon: Timer Flash Line
  * @see {@link https://remixicon.com/icon/timer-flash-line Remix Icon Docs}
  */
-export const TimerFlashLine = Icon
+export { TimerFlashLine }

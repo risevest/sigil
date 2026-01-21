@@ -1,7 +1,9 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const PrinterCloudLine = /* @__PURE__ */ memo(function PrinterCloudLine(
+  _props: IconProps
+) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +11,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'PrinterCloudLine'
 /**
  * Remix Icon: Printer Cloud Line
  * @see {@link https://remixicon.com/icon/printer-cloud-line Remix Icon Docs}
  */
-export const PrinterCloudLine = Icon
+export { PrinterCloudLine }

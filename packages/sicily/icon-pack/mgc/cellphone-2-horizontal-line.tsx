@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Cellphone2HorizontalLine = /* @__PURE__ */ memo(function Cellphone2HorizontalLine(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -14,9 +16,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'Cellphone2HorizontalLine'
 /**
  * MingCute Icon: Cellphone 2 Horizontal Line
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const Cellphone2HorizontalLine = Icon
+export { Cellphone2HorizontalLine }

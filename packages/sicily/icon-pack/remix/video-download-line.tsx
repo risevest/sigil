@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const VideoDownloadLine = /* @__PURE__ */ memo(function VideoDownloadLine(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'VideoDownloadLine'
 /**
  * Remix Icon: Video Download Line
  * @see {@link https://remixicon.com/icon/video-download-line Remix Icon Docs}
  */
-export const VideoDownloadLine = Icon
+export { VideoDownloadLine }

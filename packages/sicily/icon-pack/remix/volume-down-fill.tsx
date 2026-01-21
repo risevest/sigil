@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const VolumeDownFill = /* @__PURE__ */ memo(function VolumeDownFill(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'VolumeDownFill'
 /**
  * Remix Icon: Volume Down Fill
  * @see {@link https://remixicon.com/icon/volume-down-fill Remix Icon Docs}
  */
-export const VolumeDownFill = Icon
+export { VolumeDownFill }

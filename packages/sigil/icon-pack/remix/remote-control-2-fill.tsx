@@ -1,7 +1,9 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const RemoteControl2Fill = /* @__PURE__ */ memo(function RemoteControl2Fill(
+  _props: IconProps
+) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +11,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'RemoteControl2Fill'
 /**
  * Remix Icon: Remote Control 2 Fill
  * @see {@link https://remixicon.com/icon/remote-control-2-fill Remix Icon Docs}
  */
-export const RemoteControl2Fill = Icon
+export { RemoteControl2Fill }

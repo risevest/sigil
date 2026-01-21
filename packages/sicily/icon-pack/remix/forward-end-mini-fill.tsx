@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const ForwardEndMiniFill = /* @__PURE__ */ memo(function ForwardEndMiniFill(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'ForwardEndMiniFill'
 /**
  * Remix Icon: Forward End Mini Fill
  * @see {@link https://remixicon.com/icon/forward-end-mini-fill Remix Icon Docs}
  */
-export const ForwardEndMiniFill = Icon
+export { ForwardEndMiniFill }

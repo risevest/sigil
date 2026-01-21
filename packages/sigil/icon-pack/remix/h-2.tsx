@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const H2 = /* @__PURE__ */ memo(function H2(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'H2'
 /**
  * Remix Icon: H 2
  * @see {@link https://remixicon.com/icon/h-2 Remix Icon Docs}
  */
-export const H2 = Icon
+export { H2 }

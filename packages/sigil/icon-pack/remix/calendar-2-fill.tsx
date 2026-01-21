@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Calendar2Fill = /* @__PURE__ */ memo(function Calendar2Fill(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'Calendar2Fill'
 /**
  * Remix Icon: Calendar 2 Fill
  * @see {@link https://remixicon.com/icon/calendar-2-fill Remix Icon Docs}
  */
-export const Calendar2Fill = Icon
+export { Calendar2Fill }

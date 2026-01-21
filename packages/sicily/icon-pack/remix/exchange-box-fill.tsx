@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const ExchangeBoxFill = /* @__PURE__ */ memo(function ExchangeBoxFill(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'ExchangeBoxFill'
 /**
  * Remix Icon: Exchange Box Fill
  * @see {@link https://remixicon.com/icon/exchange-box-fill Remix Icon Docs}
  */
-export const ExchangeBoxFill = Icon
+export { ExchangeBoxFill }

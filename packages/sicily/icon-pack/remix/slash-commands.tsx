@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const SlashCommands = /* @__PURE__ */ memo(function SlashCommands(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'SlashCommands'
 /**
  * Remix Icon: Slash Commands
  * @see {@link https://remixicon.com/icon/slash-commands Remix Icon Docs}
  */
-export const SlashCommands = Icon
+export { SlashCommands }

@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Anticlockwise2Line = /* @__PURE__ */ memo(function Anticlockwise2Line(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'Anticlockwise2Line'
 /**
  * Remix Icon: Anticlockwise 2 Line
  * @see {@link https://remixicon.com/icon/anticlockwise-2-line Remix Icon Docs}
  */
-export const Anticlockwise2Line = Icon
+export { Anticlockwise2Line }

@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Rect, Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const CheckMark = /* @__PURE__ */ memo(function CheckMark(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 20 20" width={size} height={size} {...props}>
@@ -10,5 +10,4 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'CheckMark'
-export const CheckMark = Icon
+export { CheckMark }

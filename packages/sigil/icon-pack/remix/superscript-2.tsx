@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Superscript2 = /* @__PURE__ */ memo(function Superscript2(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'Superscript2'
 /**
  * Remix Icon: Superscript 2
  * @see {@link https://remixicon.com/icon/superscript-2 Remix Icon Docs}
  */
-export const Superscript2 = Icon
+export { Superscript2 }

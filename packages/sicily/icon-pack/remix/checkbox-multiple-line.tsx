@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const CheckboxMultipleLine = /* @__PURE__ */ memo(function CheckboxMultipleLine(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'CheckboxMultipleLine'
 /**
  * Remix Icon: Checkbox Multiple Line
  * @see {@link https://remixicon.com/icon/checkbox-multiple-line Remix Icon Docs}
  */
-export const CheckboxMultipleLine = Icon
+export { CheckboxMultipleLine }

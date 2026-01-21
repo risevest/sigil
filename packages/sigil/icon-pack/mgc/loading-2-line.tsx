@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Defs, Image, G, Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Loading2Line = /* @__PURE__ */ memo(function Loading2Line(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -23,9 +23,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'Loading2Line'
 /**
  * MingCute Icon: Loading 2 Line
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const Loading2Line = Icon
+export { Loading2Line }

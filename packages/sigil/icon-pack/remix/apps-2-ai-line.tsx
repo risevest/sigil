@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Apps2AiLine = /* @__PURE__ */ memo(function Apps2AiLine(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'Apps2AiLine'
 /**
  * Remix Icon: Apps 2 Ai Line
  * @see {@link https://remixicon.com/icon/apps-2-ai-line Remix Icon Docs}
  */
-export const Apps2AiLine = Icon
+export { Apps2AiLine }

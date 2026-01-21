@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Polaroid2Line = /* @__PURE__ */ memo(function Polaroid2Line(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'Polaroid2Line'
 /**
  * Remix Icon: Polaroid 2 Line
  * @see {@link https://remixicon.com/icon/polaroid-2-line Remix Icon Docs}
  */
-export const Polaroid2Line = Icon
+export { Polaroid2Line }

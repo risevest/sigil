@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const SwimmingPoolLine = /* @__PURE__ */ memo(function SwimmingPoolLine(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -14,9 +16,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'SwimmingPoolLine'
 /**
  * MingCute Icon: Swimming Pool Line
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const SwimmingPoolLine = Icon
+export { SwimmingPoolLine }

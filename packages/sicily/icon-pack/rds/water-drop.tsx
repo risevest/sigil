@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const WaterDrop = /* @__PURE__ */ memo(function WaterDrop(_props: IconProps) {
   const props = _props
   return (
     <svg fill="none" viewBox="0 0 25 25" width="1em" height="1em" {...props}>
@@ -26,5 +26,4 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'WaterDrop'
-export const WaterDrop = Icon
+export { WaterDrop }

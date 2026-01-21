@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const MenuFold4Line = /* @__PURE__ */ memo(function MenuFold4Line(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'MenuFold4Line'
 /**
  * Remix Icon: Menu Fold 4 Line
  * @see {@link https://remixicon.com/icon/menu-fold-4-line Remix Icon Docs}
  */
-export const MenuFold4Line = Icon
+export { MenuFold4Line }

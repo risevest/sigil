@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Kingkey100TowerFill = /* @__PURE__ */ memo(function Kingkey100TowerFill(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -14,9 +16,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'Kingkey100TowerFill'
 /**
  * MingCute Icon: Kingkey 100 Tower Fill
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const Kingkey100TowerFill = Icon
+export { Kingkey100TowerFill }

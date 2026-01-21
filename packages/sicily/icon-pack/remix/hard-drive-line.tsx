@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const HardDriveLine = /* @__PURE__ */ memo(function HardDriveLine(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'HardDriveLine'
 /**
  * Remix Icon: Hard Drive Line
  * @see {@link https://remixicon.com/icon/hard-drive-line Remix Icon Docs}
  */
-export const HardDriveLine = Icon
+export { HardDriveLine }

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const InputField = /* @__PURE__ */ memo(function InputField(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'InputField'
 /**
  * Remix Icon: Input Field
  * @see {@link https://remixicon.com/icon/input-field Remix Icon Docs}
  */
-export const InputField = Icon
+export { InputField }

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const FolderZipLine = /* @__PURE__ */ memo(function FolderZipLine(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'FolderZipLine'
 /**
  * Remix Icon: Folder Zip Line
  * @see {@link https://remixicon.com/icon/folder-zip-line Remix Icon Docs}
  */
-export const FolderZipLine = Icon
+export { FolderZipLine }

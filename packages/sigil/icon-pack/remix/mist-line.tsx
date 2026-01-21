@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const MistLine = /* @__PURE__ */ memo(function MistLine(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -9,9 +9,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'MistLine'
 /**
  * Remix Icon: Mist Line
  * @see {@link https://remixicon.com/icon/mist-line Remix Icon Docs}
  */
-export const MistLine = Icon
+export { MistLine }

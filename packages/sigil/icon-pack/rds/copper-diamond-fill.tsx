@@ -1,7 +1,9 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const CopperDiamondFill = /* @__PURE__ */ memo(function CopperDiamondFill(
+  _props: IconProps
+) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill={color} viewBox="0 0 25 24" width={size} height={size} {...props}>
@@ -9,5 +11,4 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'CopperDiamondFill'
-export const CopperDiamondFill = Icon
+export { CopperDiamondFill }

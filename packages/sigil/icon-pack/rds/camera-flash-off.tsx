@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const CameraFlashOff = /* @__PURE__ */ memo(function CameraFlashOff(_props: IconProps) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg fill="none" viewBox="0 0 12 19" width={size} height={size} {...props}>
@@ -12,5 +12,4 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'CameraFlashOff'
-export const CameraFlashOff = Icon
+export { CameraFlashOff }

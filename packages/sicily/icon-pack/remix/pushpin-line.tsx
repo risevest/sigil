@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const PushpinLine = /* @__PURE__ */ memo(function PushpinLine(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'PushpinLine'
 /**
  * Remix Icon: Pushpin Line
  * @see {@link https://remixicon.com/icon/pushpin-line Remix Icon Docs}
  */
-export const PushpinLine = Icon
+export { PushpinLine }

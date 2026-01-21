@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const Menu4Fill = /* @__PURE__ */ memo(function Menu4Fill(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'Menu4Fill'
 /**
  * Remix Icon: Menu 4 Fill
  * @see {@link https://remixicon.com/icon/menu-4-fill Remix Icon Docs}
  */
-export const Menu4Fill = Icon
+export { Menu4Fill }

@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const PencilRuler2Fill = /* @__PURE__ */ memo(function PencilRuler2Fill(
+  _props: IconProps
+) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +10,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'PencilRuler2Fill'
 /**
  * Remix Icon: Pencil Ruler 2 Fill
  * @see {@link https://remixicon.com/icon/pencil-ruler-2-fill Remix Icon Docs}
  */
-export const PencilRuler2Fill = Icon
+export { PencilRuler2Fill }

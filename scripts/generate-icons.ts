@@ -166,19 +166,17 @@ import type { IconProps } from '../../types'
 
 ${variables.interfaces}
 
-const Icon = memo((_props: IconProps) => {
+const ${componentName} = /* @__PURE__ */  memo(function ${componentName}(_props: IconProps) {
 ${isNative ? `  const { color = "black", size = 24, ...props } = _props` : `  const props = _props`}
   return ${variables.jsx};
 });
 
-Icon.displayName = "${componentName}";
-
 ${attr ? attr(name) : ""}
-export const ${componentName} = Icon;
+export {${componentName}};
   `;
         },
       },
-      { componentName }
+      { componentName },
     );
 
     Bun.file(`./packages/${platform}/icon-pack/${id}/${name}.tsx`).write(transformation);

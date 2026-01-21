@@ -1,7 +1,9 @@
 import { memo } from 'react'
 import Svg, { G, Path } from 'react-native-svg'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const DrawingBoardLine = /* @__PURE__ */ memo(function DrawingBoardLine(
+  _props: IconProps
+) {
   const { color = 'black', size = 24, ...props } = _props
   return (
     <Svg viewBox="0 0 24 24" width={size} height={size} {...props}>
@@ -15,9 +17,8 @@ const Icon = memo((_props: IconProps) => {
     </Svg>
   )
 })
-Icon.displayName = 'DrawingBoardLine'
 /**
  * MingCute Icon: Drawing Board Line
  * @see {@link https://www.mingcute.com MingCute Icon Docs}
  */
-export const DrawingBoardLine = Icon
+export { DrawingBoardLine }

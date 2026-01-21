@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const OpenArmFill = /* @__PURE__ */ memo(function OpenArmFill(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'OpenArmFill'
 /**
  * Remix Icon: Open Arm Fill
  * @see {@link https://remixicon.com/icon/open-arm-fill Remix Icon Docs}
  */
-export const OpenArmFill = Icon
+export { OpenArmFill }

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { IconProps } from '../../types'
-const Icon = memo((_props: IconProps) => {
+const WindyFill = /* @__PURE__ */ memo(function WindyFill(_props: IconProps) {
   const props = _props
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em" {...props}>
@@ -8,9 +8,8 @@ const Icon = memo((_props: IconProps) => {
     </svg>
   )
 })
-Icon.displayName = 'WindyFill'
 /**
  * Remix Icon: Windy Fill
  * @see {@link https://remixicon.com/icon/windy-fill Remix Icon Docs}
  */
-export const WindyFill = Icon
+export { WindyFill }
