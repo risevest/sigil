@@ -29,6 +29,7 @@ jobs:
           npm version $PACKAGE_VERSION --no-git-tag-version
           cd packages/sigil
           ls 
+          cat package.json
           echo "Publishing Sigil version $PACKAGE_VERSION"
           npm version $PACKAGE_VERSION --no-git-tag-version
           bun publish --access public
