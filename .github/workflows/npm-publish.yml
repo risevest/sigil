@@ -31,7 +31,7 @@ jobs:
           cat package.json
           echo "Publishing Sigil version $PACKAGE_VERSION"
           npm version $PACKAGE_VERSION --no-git-tag-version
-          bun publish --access public
+          bun publish --access public --verbose
         env:
           CI: true
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
