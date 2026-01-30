@@ -25,7 +25,7 @@ jobs:
         run: bun sync
       - name: 🚀 Publish Sigil
         run: |
-          PACKAGE_VERSION=$(cat packages/sigil/package.json | jq -r .version)
+          PACKAGE_VERSION=$(cat ./package.json | jq -r .version)
           npm version $PACKAGE_VERSION --no-git-tag-version
           cd packages/sigil && bun publish --access public
         env:
