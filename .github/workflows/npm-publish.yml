@@ -18,13 +18,15 @@ jobs:
       - name: 🍞 Setup Bun
         uses: oven-sh/setup-bun@v1
 
-      - name: 📦 Install packages and prebuild
-        run: cd packages/sigil && bun install --frozen-lockfile
-        shell: bash
-      - name: 🔄 Sync versions
+      - name: Sync Versions
+        run: bun run sync
+      - name: 🔄 Add token versions
         run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: 📦 Install packages and prebuild
+        run: bun install --frozen-lockfile
+        shell: bash
       - name: 🚀 Publish Sigil
         run: |
           cat ~/.npmrc
