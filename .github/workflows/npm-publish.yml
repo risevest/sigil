@@ -26,6 +26,8 @@ jobs:
       - name: 🚀 Publish Sigil
         run: |
           PACKAGE_VERSION=$(cat ./package.json | jq -r .version)
+          cat ./packages/sigil/package.json 
+          echo $PACKAGE_VERSION
           npm version $PACKAGE_VERSION --no-git-tag-version
           cd packages/sigil && bun publish --access public
         env:
