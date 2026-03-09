@@ -5,6 +5,10 @@ on:
     types: [published]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -18,18 +22,25 @@ jobs:
       - name: 🍞 Setup Bun
         uses: oven-sh/setup-bun@v1
 
+      - name: 🟢 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+
       - name: 📦 Install packages and prebuild
         run: bun install --frozen-lockfile
         shell: bash
+
       - name: 🔄 Sync versions
         run: bun sync
+
       - name: 🚀 Publish Sigil
-        run: cd packages/sigil && bun publish --access public
+        run: cd packages/sigil && npm publish --access public
         env:
           CI: true
-          NPM_CONFIG_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
       - name: 🚀 Publish Sicily
-        run: cd packages/sicily && bun publish --access public
+        run: cd packages/sicily && npm publish --access public
         env:
           CI: true
-          NPM_CONFIG_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
