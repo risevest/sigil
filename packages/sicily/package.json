@@ -10,7 +10,33 @@
     "build": "tsc -p tsconfig.json",
     "prepare": "bun run build"
   },
+  "keywords": [
+    "sicily",
+    "remix icons",
+    "ming cute icons",
+    "Deji.zeal",
+    "icon",
+    "drawable",
+    "icon library",
+    "icon pack"
+  ],
+  "files": [
+    "build"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/risevest/sigil.git"
+  },
+  "bugs": "https://github.com/risevest/sigil/issues",
+  "contributors": [
+    "Rise Developers"
+  ],
+  "peerDependencies": {
+    "react-native-svg": ">=12"
+  },
   "devDependencies": {
     "@types/react": "^19.1.13"
   }
 }
+
