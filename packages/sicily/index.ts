@@ -1109,6 +1109,7 @@ export { JewelryLine } from './icon-pack/remix/jewelry-line';
 export { IncreaseDecreaseLine } from './icon-pack/remix/increase-decrease-line';
 export { ShoppingBag4Line } from './icon-pack/remix/shopping-bag-4-line';
 export { TokenSwapFill } from './icon-pack/remix/token-swap-fill';
+export { ExchangeNairaLine } from './icon-pack/remix/exchange-naira-line';
 export { Wallet2Fill } from './icon-pack/remix/wallet-2-fill';
 export { Wallet3Fill } from './icon-pack/remix/wallet-3-fill';
 export { FundsBoxLine } from './icon-pack/remix/funds-box-line';
@@ -1641,6 +1642,7 @@ export { IndeterminateCircleLine } from './icon-pack/remix/indeterminate-circle-
 export { ResetRightLine } from './icon-pack/remix/reset-right-line';
 export { ShieldLine } from './icon-pack/remix/shield-line';
 export { LockLine } from './icon-pack/remix/lock-line';
+export { TargetLine } from './icon-pack/remix/target-line';
 export { Filter2Line } from './icon-pack/remix/filter-2-line';
 export { Filter3Line } from './icon-pack/remix/filter-3-line';
 export { ShareForwardBoxLine } from './icon-pack/remix/share-forward-box-line';
