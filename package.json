@@ -1,6 +1,6 @@
 {
   "name": "sigil",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "devDependencies": {
     "@biomejs/biome": "^1.9.2",
     "@svgr/core": "^8.1.0",
