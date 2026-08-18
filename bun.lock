@@ -20,6 +20,9 @@
       "devDependencies": {
         "@types/react": "^19.1.13",
       },
+      "peerDependencies": {
+        "react": ">=18",
+      },
     },
     "packages/sigil": {
       "name": "@risemaxi/sigil",
