@@ -6,6 +6,7 @@
   "main": "build/index.js",
   "type": "module",
   "types": "build/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "prepare": "bun run build"
