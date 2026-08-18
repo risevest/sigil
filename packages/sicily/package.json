@@ -6,6 +6,7 @@
   "main": "build/index.js",
   "type": "module",
   "types": "build/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "prepare": "bun run build"
@@ -33,7 +34,7 @@
     "Rise Developers"
   ],
   "peerDependencies": {
-    "react-native-svg": ">=12"
+    "react": ">=18"
   },
   "devDependencies": {
     "@types/react": "^19.1.13"
